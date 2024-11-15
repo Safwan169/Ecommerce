@@ -6,12 +6,12 @@ function NavbarMain() {
   return (
     <header className=''>
       {/* Top Info Bar */}
-      <div className="bg-gray-100">
-       <div className='  py-2 px-4 flex justify-around items-center text-sm text-gray-700'>
-       <div className='border border-red-600'>
+      <div className="bg-gray-100 ">
+       <div className='  py-2  flex justify-between px-[7%]  items-center text-sm text-gray-700'>
+       <div className=''>
           Need help? Call us: <span className="text-red-600">(+92) 0123 456 789</span>
         </div>
-        <div className='border border-red-600'>
+        <div className='border -translate-x-1/2 relative border-red-600'>
           Today's deal sale 50% off <span className="text-red-600 font-semibold">SHOP NOW!</span>
         </div>
         
@@ -25,7 +25,7 @@ function NavbarMain() {
       </div>
 
       {/* Main Navbar */}
-      <div className=" bg-white py-4 px-4 flex items-center justify-around">
+      <div className="px-[7%] bg-white py-4  flex items-center justify-between">
         {/* Logo */}
         <div className=" flex items-center space-x-2">
           <div className="text-red-600 font-bold text-2xl">E</div>
@@ -58,7 +58,8 @@ function NavbarMain() {
       </div>
 
       {/* Secondary Options Bar */}
-      <div className="bg-gray-900 text-white py-3 px-6 flex items-center space-x-8">
+    <div className='bg-gray-900'>
+    <div className="px-[7%] text-white py-3 flex items-center space-x-8">
         {/* Categories */}
         <button className="bg-red-600 py-2 px-4 font-semibold flex items-center space-x-2">
           <span>TOP CATEGORIES</span>
@@ -94,7 +95,8 @@ function NavbarMain() {
           <FiShoppingCart />
           <span>0 Item $0.00</span>
         </div>
-      </div>
+      </div> 
+    </div>
     </header>
   );
 }
