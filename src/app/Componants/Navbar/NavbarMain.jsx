@@ -3,6 +3,7 @@ import { FiPhone, FiSearch, FiShoppingCart, FiHeart, FiUser } from 'react-icons/
 import { FaLock, FaGift } from 'react-icons/fa';
 import { MdOutlineSupportAgent } from 'react-icons/md';
 import Slider from "@/app/Componants/Navbar/Slider"
+import data from "@/app/Componants/Navbar/sliderText"
 
 function NavbarMain() {
 
@@ -63,8 +64,8 @@ function NavbarMain() {
           </div>
         </nav>
         <div className="flex items-center space-x-2 text-red-600">
-          <MdOutlineSupportAgent />
-                    <span className='text-black font-semibold'> (+92) 0123 456 789</span>
+          <MdOutlineSupportAgent size={25} />
+          <span className='text-black font-semibold'> (+92) 0123 456 789</span>
         </div>
 
       </div>
@@ -77,21 +78,12 @@ function NavbarMain() {
             <span>TOP CATEGORIES</span>
             <span className="text-xl">☰</span>
           </button>
+          {/* this is the navbar slider  */}
 
-          {/* Secure Payment and Gift Voucher */}
-          {/* <div className="flex items-center space-x-8 text-sm">
-            <div className="flex items-center space-x-1">
-              <FaLock />
-              <span>SECURE PAYMENT</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <FaGift />
-              <span>GIFT VOUCHER</span>
-            </div>
-          </div> */}
-        <div className='w-[30%] '>
-      <Slider/>
-        </div>
+          <div className='w-[30%] '>
+          <Slider d={data} />
+
+          </div>
 
           {/* Search Bar */}
           <div className="flex-grow relative">
@@ -107,7 +99,7 @@ function NavbarMain() {
 
           {/* Cart */}
           <div className=" cursor-pointer bg-red-600 py-2 px-4 font-semibold flex items-center space-x-1">
-            <FiShoppingCart />
+            <FiShoppingCart size={20} />
             <span>0 Item $0.00</span>
           </div>
         </div>

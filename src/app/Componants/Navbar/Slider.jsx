@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef, useState } from 'react';
+import React from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -12,9 +12,8 @@ import './styles.css';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import data from "@/app/Componants/Navbar/sliderText"
 
-export default function Slider() {
+export default function Slider({d}) {
     return (
         <>
             <Swiper
@@ -32,11 +31,11 @@ export default function Slider() {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
-                {data?.map(d => <SwiperSlide>
+                {d?.map((data,index)=> <SwiperSlide key={index}>
                     <div className='flex text-[14px] items-center gap-2 justify-center'>
-                        <p >{d.icon}</p>
+                        <p >{data.icon}</p>
                         <span className='flex'>
-                            {d.text}
+                            {data.text}
                         </span>
                     </div>
                 </SwiperSlide>)}

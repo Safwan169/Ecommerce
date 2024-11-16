@@ -81,10 +81,10 @@ function Footer() {
          <p>© 2024, Ecommerce by Spacingtech™</p>
           <div className="flex space-x-4 mt-4 lg:mt-0">
             {/* Payment Icons (Use images or SVGs for actual icons) */}
-            <img src="visa.png" alt="Visa" className="w-8 h-8" />
-            <img src="paypal.png" alt="Paypal" className="w-8 h-8" />
-            <img src="mastercard.png" alt="Mastercard" className="w-8 h-8" />
-            <img src="amex.png" alt="American Express" className="w-8 h-8" />
+            <img src="/bkash.png" alt="Visa" className="w-fit p-1 bg-white h-8" />
+            <img src="/nogad.svg" alt="Paypal" className="w-fit p-1 bg-white h-8" />
+            <img src="/Rocket.png" alt="Mastercard" className="w-fit p-1 bg-white h-8" />
+            <img src="/duchBangla.png" alt="American Express" className="w-fit p-1 bg-white h-8" />
           </div>
          </div>
         </div>
