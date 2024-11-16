@@ -1,27 +1,39 @@
 import React from 'react';
 import { FiPhone, FiSearch, FiShoppingCart, FiHeart, FiUser } from 'react-icons/fi';
 import { FaLock, FaGift } from 'react-icons/fa';
+import { MdOutlineSupportAgent } from 'react-icons/md';
+import Slider from "@/app/Componants/Navbar/Slider"
 
 function NavbarMain() {
+
+
   return (
     <header className=''>
       {/* Top Info Bar */}
       <div className="bg-gray-100 ">
-       <div className='  py-2  flex justify-between px-[7%]  items-center text-sm text-gray-700'>
-       <div className=''>
-          Need help? Call us: <span className="text-red-600">(+92) 0123 456 789</span>
+        <div className='  py-2  flex justify-between px-[7%]  items-center text-sm text-gray-700'>
+          <div className=''>
+            Need help? Call us: <span className="hover:text-red-500 cursor-pointer">(+92) 0123 456 789</span>
+          </div>
+          <div className=' -translate-x-1/3 relative'>
+            Today's deal sale 50% off <span className="text-red-600 cursor-pointer  hover:text-gray-800 font-semibold">SHOP NOW!</span>
+          </div>
+
+          {/* Right-side Icons */}
+          <div className="flex items-center space-x-4">
+            <div className='flex cursor-pointer  hover:text-red-500 items-center gap-1'>
+              <FiUser className="    cursor-pointer" />
+              <span>sign In</span>
+            </div>
+            <span>
+              |</span>
+            <div className='flex cursor-pointer hover:text-red-500 items-center gap-1 '>
+              <FiHeart className="  cursor-pointer" />
+              <span>Wishlist</span>
+            </div>
+
+          </div>
         </div>
-        <div className='border -translate-x-1/2 relative border-red-600'>
-          Today's deal sale 50% off <span className="text-red-600 font-semibold">SHOP NOW!</span>
-        </div>
-        
-        {/* Right-side Icons */}
-        <div className="flex items-center space-x-4">
-          <FiUser className="text-gray-600 cursor-pointer" />
-          <FiHeart className="text-gray-600 cursor-pointer" />
-         
-        </div>
-       </div>
       </div>
 
       {/* Main Navbar */}
@@ -50,53 +62,56 @@ function NavbarMain() {
             <a href="#" className="hover:text-red-600">Pages</a>
           </div>
         </nav>
-        <div className="flex items-center space-x-1 text-red-600">
-            <FiPhone />
-            <span>(+92) 0123 456 789</span>
-          </div>
+        <div className="flex items-center space-x-2 text-red-600">
+          <MdOutlineSupportAgent />
+                    <span className='text-black font-semibold'> (+92) 0123 456 789</span>
+        </div>
 
       </div>
 
       {/* Secondary Options Bar */}
-    <div className='bg-gray-900'>
-    <div className="px-[7%] text-white py-3 flex items-center space-x-8">
-        {/* Categories */}
-        <button className="bg-red-600 py-2 px-4 font-semibold flex items-center space-x-2">
-          <span>TOP CATEGORIES</span>
-          <span className="text-xl">☰</span>
-        </button>
-
-        {/* Secure Payment and Gift Voucher */}
-        <div className="flex items-center space-x-8 text-sm">
-          <div className="flex items-center space-x-1">
-            <FaLock />
-            <span>SECURE PAYMENT</span>
-          </div>
-          <div className="flex items-center space-x-1">
-            <FaGift />
-            <span>GIFT VOUCHER</span>
-          </div>
-        </div>
-
-        {/* Search Bar */}
-        <div className="flex-grow relative">
-          <input
-            type="text"
-            placeholder="Find our product"
-            className="w-full py-2 px-4 rounded-l-md text-gray-700"
-          />
-          <button className="absolute right-0 top-0 bottom-0 bg-white text-gray-700 px-4 rounded-r-md">
-            <FiSearch />
+      <div className='bg-[#2c2b49]'>
+        <div className="px-[7%] text-white py-3 flex items-center space-x-8">
+          {/* Categories */}
+          <button className="bg-red-600 py-2 px-4 font-semibold flex items-center space-x-2">
+            <span>TOP CATEGORIES</span>
+            <span className="text-xl">☰</span>
           </button>
+
+          {/* Secure Payment and Gift Voucher */}
+          {/* <div className="flex items-center space-x-8 text-sm">
+            <div className="flex items-center space-x-1">
+              <FaLock />
+              <span>SECURE PAYMENT</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <FaGift />
+              <span>GIFT VOUCHER</span>
+            </div>
+          </div> */}
+        <div className='w-[30%] '>
+      <Slider/>
         </div>
 
-        {/* Cart */}
-        <div className="bg-red-600 py-2 px-4 font-semibold flex items-center space-x-1">
-          <FiShoppingCart />
-          <span>0 Item $0.00</span>
+          {/* Search Bar */}
+          <div className="flex-grow relative">
+            <input
+              type="text"
+              placeholder="Find our product"
+              className="w-full py-2 px-4 rounded-l-md text-gray-700"
+            />
+            <button className="absolute right-0 top-0 bottom-0 bg-white text-gray-700 px-4 rounded-r-md">
+              <FiSearch />
+            </button>
+          </div>
+
+          {/* Cart */}
+          <div className=" cursor-pointer bg-red-600 py-2 px-4 font-semibold flex items-center space-x-1">
+            <FiShoppingCart />
+            <span>0 Item $0.00</span>
+          </div>
         </div>
-      </div> 
-    </div>
+      </div>
     </header>
   );
 }
