@@ -17,7 +17,6 @@ import GlobalButton from '@/app/Componants/GloabalButton/GlobalButton'
 import AOS from "aos";
 import "aos/dist/aos.css";
 export default function Bgslider({ data }) {
-  console.log(data);
   const [hover, setHover] = useState()
 
 

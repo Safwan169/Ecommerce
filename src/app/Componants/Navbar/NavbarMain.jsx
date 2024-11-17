@@ -2,7 +2,7 @@ import React from 'react';
 import {  FiSearch, FiShoppingCart, FiHeart, FiUser } from 'react-icons/fi';
 import { MdOutlineSupportAgent } from 'react-icons/md';
 import Slider from "@/app/Componants/Navbar/Slider"
-import data from "@/app/Componants/Navbar/sliderText"
+import data from "@/app/Componants/Navbar/SliderText"
 
 function NavbarMain() {
 
@@ -22,7 +22,7 @@ function NavbarMain() {
           {/* Right-side Icons */}
           <div className="flex items-center space-x-4">
             <div className='flex cursor-pointer  hover:text-red-500 items-center gap-1'>
-              <FiUser className="    cursor-pointer" />
+              <FiUser className=" cursor-pointer" />
               <span>sign In</span>
             </div>
             <span>

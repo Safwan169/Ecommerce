@@ -3,7 +3,7 @@ import { FiGift } from "react-icons/fi";
 import { IoLockClosedOutline } from "react-icons/io5";
 import { LiaCertificateSolid } from "react-icons/lia";
  
-let data
+let data=[]
 export default  data=[
 
     {

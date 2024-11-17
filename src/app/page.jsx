@@ -1,5 +1,5 @@
 import HeaderText from "@/app/Componants/HeaderText/HeaderText"
-import Services from "@/app/Componants/Service/Services"
+import Services from "@/app/Componants/Service/ServiceText"
 import TopCategary from "@/app/Componants/Top Categary/TopCategary"
 import TreandingCullation from "@/app/Componants/TreandingCollection/TreandingCullation"
 import Background from '@/app/Componants/Background/Background'
