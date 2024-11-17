@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react";
 
-const ProductButtons = ({data}) => {
+const TrandingButton = ({data}) => {
   const [text,setText]=useState(0)
 
 
@@ -19,4 +19,4 @@ const ProductButtons = ({data}) => {
   );
 };
 
-export default ProductButtons;
+export default TrandingButton;
