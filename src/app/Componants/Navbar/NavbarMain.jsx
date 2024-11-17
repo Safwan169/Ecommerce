@@ -1,6 +1,5 @@
 import React from 'react';
-import { FiPhone, FiSearch, FiShoppingCart, FiHeart, FiUser } from 'react-icons/fi';
-import { FaLock, FaGift } from 'react-icons/fa';
+import {  FiSearch, FiShoppingCart, FiHeart, FiUser } from 'react-icons/fi';
 import { MdOutlineSupportAgent } from 'react-icons/md';
 import Slider from "@/app/Componants/Navbar/Slider"
 import data from "@/app/Componants/Navbar/sliderText"
