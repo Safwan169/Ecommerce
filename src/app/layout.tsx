@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import NavbarMain from "@/app/Componants/Navbar/NavbarMain"
 import Footer from "@/app/Componants/Footer"
+import { Poppins } from "next/font/google";
+
 
 const poppins = Poppins({
   subsets: ["latin"], // Specify subsets
