@@ -3,6 +3,7 @@ import {  FiSearch, FiShoppingCart, FiHeart, FiUser } from 'react-icons/fi';
 import { MdOutlineSupportAgent } from 'react-icons/md';
 import Slider from "./Slider"
 import {data} from "./sliderText"
+import TopCategories from './Top-Categories/TopCategories'
 
 function NavbarMain() {
 
@@ -70,13 +71,11 @@ function NavbarMain() {
       </div>
 
       {/* Secondary Options Bar */}
-      <div className='bg-[#2c2b49]'>
-        <div className="px-[7%] text-white py-3 flex items-center space-x-8">
-          {/* Categories */}
-          <button className="bg-red-600 py-2 px-4 font-semibold flex items-center space-x-2">
-            <span>TOP CATEGORIES</span>
-            <span className="text-xl">☰</span>
-          </button>
+      <div className='bg-[#2c2b49]   '>
+        <div className="px-[7%]  text-white flex items-center space-x-8">
+          {/*Top Categories */}
+
+          <TopCategories/>
           {/* this is the navbar slider  */}
 
           <div className='w-[30%] '>
@@ -97,7 +96,7 @@ function NavbarMain() {
           </div>
 
           {/* Cart */}
-          <div className=" cursor-pointer bg-red-600 py-2 px-4 font-semibold flex items-center space-x-1">
+          <div className=" cursor-pointer bg-red-600 py-4 px-4 font-semibold flex items-center space-x-1">
             <FiShoppingCart size={20} />
             <span>0 Item $0.00</span>
           </div>

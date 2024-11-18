@@ -46,8 +46,9 @@ export default function Bgslider({ data }) {
         {
           data.map((d, index) => <SwiperSlide key={index}>
 
-            <div onMouseLeave={() => setHover(false)} onMouseOver={() => setHover(true)} className={` group animate__animated animate__repeat animate__delay-0.9s  animate__fadeIn  relative w-full h-1/2 lg:w-[70%] md:w-[85%] bg-cover md:h-[50%] lg:h-fit lg:py-5  lg:px-16 justify-between items-center bg-[#e7e9eb] ${(index + 1) % 2 == 0 ? 'flex-row' : 'flex-row-reverse'}  flex `}>
-              <div className='w-[200px] md:w-[400px] md:h-[400px]   lg:w-[70%] h-[200px]  lg:h-[500px]'>
+         <div className=' flex justify-end w-full h-screen lg:mx-[7%]'>
+         <div onMouseLeave={() => setHover(false)} onMouseOver={() => setHover(true)} className={` group animate__animated animate__repeat animate__delay-0.9s  animate__fadeIn  relative w-full h-1/2 lg:w-[79%] md:w-[100%] bg-cover md:h-[50%] lg:h-[79%]   lg:px-16 justify-between items-center bg-[#e7e9eb] ${(index + 1) % 2 == 0 ? 'flex-row' : 'flex-row-reverse'}  flex `}>
+              <div className='w-[200px] md:w-[400px] md:h-[400px]    lg:w-[66%] h-[200px]  lg:h-[66%px]'>
                 <Image height={700} width={600} className='bg-cover  animate__animated animate__repeat animate__delay-1s animate__fadeIn  h-[200px]' src={d.img} alt='bg' />
 
               </div>
@@ -74,6 +75,7 @@ export default function Bgslider({ data }) {
                 &#8594;
               </button>
             </div>
+         </div>
           </SwiperSlide>
           )
         }

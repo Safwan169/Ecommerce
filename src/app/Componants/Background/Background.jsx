@@ -4,7 +4,7 @@ import {data} from './bgText'
 
 const Background = () => {
   return (
-    <div className='my-5'>
+    <div className='my-1  '>
       <Bgslider data={data}/>
     </div>
   )
