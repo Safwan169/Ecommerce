@@ -1,7 +1,7 @@
 import React from 'react';
 import {  FiSearch, FiShoppingCart, FiHeart, FiUser } from 'react-icons/fi';
 import { MdOutlineSupportAgent } from 'react-icons/md';
-import Slider from "@/app/Componants/Navbar/Slider"
+import Slider from "./Slider"
 import {data} from "./sliderText"
 
 function NavbarMain() {
