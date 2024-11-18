@@ -1,6 +1,6 @@
 import React from 'react'
 import Bgslider from './Bgslider'
-import {data} from './BgText'
+import {data} from './bgText'
 
 const Background = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import {data} from './Category'
+import {data} from './category'
 import Slider from './Slider'
 
 function TopCategary() {
