@@ -27,7 +27,7 @@ const TopCategories = () => {
         <div className="text-gray-500 font-normal bg-white font- text-base absolute z-50 w-full border border-solid border-gray-300 ">
                 
                 {categories.map((category, index) => (
-                     <button  className="  group py-3 px-4 border-b-2 w-full border-gray-200 font-semibold flex items-center ">
+                     <button key={index}  className="  group py-3 px-4 border-b-2 w-full border-gray-200 font-semibold flex items-center ">
                      {/* this is for img or icon  */}
                      <span className="text-xl"></span> 
                      <span className='group-hover:text-red-600 duration-1000 transform'>{category.name}</span>

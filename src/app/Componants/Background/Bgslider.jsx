@@ -27,7 +27,7 @@ export default function Bgslider({ data }) {
     <>
       <Swiper
         slidesPerView={1}
-        spaceBetween={30}
+        spaceBetween={5}
         loop={true}
         autoplay={{
           delay: 5000,
@@ -57,12 +57,12 @@ export default function Bgslider({ data }) {
 
                   <p className={`${index % 2 == 0 ? 'text-left' : 'text-right '} w-fit    right-0 animate__animated animate__repeat animate__delay-0.9s  animate__fadeInUpBig md:text-xl lg:text-xl md text-[14px] mb-5`}>{d.textHead}</p>
 
-                  <p className={`${index % 2 == 0 ? 'text-left lg:w-fit md:w-1/2 w-1/2' : 'text-right w-fit flex justify-end '}  w-fit animate__animated animate__repeat animate__delay-1s  animate__fadeInUp lg:text-4xl text-[16px] md:text-2xl    font-bold`}>
+                  <div className={`${index % 2 == 0 ? 'text-left lg:w-fit md:w-1/2 w-1/2' : 'text-right w-fit flex justify-end '}  w-fit animate__animated animate__repeat animate__delay-1s  animate__fadeInUp lg:text-4xl text-[16px] md:text-2xl    font-bold`}>
 
                     <p className={`${index % 2 == 0 ? ' lg:w-3/4 md:w-full w-3/4 ' : 'text-right b  lg:w-[80%] md:w-3/4 w-3/4 '}`}>
                       {d.mainText}
                     </p>
-                  </p>
+                  </div>
                   <div className={`${index % 2 == 0 ? 'justify-start' : 'justify-end'}   animate__animated animate__repeat animate__delay-2s animate__fadeInUp  lg:mt-7   w-fit flex `}>
                     <GlobalButton text={'Shop Now'} />
                   </div>
