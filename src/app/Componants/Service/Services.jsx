@@ -1,5 +1,4 @@
 import React from "react";
-import {data} from "./serviceText"
 import Image from "next/image";
 
 const Services = () => {
