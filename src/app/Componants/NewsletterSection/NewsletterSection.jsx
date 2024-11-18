@@ -1,8 +1,8 @@
 const NewsletterSection = () => {
     return (
-      <div className="flex flex-wrap justify-between items-center gap-8 bg-white p-10 rounded-lg shadow-md lg:flex-nowrap">
+      <div className="flex flex-wrap justify-between  items-center lg:gap-8 gap-4 md:gap-y-16 lg:px-[8%] md:px-16 px-5 bg-white lg:p-10 p-3 rounded-lg shadow-md lg:flex-nowrap">
         {/* Left Section */}
-        <div className="flex items-center gap-6 lg:w-1/2 md:w-full">
+        <div className="flex lg:flex-row flex-col md:flex-row md:py-10 items-center gap-6 p-5  md:px-20 lg:px-14 lg:border-r  lg:border-b-0 md:border-r-0 border-b border-gray-300 border-separate lg:w-1/2 md:w-full">
           <div className="w-20 h-20">
             <img
               src="https://via.placeholder.com/100" // Replace with your image URL
@@ -10,11 +10,11 @@ const NewsletterSection = () => {
               className="w-full h-full rounded-full object-cover"
             />
           </div>
-          <div>
-            <h3 className="text-xl font-bold text-red-500">
+          <div className="lg:space-y-5 md:space-y-4 space-y-4   text-center  lg:text-start md:text-start">
+            <h3 className="lg:text-xl text-[16px] text-center md:text-start lg:text-start w-full  font-bold text-red-500">
               Mr.onsequat <span className="text-gray-800">- designer</span>
             </h3>
-            <p className="text-gray-600 mt-2">
+            <p className="text-gray-600  w-full mt-2">
               Consectetur adipiscing elit donec vitae nunc vel enim tempus
               fermentum nec ac enim sed egestas faucibus turpis id egestas.
             </p>
@@ -22,22 +22,22 @@ const NewsletterSection = () => {
         </div>
   
         {/* Right Section */}
-        <div className="lg:w-1/2 md:w-full">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
+        <div className="lg:w-1/2 mb-16 space-y-7 md:px-20 w-full lg:p-6  lg:px-14 md:w-full">
+          <h3 className="lg:text-3xl text-[16px] md:text-[20px] text-center  font-semibold text-gray-800 mb-4">
             Sign up for newsletter
           </h3>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col lg:flex-row md:flex-row items-center gap-3">
             <input
               type="email"
               placeholder="Enter your mail.."
-              className="flex-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="flex-1 lg:px-4 md:px-4 px-6 w-full py-2  rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
             />
-            <button className="bg-red-500 text-white px-6 py-2 rounded-md hover:bg-red-600">
+            <button className="bg-red-500 text-white px-4 md:px-6 lg:px-6   py-2 rounded-md hover:bg-red-600">
               SUBSCRIBE
             </button>
           </div>
-          <div className="mt-4">
-            <p className="text-sm text-gray-600 mb-2">
+          <div className="mt-4 flex items-center justify-center gap-5 text-center">
+            <p className="text-[16px]  items-center text-gray-600 mb-2">
               <span className="text-red-500 font-semibold">Follow us:</span>
             </p>
             <div className="flex items-center gap-3">
