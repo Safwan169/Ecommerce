@@ -1,6 +1,6 @@
 import React from 'react'
 import HeaderText from "../HeaderText/HeaderText"
-import TrandingButton from './trandingButton'
+import TrandingButton from './TrandingButton'
 // import AOS from 'aos';
 const TreandingCullation = () => {
   
