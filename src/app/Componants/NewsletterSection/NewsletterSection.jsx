@@ -1,11 +1,13 @@
+import Image from "next/image";
+
 const NewsletterSection = () => {
     return (
       <div className="flex flex-wrap justify-between  items-center lg:gap-8 gap-4 md:gap-y-16 lg:px-[8%] md:px-16 px-5 bg-white lg:p-10 p-3 rounded-lg shadow-md lg:flex-nowrap">
         {/* Left Section */}
         <div className="flex lg:flex-row flex-col md:flex-row md:py-10 items-center gap-6 p-5  md:px-20 lg:px-14 lg:border-r  lg:border-b-0 md:border-r-0 border-b border-gray-300 border-separate lg:w-1/2 md:w-full">
-          <div className="w-20 h-20">
-            <img
-              src="https://via.placeholder.com/100" // Replace with your image URL
+          <div className="w-1/2 h-full">
+            <Image height={500} width={500}
+              src="/webLogo.png" // Replace with your image URL
               alt="User"
               className="w-full h-full rounded-full object-cover"
             />

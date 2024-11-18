@@ -4,6 +4,7 @@ import { MdOutlineSupportAgent } from 'react-icons/md';
 import Slider from "./Slider"
 import {data} from "./sliderText"
 import TopCategories from './Top-Categories/TopCategories'
+import Image from 'next/image';
 
 function NavbarMain() {
 
@@ -41,7 +42,8 @@ function NavbarMain() {
       <div className="px-[7%] bg-white py-4  flex items-center justify-between">
         {/* Logo */}
         <div className=" flex items-center space-x-2">
-          <div className="text-red-600 font-bold text-2xl">E</div>
+          {/* <div className="text-red-600 font-bold text-2xl">E</div> */}
+          <Image width={500} height={500} className='w-[50px]' src="/webLogo.png" alt="" />
           <div className="font-bold text-xl">Electon</div>
         </div>
 
