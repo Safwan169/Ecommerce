@@ -58,7 +58,7 @@ export default function Slider({ d }) {
                 {d?.map((data, index) => <SwiperSlide key={index}>
                     <div className=' group  text-[14px] py-3 w-full space-y-5 '>
                         <div className='w-[50] h-fit mx-auto'>
-                            <Image width={50} height={50} className=' group-hover:scale-110 duration-500 w-[50px]' src={data.icon} alt="" />
+                            <Image width={600} height={600} className=' group-hover:scale-110 duration-500 w-[50px]' src={data.icon} alt="" />
 
                         </div>
                         <span className='flex transition-all group-hover:text-red-600 duration-300 mx-auto w-[100px]   justify-center'>
