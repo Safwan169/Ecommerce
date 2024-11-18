@@ -3,8 +3,8 @@ import { FiGift } from "react-icons/fi";
 import { IoLockClosedOutline } from "react-icons/io5";
 import { LiaCertificateSolid } from "react-icons/lia";
  
-let data=[]
-export default  data=[
+
+export const  data=[
 
     {
         icon:<FaTruck size={20} />,

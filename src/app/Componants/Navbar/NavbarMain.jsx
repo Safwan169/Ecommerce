@@ -2,21 +2,21 @@ import React from 'react';
 import {  FiSearch, FiShoppingCart, FiHeart, FiUser } from 'react-icons/fi';
 import { MdOutlineSupportAgent } from 'react-icons/md';
 import Slider from "@/app/Componants/Navbar/Slider"
-import data from "@/app/Componants/Navbar/sliderText"
+import {data} from "./sliderText"
 
 function NavbarMain() {
 
 
   return (
-    <header className=''>
+    <header>
       {/* Top Info Bar */}
       <div className="bg-gray-100 ">
         <div className='  py-2  flex justify-between px-[7%]  items-center text-sm text-gray-700'>
-          <div className=''>
+          <div >
             Need help? Call us: <span className="hover:text-red-500 cursor-pointer">(+92) 0123 456 789</span>
           </div>
           <div className=' -translate-x-1/3 relative'>
-            Today's deal sale 50% off <span className="text-red-600 cursor-pointer  hover:text-gray-800 font-semibold">SHOP NOW!</span>
+            Today&apos;s deal sale 50% off <span className="text-red-600 cursor-pointer  hover:text-gray-800 font-semibold">SHOP NOW!</span>
           </div>
 
           {/* Right-side Icons */}
