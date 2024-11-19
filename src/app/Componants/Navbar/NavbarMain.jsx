@@ -1,4 +1,7 @@
-import React from 'react';
+"use client"
+import AOS from 'aos'; // Import AOS library
+import 'aos/dist/aos.css'; // Import AOS CSS
+import React, { useEffect, useState } from 'react';
 import {  FiSearch, FiShoppingCart, FiHeart, FiUser } from 'react-icons/fi';
 import { MdOutlineSupportAgent } from 'react-icons/md';
 import Slider from "./Slider"
@@ -7,12 +10,43 @@ import TopCategories from './Top-Categories/TopCategories'
 import Image from 'next/image';
 
 function NavbarMain() {
+const[isLoad,setIsload]=useState(false)
+ useEffect(()=>{
+  AOS.init({ duration: 1000 })
+ const handelNavbar = () =>{
+  const data = window.pageYOffset || document.documentElement.scrollTop;
+  if(data > 160){
+
+    document.querySelector('header').classList.add("top-0")
+  
+    document.querySelector('.top-bar').classList.add('hidden')
+   
+    document.querySelector('header').classList.add("fixed")
+    setIsload(true)
+    // document.querySelector('.nv').setAttribute("data-aos","zoom-in")
+
+
+  }else{
+    document.querySelector('.top-bar').classList.remove('hidden')
+    document.querySelector('header').classList.remove("fixed")
+
+    setIsload(false)
+
+
+  }
+ }
+
+ window.addEventListener('scroll', handelNavbar)
+ return () => {
+  window.removeEventListener('scroll', handleScroll);
+};
+ },[])
 
 
   return (
-    <header>
+    <header  className={ `z-50 transition-all duration-700 mt-0 bg-white`}>
       {/* Top Info Bar */}
-      <div className="bg-gray-100 ">
+      <div  className="bg-gray-100 top-bar ">
         <div className='  py-2  flex justify-between px-[7%]  items-center text-sm text-gray-700'>
           <div >
             Need help? Call us: <span className="hover:text-red-500 cursor-pointer">(+92) 0123 456 789</span>
@@ -38,13 +72,14 @@ function NavbarMain() {
         </div>
       </div>
 
-      {/* Main Navbar */}
-      <div className="px-[7%] bg-white py-4  flex items-center justify-between">
+    <div className={`${isLoad?'animate__animated animate__slideInDown z-50':''}`}>
+        {/* Main Navbar */}
+        <div  className="px-[7%] bg-white py-4  flex items-center justify-between">
         {/* Logo */}
         <div className=" flex items-center space-x-2">
           {/* <div className="text-red-600 font-bold text-2xl">E</div> */}
           <Image width={500} height={500} className='w-[50px]' src="/webLogo.png" alt="" />
-          <div className="font-bold text-xl">Electon</div>
+          <div className="font-bold text-xl">Electron</div>
         </div>
 
         {/* Main Links */}
@@ -104,6 +139,7 @@ function NavbarMain() {
           </div>
         </div>
       </div>
+    </div>
     </header>
   );
 }

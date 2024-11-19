@@ -7,13 +7,15 @@ import NewsletterSection  from '@/app/Componants/NewsletterSection/NewsletterSec
 export default function Home() {
   return (
    <>
-   <Background/>
+<div className="">
+<Background/>
    <Services/>
    <HeaderText text={'Top category'}/>
    <TopCategary/>
    <TreandingCullation />
    {/* NewsletterSection  */}
    <NewsletterSection />
+</div>
    </>
   );
 }
