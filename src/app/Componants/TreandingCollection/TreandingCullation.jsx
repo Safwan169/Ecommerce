@@ -1,6 +1,7 @@
 import React from 'react'
 import HeaderText from "../HeaderText/HeaderText"
 import TrandingButton from './TrandingButton'
+import ProductCard from '../card/ProductCard'
 // import AOS from 'aos';
 const TreandingCullation = () => {
   
@@ -13,6 +14,7 @@ const TreandingCullation = () => {
     <div className='' >
       <HeaderText  text={'Treanding Collection'} />
       <TrandingButton  data={buttons}/>
+      <ProductCard/>
     </div>
   )
 }
