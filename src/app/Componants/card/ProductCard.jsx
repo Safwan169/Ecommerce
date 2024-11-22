@@ -25,10 +25,10 @@ const ProductCard = () => {
               key={button.id}
               className={`bg-red-600 text-white p-2 rounded-full shadow-md hover:bg-red-700  `}
               // here is styled 
-              style={{
-                animationDelay: `10s`, // Delay for staggered animation
-                animationDuration: "0.5s", // Smooth animation duration
-              }}
+              // style={{
+              //   animationDelay: `10s`, // Delay for staggered animation
+              //   animationDuration: "0.5s", // Smooth animation duration
+              // }}
             >
               {button.icon} {/* Display the icon */}
             </button>
