@@ -3,10 +3,10 @@ import { FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
 
 function Footer() {
   return (
-    <footer className="bg-gray-100 pt-8 pb-4">
-      <div className=" w-full mx-auto ">
+    <footer className="bg-gray-100 w-full pt-8 pb-4">
+      <div className=" lg:w-full xl:w-[1200px] 2xl:w-[1500px] mx-auto  ">
         {/* Footer Links Section */}
-        <div className="grid grid-cols-1 lg:p-24 p-4  sm:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 lg:p-24 p-4  lg:px-0  sm:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Contact Us Section */}
           <div>
             <h3 className="font-bold text-lg text-gray-800 mb-4">Contact us</h3>
@@ -76,8 +76,11 @@ function Footer() {
         </div>
 
         {/* Footer Bottom Section */}
-        <div className=" bg-[#2c2b49] ">
-         <div className="lg:px-24 p-8 border-t text-white border-gray-300 pt-4 flex flex-col lg:flex-row justify-between items-center text-sm ">
+        
+      </div>
+      <div className=" w-full bg-[#2c2b49] ">
+      <div className="lg:w-full xl:w-[1200px] 2xl:w-[1500px] mx-auto">
+      <div className=" p-8 px-0 border-t text-white border-gray-300 pt-4 flex flex-col lg:flex-row justify-between items-center text-sm ">
          <p>© 2024, Ecommerce by Spacingtech™</p>
           <div className="flex space-x-4 mt-4 lg:mt-0">
             {/* Payment Icons (Use images or SVGs for actual icons) */}
@@ -87,8 +90,8 @@ function Footer() {
             <img src="/duchBangla.png" alt="American Express" className="w-fit p-1 bg-white h-8" />
           </div>
          </div>
-        </div>
       </div>
+        </div>
     </footer>
   );
 }

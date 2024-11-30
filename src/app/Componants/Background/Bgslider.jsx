@@ -44,19 +44,20 @@ export default function Bgslider({ data }) {
       >
         {data.map((d, index) => (
           <SwiperSlide key={index}>
-            <div className=" flex justify-end w-full h-screen lg:mx-[7%]">
+            <div className=" flex justify-end w-full h-1/2 border border-red-300 lg:mx-[7%]">
               <div
                 onMouseLeave={() => setHover(false)}
                 onMouseOver={() => setHover(true)}
-                className={` group animate__animated animate__repeat animate__delay-0.9s  animate__fadeIn  relative w-full h-1/2 lg:w-[78%] lg:h-[78%] md:w-[100%] bg-cover md:h-[50%]   lg:px-16 justify-between items-center bg-[#e7e9eb] ${
+                className={` group animate__animated animate__repeat animate__delay-0.9s  animate__fadeIn  relative w-full h-1/2 lg:w-[78%] lg:h-full md:w-[100%] bg-cover md:h-[50%]   lg:px-16 justify-between items-center bg-[#e7e9eb] ${
                   (index + 1) % 2 == 0 ? "flex-row" : "flex-row-reverse"
                 }  flex `}
               >
-                <div className="w-[200px] md:w-[400px] md:h-[400px]    lg:w-[66%] h-[200px] xl:h-[80%]  lg:h-[80%]">
+                <div className="w-[200px] md:w-[400px] md:h-[400px] border border-red-500    lg:w-[66%] h-[200px] xl:h-[80%]  lg:h-[80%]">
                   <Image
-                    height={700}
-                    width={600}
-                    className="bg-cover  animate__animated animate__repeat animate__delay-1s animate__fadeIn  h-[200px]"
+                    layout="responsive"
+                    height={1}
+                    width={1}
+                    className="bg-cover  animate__animated animate__repeat animate__delay-1s animate__fadeIn "
                     src={d.img}
                     alt="bg"
                   />
