@@ -11,7 +11,7 @@
   
   body {
     background: none;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    /* font-family: Helvetica Neue, Helvetica, Arial, sans-serif; */
     font-size: 14px;
     color: #000;
     margin: 0;
@@ -32,6 +32,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+
+  /* just for hero section background slider  */
+  .slide-end .swiper-slide{
+    justify-content: end  ;
   }
   
   .swiper-slide img {

@@ -13,22 +13,43 @@ function NavbarMain() {
   const [isLoad, setIsload] = useState(false);
   useEffect(() => {
     AOS.init({ duration: 1000 });
-    const handelNavbar = () => {
-      const data = window.pageYOffset || document.documentElement.scrollTop;
-      if (data > 160) {
-        // document.querySelector('header').classList.add("top-0")
+    let cursor=0
 
-        document.querySelector(".top-bar").classList.add("hidden");
+    const handelNavbar = () => {
+
+      const data =  window.pageYOffset || document.documentElement.scrollTop;
+      if (data < cursor) {
+
+
+        document.querySelector('.sf').classList.add("top-0")
+        // document.querySelector('.sf').classList.add("relative")
+
 
         document.querySelector(".sf").classList.add("fixed");
         setIsload(true);
-        // document.querySelector('.nv').setAttribute("data-aos","zoom-in")
+
+
+
+        if(data < 200){
+          document.querySelector(".sf").classList.remove("fixed");
+
+          
+          document.querySelector(".top-bar").classList.remove("hidden");
+  
+        }
       } else {
-        document.querySelector(".top-bar").classList.remove("hidden");
-        document.querySelector("header").classList.remove("fixed");
+        console.log('down');
+
+        
+        document.querySelector(".sf").classList.remove("fixed");
+        document.querySelector(".top-bar").classList.add("hidden");
+
+      
 
         setIsload(false);
       }
+     
+      cursor = data; 
     };
 
     window.addEventListener("scroll", handelNavbar);
@@ -38,11 +59,11 @@ function NavbarMain() {
   }, []);
 
   return (
-    <div className="w-full  sf z-50">
-      <header className={`z-50 transition-all duration-700 mt-0    bg-white`}>
+    <div className="w-full transition-transform  bg-white duration-1000 z-50 sf ">
+      <header className={`z-50 pt-0     `}>
         {/* Top Info Bar */}
-        <div className="bg-gray-100 top-bar lg:w-full xl:w-[1200px]   2xl:w-[1500px] mx-auto ">
-          <div className="  py-2  flex justify-between  items-center text-sm text-gray-700">
+        <div className="bg-gray-100 top-bar z-50 lg:w-full xl:w-[1300px]    mx-auto ">
+          <div className="    flex justify-between  items-center text-sm text-gray-700">
             <div>
               Need help? Call us:{" "}
               <span className="hover:text-red-500 cursor-pointer">
@@ -74,12 +95,12 @@ function NavbarMain() {
         <div
           className={`${
             isLoad
-              ? "animate__animated animate__slideInDown z-50 border-red-500  "
-              : " "
+              ? " transition-all animate__animated animate__fadeInDown delay-3s z-50 mt-0 border-red-500  "
+              : " animate__fadeIn animate__animated delay-0 z-50 "
           }`}
         >
           {/* Main Navbar */}
-          <div className=" bg-white py-4 lg:w-full xl:w-[1200px] 2xl:w-[1500px] mx-auto  flex items-center justify-between">
+          <div className=" bg-white py-4 lg:w-full xl:w-[1300px]  mx-auto  flex items-center justify-between">
             {/* Logo */}
             <div className=" flex items-center space-x-2">
               {/* <div className="text-red-600 font-bold text-2xl">E</div> */}
@@ -132,13 +153,13 @@ function NavbarMain() {
 
           {/* Secondary Options Bar */}
           <div className="bg-[#2c2b49]   ">
-            <div className="lg:w-full xl:w-[1200px] 2xl:w-[1500px] mx-auto  text-white flex items-center space-x-8">
+            <div className="lg:w-full xl:w-[85rem]  mx-auto z-50  text-white flex items-center space-x-8">
               {/*Top Categories */}
 
               <TopCategories />
               {/* this is the navbar slider  */}
 
-              <div className="w-[30%] ">
+              <div className="w-[25%]  justify-start  ">
                 <Slider d={data} />
               </div>
 

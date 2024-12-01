@@ -1,4 +1,3 @@
-import HeaderText from "@/app/Componants/HeaderText/HeaderText"
 import Services from "@/app/Componants/Service/Services"
 import TopCategary from "@/app/Componants/Top Categary/TopCategary"
 import TreandingCullation from "@/app/Componants/TreandingCollection/TreandingCullation"
@@ -7,10 +6,10 @@ import NewsletterSection  from '@/app/Componants/NewsletterSection/NewsletterSec
 export default function Home() {
   return (
    <>
-<div className="">
+<div className="space-y-44">
 <Background/>
    <Services/>
-   <HeaderText text={'Top category'}/>
+   
    <TopCategary/>
    <TreandingCullation />
    {/* NewsletterSection  */}

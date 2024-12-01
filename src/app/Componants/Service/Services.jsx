@@ -6,8 +6,8 @@ const Services = () => {
 
 
   return (
-    <div className="py-10 px-[3%] lg:px-[8%]   duration-300 bg-gray-50">
-      <div className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+    <div className="py-10 px-[3%] lg:px-0   duration-300 bg-gray-50">
+      <div className="w-full  mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
         {data.map((feature, index) => (
      <div key={index} className= {`${index < 3 && 'border-r border-gray-300 border-separate'}group `}>
         <div  className="flex gap-3 justify-center items-center">

@@ -10,7 +10,7 @@ const ProductCard = () => {
   ];
 
   return (
-    <div className="group relative bg-white border rounded-lg shadow-lg p-4 w-64 text-center">
+    <div className="group relative bg-white border rounded-lg shadow-lg p-4  w-64 text-center">
       {/* Product Image */}
       <div className="relative">
         <img
@@ -22,7 +22,7 @@ const ProductCard = () => {
         <div className="absolute  animate__repeat animate__animated animate__fadeInUp animate__delay-2s inset-0 flex justify-center items-end space-x-3 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-10 transition-all duration-500">
           {buttonData.map((button, index) => (
             <button
-              key={button.id}
+              key={index}
               className={`bg-red-600 text-white p-2 rounded-full shadow-md hover:bg-red-700  `}
               // here is styled 
               // style={{

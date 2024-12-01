@@ -4,9 +4,9 @@ import { FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
 function Footer() {
   return (
     <footer className="bg-gray-100 w-full pt-8 pb-4">
-      <div className=" lg:w-full xl:w-[1200px] 2xl:w-[1500px] mx-auto  ">
+      <div className=" lg:w-full xl:w-[1300px]  mx-auto  ">
         {/* Footer Links Section */}
-        <div className="grid grid-cols-1 lg:p-24 p-4  lg:px-0  sm:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 lg:p-24 p-4  lg:px-0 xl  sm:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Contact Us Section */}
           <div>
             <h3 className="font-bold text-lg text-gray-800 mb-4">Contact us</h3>
@@ -79,7 +79,7 @@ function Footer() {
         
       </div>
       <div className=" w-full bg-[#2c2b49] ">
-      <div className="lg:w-full xl:w-[1200px] 2xl:w-[1500px] mx-auto">
+      <div className="lg:w-full xl:w-[1300px]  mx-auto">
       <div className=" p-8 px-0 border-t text-white border-gray-300 pt-4 flex flex-col lg:flex-row justify-between items-center text-sm ">
          <p>© 2024, Ecommerce by Spacingtech™</p>
           <div className="flex space-x-4 mt-4 lg:mt-0">
