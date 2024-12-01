@@ -51,7 +51,7 @@ function Footer() {
           </div>
 
           {/* Customer Care Section */}
-          <div className='md:col-span-2'>
+          <div className='md:col-span-2 lg:col-span-1'>
             <h3 className="font-bold text-lg  text-gray-800 mb-4">Customer care</h3>
             <ul className="space-y-2 text-gray-600 text-sm">
               <li><a href="#" className="hover:text-red-600">Contact us</a></li>
