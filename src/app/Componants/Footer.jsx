@@ -6,7 +6,7 @@ function Footer() {
     <footer className="bg-gray-100 w-full pt-8 pb-4">
       <div className=" lg:w-full xl:w-[1300px]  mx-auto  ">
         {/* Footer Links Section */}
-        <div className="grid grid-cols-1 lg:p-24 p-4  lg:px-0 xl  sm:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 lg:p-24 p-6 md:pl-20 lg:px-0   sm:grid-cols-3 lg:grid-cols-5 gap-8">
           {/* Contact Us Section */}
           <div>
             <h3 className="font-bold text-lg text-gray-800 mb-4">Contact us</h3>
@@ -51,8 +51,8 @@ function Footer() {
           </div>
 
           {/* Customer Care Section */}
-          <div>
-            <h3 className="font-bold text-lg text-gray-800 mb-4">Customer care</h3>
+          <div className='md:col-span-2'>
+            <h3 className="font-bold text-lg  text-gray-800 mb-4">Customer care</h3>
             <ul className="space-y-2 text-gray-600 text-sm">
               <li><a href="#" className="hover:text-red-600">Contact us</a></li>
               <li><a href="#" className="hover:text-red-600">Return policy</a></li>
@@ -63,7 +63,7 @@ function Footer() {
           </div>
 
           {/* Electon Legal Section */}
-          <div>
+          <div className=''>
             <h3 className="font-bold text-lg text-gray-800 mb-4">Electon legal</h3>
             <ul className="space-y-2 text-gray-600 text-sm">
               <li><a href="#" className="hover:text-red-600">Return policy</a></li>

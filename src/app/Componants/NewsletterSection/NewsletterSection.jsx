@@ -4,7 +4,7 @@ const NewsletterSection = () => {
     return (
       <div className="flex flex-wrap justify-between  items-center lg:gap-8 gap-4 md:gap-y-16  md:px-16 lg:px-0   bg-white  rounded-lg shadow-md lg:flex-nowrap">
         {/* Left Section */}
-        <div className=" flex lg:flex-row flex-col md:flex-row md:py-10 items-center gap-6    md:px-20 lg:px-0 lg:border-r  lg:border-b-0 md:border-r-0 border-b border-gray-300 border-separate lg:w-1/2 md:w-full">
+        <div className=" flex lg:flex-row flex-col md:flex-row md:py-10 items-center gap-6    md:px-20 lg:px-0 lg:border-r  lg:border-b-0 md:border-r-0 border-b py-3 sm:py-0 border-gray-300 border-separate lg:w-1/2 md:w-full">
           <div className="w-1/4 md:w-1/3 lg:w-1/3  h-full">
             <Image height={400} width={400}
               src="/webLogo.png" // Replace with your image URL

@@ -32,8 +32,8 @@ const TopCategories = () => {
     }
   })
     return (
-       <div onClick={()=>setTogle(!togle)} className='relative W-[100%]  z-50 '>
-         <button  className="bg-red-600 W-[80%] py-3 px-4 font-semibold flex items-center xl:space-x-20 space-x-24">
+       <div onClick={()=>setTogle(!togle)} className='relative w-fit lg:block hidden  z-50 '>
+         <button  className="bg-red-600 py-3 px-4 font-semibold flex items-center xl:space-x-20 space-x-24">
             <span>TOP CATEGORIES</span>
             <span className="text-xl">☰</span>
 

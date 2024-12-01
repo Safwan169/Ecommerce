@@ -159,7 +159,7 @@ function NavbarMain() {
               <TopCategories />
               {/* this is the navbar slider  */}
 
-              <div className="w-[25%]  justify-start  ">
+              <div className="w-[25%]   justify-start  ">
                 <Slider d={data} />
               </div>
 
@@ -176,7 +176,7 @@ function NavbarMain() {
               </div>
 
               {/* Cart */}
-              <div className=" cursor-pointer bg-red-600 py-4 px-4 font-semibold flex items-center space-x-1">
+              <div className=" cursor-pointer  bg-red-600 py-4 px-4 font-semibold flex items-center space-x-1">
                 <FiShoppingCart size={20} />
                 <span>0 Item $0.00</span>
               </div>
