@@ -6,7 +6,7 @@ import NewsletterSection  from '@/app/Componants/NewsletterSection/NewsletterSec
 export default function Home() {
   return (
    <>
-<div className="space-y-44">
+<div className="space-y-44 ">
 <Background/>
    <Services/>
    

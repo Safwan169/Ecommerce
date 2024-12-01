@@ -62,7 +62,7 @@ function NavbarMain() {
     <div className="w-full transition-transform  bg-white duration-1000 z-50 sf ">
       <header className={`z-50 pt-0     `}>
         {/* Top Info Bar */}
-        <div className="bg-gray-100 top-bar z-50 lg:w-full xl:w-[1300px]    mx-auto ">
+        <div className="bg-gray-100 top-bar z-50 lg:w-full xl:w-[1400px]    mx-auto ">
           <div className="    flex justify-between  items-center text-sm text-gray-700">
             <div>
               Need help? Call us:{" "}
@@ -100,7 +100,7 @@ function NavbarMain() {
           }`}
         >
           {/* Main Navbar */}
-          <div className=" bg-white py-4 lg:w-full xl:w-[1300px]  mx-auto  flex items-center justify-between">
+          <div className=" bg-white py-4 lg:w-full xl:w-[1400px]  mx-auto  flex items-center justify-between">
             {/* Logo */}
             <div className=" flex items-center space-x-2">
               {/* <div className="text-red-600 font-bold text-2xl">E</div> */}
@@ -153,7 +153,7 @@ function NavbarMain() {
 
           {/* Secondary Options Bar */}
           <div className="bg-[#2c2b49]   ">
-            <div className="lg:w-full xl:w-[85rem]  mx-auto z-50  text-white flex items-center space-x-8">
+            <div className="lg:w-full xl:w-[1400px]  mx-auto z-50  text-white flex items-center space-x-8">
               {/*Top Categories */}
 
               <TopCategories />

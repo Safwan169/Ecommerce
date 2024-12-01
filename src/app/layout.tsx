@@ -34,10 +34,10 @@ export default function RootLayout({
          <link rel="icon" type="image/svg+xml" href="/webLogo.png" />
         <title >Electron</title>
       </head>
-      <body className={`${poppins.variable} antialiased`}>
+      <body className={`${poppins.variable} antialiased `}>
         <NavbarMain />
 
-        <div className="lg:w-full xl:w-[1300px]  mx-auto">
+        <div className="lg:w-full xl:w-[1400px]  mx-auto">
         {children}
         </div>
         <Footer />

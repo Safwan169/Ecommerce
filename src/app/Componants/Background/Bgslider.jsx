@@ -53,7 +53,7 @@ export default function Bgslider({ data }) {
               }  flex `}
             >
               {/* <div className=" border border-red-500 relative flex-1 lg:w-[500px]  flex justify-end  h-[300px] lg:h-[500px]"> */}
-            <div className="w-[80%] h-[300px]   flex items-center text-center  bg-cover  ">
+            <div className="w-[80%] h-[300px] md:h-[500px] md:w-[500px] border object-contain border-red-400 flex items-center text-center  bg-cover  ">
             <Image
                   layout="responsive"
                   height={10}
@@ -77,7 +77,7 @@ export default function Bgslider({ data }) {
                   <p
                     className={`${
                       index % 2 == 0 ? "text-left" : "text-right "
-                    } w-fit    right-0 animate__animated animate__repeat animate__delay-0.9s  animate__fadeInUpBig md:text-xl lg:text-xl md text-[18px] mb-5`}
+                    } w-fit    right-0 animate__animated animate__repeat animate__delay-0.9s  animate__fadeInUpBig md:text-xl lg:text-3xl md text-[18px] mb-5`}
                   >
                     {d.textHead}
                   </p>
