@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-import NavbarMain from "@/app/Componants/Navbar/NavbarMain"
-import Footer from "@/app/Componants/Footer"
+import NavbarMain from "@/app/Componants/Navbar/NavbarMain";
+import Footer from "@/app/Componants/Footer";
 import { Poppins } from "next/font/google";
-
-
+import ContextProvider from "@/app/Componants/GlobalDataShere/ContextProvider"
 const poppins = Poppins({
   subsets: ["latin"], // Specify subsets
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -31,16 +30,16 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=optional"
         />
-         <link rel="icon" type="image/svg+xml" href="/webLogo.png" />
-        <title >Electron</title>
+        <link rel="icon" type="image/svg+xml" href="/webLogo.png" />
+        <title>Electron</title>
       </head>
       <body className={`${poppins.variable} antialiased `}>
-        <NavbarMain />
+        <ContextProvider>
+          <NavbarMain />
 
-        <div className="lg:w-full xl:w-[1400px]  mx-auto">
-        {children}
-        </div>
-        <Footer />
+          <div className="lg:w-full xl:w-[1400px]  mx-auto">{children}</div>
+          <Footer />
+        </ContextProvider>
       </body>
     </html>
   );

@@ -1,7 +1,9 @@
 import React from "react";
 import "animate.css";
 
-const ProductCard = () => {
+const ProductCard = ({data}) => {
+
+  console.log(data,'from Product')
   // Button data array
   const buttonData = [
     { id: 1, icon: "❤️", action: "Add to Wishlist" },
@@ -10,11 +12,12 @@ const ProductCard = () => {
   ];
 
   return (
-    <div className="group relative bg-white border rounded-lg shadow-lg p-4  w-64 text-center">
+    <div className="group relative bg-white  p-4  w-64 text-center">
       {/* Product Image */}
       <div className="relative">
         <img
-          src="https://via.placeholder.com/150" // Replace with your image URL
+          src={data.image}
+          loading="lazy" // Replace with your image URL
           alt="Product"
           className="w-full rounded-lg"
         />
