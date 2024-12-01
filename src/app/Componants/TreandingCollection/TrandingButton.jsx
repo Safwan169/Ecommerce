@@ -6,7 +6,7 @@ const TrandingButton = ({data}) => {
 
 
   return (
-    <div className="flex space-x-4 justify-center py-4">
+    <div className="lg:flex-row md:flex-row flex-col   md:space-x-4  lg:space-x-4   text-center space-y-2 sm:space-y-0  md:justify-center lg:justify-center py-4">
       {data.map((button, index) => (
         <button  onClick={()=>setText(index)}
           key={index}

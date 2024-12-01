@@ -5,9 +5,9 @@ export default function HeaderText({text}) {
     <div  className="flex items-center  justify-center my-8">
     <div className="flex items-center relative  space-x-2">
       {/* Left Line */}
-      <div className="h-[2.4px] bg-red-600  w-8"></div>
+      <div className="h-[2.4px] bg-red-600  w-8 "></div>
       {/* Text */}
-      <h2 className="text-lg font-semibold text-gray-800 sm:text-xl lg:text-4xl">
+      <h2 className="text-lg font-semibold text-gray-800 text-[22px] lg:text-4xl">
         {text}
       </h2>
       {/* Right Line */}
