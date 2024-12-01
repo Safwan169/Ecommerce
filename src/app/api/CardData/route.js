@@ -53,7 +53,7 @@ export const GET = async ()=>{
               "brand": "Apple",
               "price": 2499.99,
               "description": "Powerful laptop with M2 Max chip and 16-inch Retina display.",
-              "image": "https://i.ibb.co.com/VTRX5t6/kader.jpg",
+              "image": "https://i.ibb.co.com/nfbdJz3/osman-samim.jpg",
               "rating": 4.7,
               "stock": 10,
               "specifications": {
@@ -70,7 +70,7 @@ export const GET = async ()=>{
               "brand": "Dell",
               "price": 1399.99,
               "description": "Compact and lightweight laptop with stunning InfinityEdge display.",
-              "image": "https://i.ibb.co.com/VTRX5t6/kader.jpg",
+              "image": "https://i.ibb.co.com/nfbdJz3/osman-samim.jpg",
               "rating": 4.5,
               "stock": 25,
               "specifications": {
@@ -93,7 +93,7 @@ export const GET = async ()=>{
               "brand": "Apple",
               "price": 399.99,
               "description": "Advanced health and fitness tracking with temperature sensor.",
-              "image": "https://i.ibb.co.com/VTRX5t6/kader.jpg",
+              "image": "https://i.ibb.co.com/98NWXkL/images.jpg",
               "rating": 4.8,
               "stock": 30,
               "specifications": {
@@ -109,7 +109,7 @@ export const GET = async ()=>{
               "brand": "Samsung",
               "price": 299.99,
               "description": "Durable and stylish smartwatch with long battery life.",
-              "image": "https://i.ibb.co.com/VTRX5t6/kader.jpg",
+              "image": "https://i.ibb.co.com/98NWXkL/images.jpg",
               "rating": 4.6,
               "stock": 40,
               "specifications": {
