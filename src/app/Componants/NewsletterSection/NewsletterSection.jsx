@@ -4,7 +4,7 @@ const NewsletterSection = () => {
     return (
       <div className="flex flex-wrap justify-between  items-center lg:gap-8 gap-4 md:gap-y-16  md:px-16 lg:px-0   bg-white  rounded-lg shadow-md lg:flex-nowrap">
         {/* Left Section */}
-        <div className=" flex lg:flex-row flex-col md:flex-row md:py-10 items-center gap-6    md:px-20 lg:px-0 lg:border-r  lg:border-b-0 md:border-r-0 border-b py-3 sm:py-0 border-gray-300 border-separate lg:w-1/2 md:w-full">
+        <div className=" flex  lg:flex-row flex-col md:flex-row md:py-10 items-center gap-6    md:px-16 lg:px-0 lg:border-r  lg:border-b-0 md:border-r-0 border-b  py-3 sm:py-0 border-gray-300 border-separate lg:w-1/2 md:w-full">
           <div className="w-1/4 md:w-1/3 lg:w-1/3  h-full">
             <Image height={400} width={400}
               src="/webLogo.png" // Replace with your image URL
@@ -16,7 +16,7 @@ const NewsletterSection = () => {
             <h3 className="lg:text-xl text-[16px] text-center md:text-start lg:text-start w-full  font-bold text-red-500">
               Mr.onsequat <span className="text-gray-800">- designer</span>
             </h3>
-            <p className="text-gray-600  w-full sm:px-0 px-5 mt-2">
+            <p className="text-gray-600  w-full lg:pr-4 sm:px-0 px-5 mt-2">
               Consectetur adipiscing elit donec vitae nunc vel enim tempus
               fermentum nec ac enim sed egestas faucibus turpis id egestas.
             </p>
