@@ -10,7 +10,7 @@ export default function Example() {
 
   const {openCart,setCart}=useContext(my_context)
   return (
-    <Dialog open={openCart} onClose={setCart} className="relative z-10">
+    <Dialog open={openCart} onClose={setCart} className="relative z-50">
       <DialogBackdrop
         transition
         className="fixed inset-0 bg-gray-500/75 transition-opacity duration-500 ease-in-out data-[closed]:opacity-0"

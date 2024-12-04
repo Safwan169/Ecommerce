@@ -80,16 +80,12 @@ function NavbarMain() {
             </div>
 
             {/* Right-side Icons */}
-            <div className="flex items-center space-x-4">
-              <div className="flex cursor-pointer  hover:text-red-500 items-center gap-1">
-                <FiUser className=" cursor-pointer" />
-                <span>sign In</span>
-              </div>
-              <span>|</span>
-              <div className="flex cursor-pointer hover:text-red-500 items-center gap-1 ">
-                <FiHeart className="  cursor-pointer" />
-                <span>Wishlist</span>
-              </div>
+            <div className="flex items-center space-x-2 text-red-600">
+              <MdOutlineSupportAgent size={25} />
+              <span className="text-black font-semibold">
+                {" "}
+                (+92) 0123 456 789
+              </span>
             </div>
           </div>
         </div>
@@ -144,12 +140,16 @@ function NavbarMain() {
                 </a>
               </div>
             </nav>
-            <div className="flex items-center space-x-2 text-red-600">
-              <MdOutlineSupportAgent size={25} />
-              <span className="text-black font-semibold">
-                {" "}
-                (+92) 0123 456 789
-              </span>
+            <div className="flex items-center space-x-4">
+              <div className="flex cursor-pointer  hover:text-red-500 items-center gap-1">
+                <FiUser className=" cursor-pointer" />
+                <span>sign In</span>
+              </div>
+              <span>|</span>
+              <div className="flex cursor-pointer hover:text-red-500 items-center gap-1 ">
+                <FiHeart className="  cursor-pointer" />
+                <span>Wishlist</span>
+              </div>
             </div>
           </div>
 
@@ -179,7 +179,7 @@ function NavbarMain() {
               </div>
 
               {/* Cart */}
-              <div className=" cursor-pointer  bg-red-600 py-4 px-4 font-semibold flex items-center space-x-1">
+              <div  className=" cursor-pointer  bg-red-600 py-4 px-4 font-semibold flex items-center space-x-1">
                 <FiShoppingCart size={20} />
                 <span onClick={()=>setCart(true)}>0 Item $0.00</span>
               </div>

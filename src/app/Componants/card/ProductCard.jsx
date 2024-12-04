@@ -20,7 +20,7 @@ const ProductCard = ({data}) => {
         />
         {/* Buttons (Hidden by default, shown on hover with staggered animation) */}
         <div className="absolute  animate__repeat animate__animated animate__fadeInUp animate__delay-2s inset-0 flex justify-center items-end space-x-3 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-10 transition-all duration-500">
-         <CardButton data={data.name}/>
+         <CardButton data={data}/>
         </div>
       </div>
 
