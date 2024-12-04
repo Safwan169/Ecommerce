@@ -8,12 +8,11 @@ import Slider from "./Slider";
 import { data } from "./sliderText";
 import TopCategories from "./Top-Categories/TopCategories";
 import Image from "next/image";
-import Categories from "@/app/Componants/Navbar/Top-Categories/Categories"
 import { my_context } from "../GlobalDataShere/ContextProvider";
 
 function NavbarMain() {
   const [isLoad, setIsload] = useState(false);
-  const {openCart,setCart}=useContext(my_context)
+  const {setCart}=useContext(my_context)
   useEffect(() => {
     AOS.init({ duration: 1000 });
     let cursor=0

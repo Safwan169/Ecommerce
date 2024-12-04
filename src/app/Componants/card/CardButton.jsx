@@ -13,7 +13,7 @@ const CardButton = ({data}) => {
 
 
        const handleButton = (index) => {
-    console.log(index)
+    console.log(index,data)
       }
   return (
     <>

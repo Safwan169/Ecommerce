@@ -1,5 +1,5 @@
 "use client"
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { my_context } from '../../GlobalDataShere/ContextProvider'
 
 const TopCategories = () => {
