@@ -75,12 +75,15 @@ const ContextProvider = ({children}) => {
     setCartToState();
   };
 
-  const deleteItemFromCart = (id) => {
-    const newCartItems = cart?.cartItems?.filter((i) => i.product !== id);
 
-    localStorage.setItem("cart", JSON.stringify({ cartItems: newCartItems }));
-    setCartToState();
-  };
+  // its gonna used for cart delete from the local storage 
+
+  // const deleteItemFromCart = (id) => {
+  //   const newCartItems = cart?.cartItems?.filter((i) => i.product !== id);
+
+  //   localStorage.setItem("cart", JSON.stringify({ cartItems: newCartItems }));
+  //   setCartToState();
+  // };
 
 const data={
   trendingProduct,

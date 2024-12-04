@@ -1,14 +1,21 @@
-'use client'
+"use client";
 
-import { useContext } from 'react'
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
-import { my_context } from '../GlobalDataShere/ContextProvider'
+import { useContext } from "react";
+import {
+  Dialog,
+  DialogBackdrop,
+  DialogPanel,
+  DialogTitle,
+  TransitionChild,
+} from "@headlessui/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import { my_context } from "../GlobalDataShere/ContextProvider";
+import CartSliderContainer from "./CartSliderContant";
 
 export default function Example() {
-//   const [open, setOpen] = useState(true)
+  //   const [open, setOpen] = useState(true)
 
-  const {openCart,setCart}=useContext(my_context)
+  const { openCart, setCart, cart } = useContext(my_context);
   return (
     <Dialog open={openCart} onClose={setCart} className="relative z-50">
       <DialogBackdrop
@@ -38,12 +45,16 @@ export default function Example() {
               </TransitionChild>
               <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 ">
                 <div className="px-4 sm:px-6 border-b-gray-300 pb-5 border">
-                  <DialogTitle className="text-base font-semibold text-gray-900">My shopping cart</DialogTitle>
+                  <DialogTitle className="text-base font-semibold text-gray-900">
+                    My shopping cart
+                  </DialogTitle>
                 </div>
-                <div className="relative mt-6 flex-1 px-4 sm:px-6">{/* Your content */}
+                <div className="relative mt-6 flex-1 px-4 sm:px-6">
+                  {/*slider cart container  */}
 
-
-                    {/* here is we get card  */}
+                  {cart?.cartItems?.map((data) => (
+                    <CartSliderContainer data={data} />
+                  ))}
                 </div>
               </div>
             </DialogPanel>
@@ -51,5 +62,5 @@ export default function Example() {
         </div>
       </div>
     </Dialog>
-  )
+  );
 }
