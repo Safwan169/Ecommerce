@@ -1,16 +1,19 @@
 "use client";
 import AOS from "aos"; // Import AOS library
 import "aos/dist/aos.css"; // Import AOS CSS
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FiSearch, FiShoppingCart, FiHeart, FiUser } from "react-icons/fi";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import Slider from "./Slider";
 import { data } from "./sliderText";
 import TopCategories from "./Top-Categories/TopCategories";
 import Image from "next/image";
+import Categories from "@/app/Componants/Navbar/Top-Categories/Categories"
+import { my_context } from "../GlobalDataShere/ContextProvider";
 
 function NavbarMain() {
   const [isLoad, setIsload] = useState(false);
+  const {openCart,setCart}=useContext(my_context)
   useEffect(() => {
     AOS.init({ duration: 1000 });
     let cursor=0
@@ -157,6 +160,7 @@ function NavbarMain() {
               {/*Top Categories */}
 
               <TopCategories />
+
               {/* this is the navbar slider  */}
 
               <div className="w-[25%]   justify-start  ">
@@ -178,7 +182,7 @@ function NavbarMain() {
               {/* Cart */}
               <div className=" cursor-pointer  bg-red-600 py-4 px-4 font-semibold flex items-center space-x-1">
                 <FiShoppingCart size={20} />
-                <span>0 Item $0.00</span>
+                <span onClick={()=>setCart(true)}>0 Item $0.00</span>
               </div>
             </div>
           </div>

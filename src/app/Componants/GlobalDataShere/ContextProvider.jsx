@@ -8,9 +8,17 @@ import React, { createContext, useState } from 'react'
 const ContextProvider = ({children}) => {
 
   const [trendingProduct,setTrendingProduct]=useState(0)
+  // for togole top category
+   const [topCategory, setTopCategory] = useState(false)
+   const [openCart,setCart]=useState(false)
+
 const data={
   trendingProduct,
-  setTrendingProduct
+  setTrendingProduct,
+  topCategory,
+  setTopCategory,
+  openCart,
+  setCart
 }
 // console.log(trendingProduct)
   return (

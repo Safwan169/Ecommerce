@@ -37,7 +37,7 @@ export default function RootLayout({
         <ContextProvider>
           <NavbarMain />
 
-          <div className="lg:w-full xl:w-[1400px]  mx-auto">{children}</div>
+          <div className="lg:w-full xl:w-[1400px] z-10 mx-auto">{children}</div>
           <Footer />
         </ContextProvider>
       </body>
