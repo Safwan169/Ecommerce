@@ -40,7 +40,11 @@ export default function Example() {
                 <div className="px-4 sm:px-6 border-b-gray-300 pb-5 border">
                   <DialogTitle className="text-base font-semibold text-gray-900">My shopping cart</DialogTitle>
                 </div>
-                <div className="relative mt-6 flex-1 px-4 sm:px-6">{/* Your content */}</div>
+                <div className="relative mt-6 flex-1 px-4 sm:px-6">{/* Your content */}
+
+
+                    {/* here is we get card  */}
+                </div>
               </div>
             </DialogPanel>
           </div>
