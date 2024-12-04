@@ -52,8 +52,8 @@ export default function Example() {
                 <div className="relative mt-6 flex-1 px-4 sm:px-6">
                   {/*slider cart container  */}
 
-                  {cart?.cartItems?.map((data) => (
-                    <CartSliderContainer data={data} />
+                  {cart?.cartItems?.map((data,index) => (
+                    <CartSliderContainer key={index} data={data} />
                   ))}
                 </div>
               </div>
