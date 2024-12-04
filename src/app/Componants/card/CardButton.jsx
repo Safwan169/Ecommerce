@@ -32,7 +32,7 @@ return
       price: data.price}
      )
     }
-  console.log(addItemToCart,index)
+  // console.log(addItemToCart,index)
   };
   return (
     <>

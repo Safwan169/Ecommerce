@@ -12,46 +12,39 @@ import { my_context } from "../GlobalDataShere/ContextProvider";
 
 function NavbarMain() {
   const [isLoad, setIsload] = useState(false);
-  const {setCart}=useContext(my_context)
+  const { setCart,cart } = useContext(my_context);
+
+
+  const total=cart?.cartItems?.reduce((acc,current)=>acc+current?.price,0).toFixed(0)||0 
+
+ console.log(cart.cartItems,"here is the cart form local storage ") 
   useEffect(() => {
     AOS.init({ duration: 1000 });
-    let cursor=0
-
+    let cursor = 0;
     const handelNavbar = () => {
-
-      const data =  window.pageYOffset || document.documentElement.scrollTop;
+      const data = window.pageYOffset || document.documentElement.scrollTop;
       if (data < cursor) {
-
-
-        document.querySelector('.sf').classList.add("top-0")
+        document.querySelector(".sf").classList.add("top-0");
         // document.querySelector('.sf').classList.add("relative")
-
 
         document.querySelector(".sf").classList.add("fixed");
         setIsload(true);
 
-
-
-        if(data < 200){
+        if (data < 200) {
           document.querySelector(".sf").classList.remove("fixed");
 
-          
           document.querySelector(".top-bar").classList.remove("hidden");
-  
         }
       } else {
-        console.log('down');
+        console.log("down");
 
-        
         document.querySelector(".sf").classList.remove("fixed");
         document.querySelector(".top-bar").classList.add("hidden");
 
-      
-
         setIsload(false);
       }
-     
-      cursor = data; 
+
+      cursor = data;
     };
 
     window.addEventListener("scroll", handelNavbar);
@@ -179,9 +172,9 @@ function NavbarMain() {
               </div>
 
               {/* Cart */}
-              <div  className=" cursor-pointer  bg-red-600 py-4 px-4 font-semibold flex items-center space-x-1">
+              <div className=" cursor-pointer  bg-red-600 py-4 px-4 font-semibold flex items-center space-x-1">
                 <FiShoppingCart size={20} />
-                <span onClick={()=>setCart(true)}>0 Item $0.00</span>
+                <span onClick={() => setCart(true)}><span>{cart?.cartItems?.reduce((acc,current)=>acc + current?.quantity , 0)||0}</span> Item $<span>{total}</span></span>
               </div>
             </div>
           </div>
@@ -192,3 +185,5 @@ function NavbarMain() {
 }
 
 export default NavbarMain;
+
+
