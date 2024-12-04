@@ -3,6 +3,7 @@ import React from 'react'
 import HeaderText from "../HeaderText/HeaderText"
 import TrandingButton from './TrandingButton'
 import dynamic from 'next/dynamic'
+import TrendingSlider from './TrendingSlider'
 
 const TrendingCollectionCard = dynamic(() => import('./TrendingCollectionCard'), { ssr: false });
 
@@ -17,6 +18,7 @@ const TreandingCullation = () => {
       <HeaderText text={'Treanding Collection'} />
       <TrandingButton data={buttons} />
       <TrendingCollectionCard />
+      {/* <TrendingSlider /> */}
     </div>
   )
 }

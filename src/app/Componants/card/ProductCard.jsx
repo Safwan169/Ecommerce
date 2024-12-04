@@ -1,41 +1,26 @@
 import React from "react";
 import "animate.css";
+import CardButton from './CardButton'
 
 const ProductCard = ({data}) => {
 
   console.log(data,'from Product')
   // Button data array
-  const buttonData = [
-    { id: 1, icon: "❤️", action: "Add to Wishlist" },
-    { id: 2, icon: "👁️", action: "View Details" },
-    { id: 3, icon: "🛒", action: "Add to Cart" },
-  ];
+
 
   return (
-    <div className="group relative bg-white  p-4  w-64 text-center">
+    <div className="group relative mx-auto bg-white  p-4  w-64 text-center">
       {/* Product Image */}
       <div className="relative">
         <img
-          src={data.image}
+          src={'watch.png'}
           loading="lazy" // Replace with your image URL
           alt="Product"
-          className="w-full rounded-lg"
+          className="w-full object-cover  rounded-lg"
         />
         {/* Buttons (Hidden by default, shown on hover with staggered animation) */}
         <div className="absolute  animate__repeat animate__animated animate__fadeInUp animate__delay-2s inset-0 flex justify-center items-end space-x-3 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-10 transition-all duration-500">
-          {buttonData.map((button, index) => (
-            <button
-              key={index}
-              className={`bg-red-600 text-white p-2 rounded-full shadow-md hover:bg-red-700  `}
-              // here is styled 
-              // style={{
-              //   animationDelay: `10s`, // Delay for staggered animation
-              //   animationDuration: "0.5s", // Smooth animation duration
-              // }}
-            >
-              {button.icon} {/* Display the icon */}
-            </button>
-          ))}
+         <CardButton data={data.name}/>
         </div>
       </div>
 
@@ -51,12 +36,12 @@ const ProductCard = ({data}) => {
         </div>
 
         {/* Product Name */}
-        <h3 className="text-sm font-medium">I Phone</h3>
+        <h3 className="text-sm font-medium text-gray-500" >I Phone</h3>
 
         {/* Pricing */}
         <div className="mt-1">
-          <span className="text-green-600 font-bold text-lg">$150.00</span>
-          <span className="text-gray-500 line-through ml-2">$155.00</span>
+          <span className="text-gray-600 font-bold text-lg">$150.00</span>
+          <span className="text-gray-400 line-through ml-2">$155.00</span>
         </div>
       </div>
     </div>

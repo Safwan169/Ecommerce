@@ -28,7 +28,7 @@ const TrendingCollectionCard = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5">
+    <div className="grid grid-cols-1  sm:grid-cols-3 lg:grid-cols-5">
       {cardData.map((item) => (
         <ProductCard key={item.id} data={item} />
       ))}
