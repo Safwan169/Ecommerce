@@ -11,6 +11,7 @@ import {
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { my_context } from "../GlobalDataShere/ContextProvider";
 import CartSliderContainer from "./CartSliderContant";
+import { RxCross1 } from "react-icons/rx";
 
 export default function Example() {
   //   const [open, setOpen] = useState(true)
@@ -30,7 +31,7 @@ export default function Example() {
               transition
               className="pointer-events-auto relative w-screen max-w-md transform transition duration-500 ease-in-out data-[closed]:translate-x-full sm:duration-700"
             >
-              <TransitionChild>
+              {/* <TransitionChild>
                 <div className="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 duration-500 ease-in-out data-[closed]:opacity-0 sm:-ml-10 sm:pr-4">
                   <button
                     type="button"
@@ -42,17 +43,25 @@ export default function Example() {
                     <XMarkIcon aria-hidden="true" className="size-6" />
                   </button>
                 </div>
-              </TransitionChild>
+              </TransitionChild> */}
               <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 ">
-                <div className="px-4 sm:px-6 border-b-gray-300 pb-5 border">
-                  <DialogTitle className="text-base font-semibold text-gray-900">
-                    My shopping cart
+                <div className="px-4 sm:px-6 border-b-gray-300 pb-5 border-b">
+                  <DialogTitle className="text-base flex justify-between items-center font-semibold text-gray-900">
+                    My shopping cart{" "}
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => setCart(false)}
+                    >
+                      {" "}
+                      <RxCross1 />
+                    </span>
                   </DialogTitle>
                 </div>
+
                 <div className="relative mt-6 flex-1 px-4 sm:px-6">
                   {/*slider cart container  */}
 
-                  {cart?.cartItems?.map((data,index) => (
+                  {cart?.cartItems?.map((data, index) => (
                     <CartSliderContainer key={index} data={data} />
                   ))}
                 </div>
