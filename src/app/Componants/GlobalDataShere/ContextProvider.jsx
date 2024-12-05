@@ -76,14 +76,13 @@ const ContextProvider = ({children}) => {
   };
 
 
-  // its gonna used for cart delete from the local storage 
+// for cart delete from local storage
+  const deleteItemFromCart = (id) => {
+    const newCartItems = cart?.cartItems?.filter((i) => i.product !== id);
 
-  // const deleteItemFromCart = (id) => {
-  //   const newCartItems = cart?.cartItems?.filter((i) => i.product !== id);
-
-  //   localStorage.setItem("cart", JSON.stringify({ cartItems: newCartItems }));
-  //   setCartToState();
-  // };
+    localStorage.setItem("cart", JSON.stringify({ cartItems: newCartItems }));
+    setCartToState();
+  };
 
 const data={
   trendingProduct,
@@ -94,7 +93,8 @@ const data={
   setCart,
   setCarts ,
   cart,
-  addItemToCart   
+  addItemToCart,
+  deleteItemFromCart 
 }
 // console.log(trendingProduct)
   return (
