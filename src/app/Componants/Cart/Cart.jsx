@@ -6,9 +6,9 @@ import {
   DialogBackdrop,
   DialogPanel,
   DialogTitle,
-  TransitionChild,
+  // TransitionChild,
 } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+// import { XMarkIcon } from "@heroicons/react/24/outline";
 import { my_context } from "../GlobalDataShere/ContextProvider";
 import CartSliderContainer from "./CartSliderContant";
 import { RxCross1 } from "react-icons/rx";
