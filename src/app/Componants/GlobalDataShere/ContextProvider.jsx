@@ -20,8 +20,11 @@ const ContextProvider = ({ children }) => {
 
   const [modalData, setModalData] = useState([]);
 
-
+// for set wishlist to local storage
   const [wishListData, setWishListData] = useState([]);
+
+
+ 
 
   useEffect(() => {
     setCartToState();
@@ -71,7 +74,6 @@ let wishlist
 
     else {
 
-      // console.log(wishListData)
         wishlist = ([...(wishListData)||[],item])
 
   }
@@ -143,7 +145,8 @@ let wishlist
     setOpenModal,
     modalData,
     setModalData,
-    addItemToWishlist
+    addItemToWishlist,
+    wishListData
   };
   // console.log(trendingProduct)
   return <my_context.Provider value={data}>{children}</my_context.Provider>;

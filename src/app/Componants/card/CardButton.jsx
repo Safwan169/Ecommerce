@@ -1,13 +1,19 @@
 "use client";
 import { useContext } from "react";
-import { FaRegEye, FaRegHeart } from "react-icons/fa";
+import { FaHeart, FaRegEye, FaRegHeart } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
 import { my_context } from "../GlobalDataShere/ContextProvider";
 
 const CardButton = ({ data }) => {
-  const { setModalData, setOpenModal, addItemToCart,addItemToWishlist } = useContext(my_context);
+  const { setModalData, setOpenModal, addItemToCart,addItemToWishlist,wishListData } = useContext(my_context);
+
+
+  // for know is this card is added to the wishlist or not 
+  const isWishListExists=wishListData?.some((item)=>(item?.product == data?.id))
+
+console.log(isWishListExists)
   const buttonData = [
-    { id: 1, icon: <FaRegHeart size={20} />, action: "Add to Wishlist" },
+    { id: 1, icon: isWishListExists ? <FaHeart size={20} /> : <FaRegHeart size={20}/>, action: "Add to Wishlist" },
     { id: 2, icon: <FaRegEye size={20} />, action: "View Details" },
     { id: 3, icon: <TiShoppingCart size={20} />, action: "Add to Cart" },
   ];
