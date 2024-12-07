@@ -5,7 +5,7 @@ import { TiShoppingCart } from "react-icons/ti";
 import { my_context } from "../GlobalDataShere/ContextProvider";
 
 const CardButton = ({ data }) => {
-  const { setModalData, setOpenModal, addItemToCart } = useContext(my_context);
+  const { setModalData, setOpenModal, addItemToCart,addItemToWishlist } = useContext(my_context);
   const buttonData = [
     { id: 1, icon: <FaRegHeart size={20} />, action: "Add to Wishlist" },
     { id: 2, icon: <FaRegEye size={20} />, action: "View Details" },
@@ -14,7 +14,15 @@ const CardButton = ({ data }) => {
 
   const handleButton = (index) => {
     if (index === 1) {
-      //for watch list data
+
+      // this is for the wishlist data into the local storage
+      addItemToWishlist({
+        product: data.id,
+        name: data.name,
+        image: data.image,
+        brand: data.brand,
+        price: data.price,
+      });
       
     } else if (index === 2) {
       //for cart watch button modal data

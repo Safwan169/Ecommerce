@@ -17,7 +17,7 @@ function NavbarMain() {
 
   const total=cart?.cartItems?.reduce((acc,current)=>acc+current?.price,0).toFixed(0)||0 
 
- console.log(cart.cartItems,"here is the cart form local storage ") 
+//  console.log(cart.cartItems,"here is the cart form local storage ") 
   useEffect(() => {
     AOS.init({ duration: 1000 });
     let cursor = 0;
@@ -36,7 +36,7 @@ function NavbarMain() {
           document.querySelector(".top-bar").classList.remove("hidden");
         }
       } else {
-        console.log("down");
+        // console.log("down");
 
         document.querySelector(".sf").classList.remove("fixed");
         document.querySelector(".top-bar").classList.add("hidden");

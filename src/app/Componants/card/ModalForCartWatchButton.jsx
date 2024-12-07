@@ -8,6 +8,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
 import { my_context } from "../GlobalDataShere/ContextProvider";
+import { RxCross1 } from "react-icons/rx";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -42,8 +43,9 @@ export default function ModalForCartWatchButton() {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          {/* <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose}>Agree</Button> */}
+            {/* for close the modal button  */}
+          <button className="absolute top-2" onClick={handleClose}>  <RxCross1 /></button>
+         
         </DialogActions>
       </Dialog>
     </React.Fragment>
