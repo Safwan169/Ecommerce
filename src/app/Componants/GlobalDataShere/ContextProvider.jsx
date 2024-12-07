@@ -19,7 +19,10 @@ const ContextProvider = ({children}) => {
   const [cart, setCarts] = useState({ cartItems: [] }); 
  //  for a cart 
 
+ const [openModal,setOpenModal]=useState(false)
+// for control modal for cart watch button
 
+const [modalData,setModalData]=useState([])
  
   useEffect(() => {
     setCartToState();
@@ -94,7 +97,11 @@ const data={
   setCarts ,
   cart,
   addItemToCart,
-  deleteItemFromCart 
+  deleteItemFromCart,
+  openModal,
+  setOpenModal,
+  modalData,
+  setModalData,
 }
 // console.log(trendingProduct)
   return (

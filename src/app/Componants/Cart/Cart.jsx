@@ -13,6 +13,9 @@ import { my_context } from "../GlobalDataShere/ContextProvider";
 import CartSliderContainer from "./CartSliderContant";
 import { RxCross1 } from "react-icons/rx";
 
+
+import ModalForCartWatchButton from "../card/ModalForCartWatchButton"
+
 export default function Example() {
   //   const [open, setOpen] = useState(true)
 
@@ -70,6 +73,8 @@ export default function Example() {
           </div>
         </div>
       </div>
+
+      <ModalForCartWatchButton/>
     </Dialog>
   );
 }

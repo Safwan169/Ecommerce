@@ -1,38 +1,36 @@
-'use client'
+"use client";
 import { useContext } from "react";
 import { FaRegEye, FaRegHeart } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
 import { my_context } from "../GlobalDataShere/ContextProvider";
 
 const CardButton = ({ data }) => {
-
-  const {addItemToCart}=useContext(my_context)
+  const { setModalData, setOpenModal, addItemToCart } = useContext(my_context);
   const buttonData = [
     { id: 1, icon: <FaRegHeart size={20} />, action: "Add to Wishlist" },
     { id: 2, icon: <FaRegEye size={20} />, action: "View Details" },
     { id: 3, icon: <TiShoppingCart size={20} />, action: "Add to Cart" },
   ];
 
-
-
-
   const handleButton = (index) => {
-   if(index ===1){
-    return
-   }
-    else if(index ===2){
-return
+    if (index === 1) {
+      //for watch list data
+      
+    } else if (index === 2) {
+      //for cart watch button modal data
+      setOpenModal(true);
+      setModalData(data);
+    } else if (index === 3) {
+      //for cart data into the local storage
+      addItemToCart({
+        product: data.id,
+        name: data.name,
+        image: data.image,
+        brand: data.brand,
+        price: data.price,
+      });
     }
-    else if(index ===3){
-     addItemToCart(
-     { product: data.id,
-      name: data.name,
-      image: data.image,
-      brand:data.brand,
-      price: data.price}
-     )
-    }
-  // console.log(addItemToCart,index)
+    // console.log(addItemToCart,index)
   };
   return (
     <>

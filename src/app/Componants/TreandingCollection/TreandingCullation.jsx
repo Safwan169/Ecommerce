@@ -3,9 +3,10 @@ import React from 'react'
 import HeaderText from "../HeaderText/HeaderText"
 import TrandingButton from './TrandingButton'
 import dynamic from 'next/dynamic'
+// import ModalForCartWatchButton from '../card/ModalForCartWatchButton'
 
 const TrendingCollectionCard = dynamic(() => import('./TrendingCollectionCard'), { ssr: false });
-
+const ModalForCartWatchButton =dynamic(() => import('../card/ModalForCartWatchButton'), {ssr: false});
 const TreandingCullation = () => {
   const buttons = [
     { label: "NEW PRODUCTS", bg: "bg-gray-800", textColor: "text-white" },
@@ -17,6 +18,7 @@ const TreandingCullation = () => {
       <HeaderText text={'Treanding Collection'} />
       <TrandingButton data={buttons} />
       <TrendingCollectionCard />
+      <ModalForCartWatchButton/>
       {/* <TrendingSlider /> */}
     </div>
   )
