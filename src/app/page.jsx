@@ -5,6 +5,7 @@ import Background from "@/app/Componants/Background/Background";
 import NewsletterSection from "@/app/Componants/NewsletterSection/NewsletterSection";
 import Categories from "./Componants/Navbar/Top-Categories/Categories";
 import CartMain from "@/app/Componants/Cart/CartMain";
+import SpecialProductMain from "@/app/Componants/specialProduct/SpecialProductMain"
 export default function Home() {
   return (
     <>
@@ -14,6 +15,8 @@ export default function Home() {
 
         <TopCategary />
         <TreandingCullation />
+
+        <SpecialProductMain/>
         {/* NewsletterSection  */}
         <NewsletterSection />
         <CartMain />

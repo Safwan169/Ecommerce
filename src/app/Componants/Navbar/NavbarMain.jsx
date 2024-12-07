@@ -143,7 +143,7 @@ function NavbarMain() {
                 <FiHeart className="  cursor-pointer" />
                 <span>Wishlist</span>
 
-                <span className="absolute -top-2 left-2 bg-red-700 rounded-full text-xs  w-4 h-4 flex justify-center text-white">{wishListData?.length||0}</span>
+                <span className="absolute -top-2 left-2 bg-red-700 rounded-full text-xs  w-4 h-4 flex justify-center text-white">{ wishListData?.length ||0}</span>
               </div>
             </div>
           </div>

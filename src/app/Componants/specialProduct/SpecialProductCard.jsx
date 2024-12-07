@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { my_context } from "../GlobalDataShere/ContextProvider";
 import ProductCard from "../card/ProductCard";
 import Loading from "../Loading/Loading"
-const TrendingCollectionCard = () => {
+const SpecialProductCard = () => {
   const [loading, setLoading] = useState(true);
   const { trendingProduct } = useContext(my_context);
   console.log(trendingProduct);
@@ -36,4 +36,5 @@ const TrendingCollectionCard = () => {
   );
 };
 
-export default TrendingCollectionCard;
+export default SpecialProductCard;
+
