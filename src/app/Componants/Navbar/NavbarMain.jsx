@@ -12,7 +12,7 @@ import { my_context } from "../GlobalDataShere/ContextProvider";
 
 function NavbarMain() {
   const [isLoad, setIsload] = useState(false);
-  const { setCart,cart } = useContext(my_context);
+  const { setCart,cart,wishListData } = useContext(my_context);
 
 
   const total=cart?.cartItems?.reduce((acc,current)=>acc+current?.price,0).toFixed(0)||0 
@@ -139,9 +139,11 @@ function NavbarMain() {
                 <span>sign In</span>
               </div>
               <span>|</span>
-              <div className="flex cursor-pointer hover:text-red-500 items-center gap-1 ">
+              <div className="flex relative cursor-pointer  hover:text-red-500 items-center gap-1 ">
                 <FiHeart className="  cursor-pointer" />
                 <span>Wishlist</span>
+
+                <span className="absolute -top-2 left-2 bg-red-700 rounded-full text-xs  w-4 h-4 flex justify-center text-white">{wishListData?.length||0}</span>
               </div>
             </div>
           </div>
