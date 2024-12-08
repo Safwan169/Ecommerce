@@ -1,13 +1,12 @@
 'use client'
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
-import { my_context } from "../GlobalDataShere/ContextProvider";
+import { useEffect, useState } from "react";
+
 import ProductCard from "../card/ProductCard";
 import Loading from "../Loading/Loading"
 const TrendingCollectionCard = () => {
   const [loading, setLoading] = useState(true);
-  const { trendingProduct } = useContext(my_context);
-  // console.log(trendingProduct);
+
 
   const [cardData, setCardData] = useState([]);
 
