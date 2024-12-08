@@ -12,14 +12,14 @@ const TrandingButton = ({ data }) => {
   };
 
   return (
-    <div className="sm:flex-row flex-col md:space-x-4 lg:space-x-4 text-center space-y-2 sm:space-y-0 md:justify-center lg:justify-center py-4">
+    <div className="flex-1  sm:justify-center  items-center space-x-4 text-center  space-y-2 sm:space-y-0  py-4">
       {data.map((button, index) => (
         <button
           onClick={() => handleClick(index)} // Using the new handler
           key={index}
           className={`${
             text === index ? `bg-[#333333] text-white` : 'bg-red-700 text-white'
-          } px-6 py-3 font-bold uppercase tracking-wide duration-500 hover:bg-[#333333] transition`}
+          } w-fit px-6 py-3 font-bold uppercase tracking-wide duration-500 hover:bg-[#333333] transition`}
         >
           {button.label}
         </button>

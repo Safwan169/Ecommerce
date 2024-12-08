@@ -27,7 +27,7 @@ const TrendingCollectionCard = () => {
   if (loading) return <Loading/>
 
   return (
-    <div className="grid grid-cols-1  sm:grid-cols-3 lg:grid-cols-5">
+    <div className="flex flex-wrap gap-5">
       {cardData.map((item) => (
         <ProductCard key={item.id} data={item} />
       ))}
