@@ -21,9 +21,11 @@ const TopCategories = () => {
   // })
 
   const {topCategory,setTopCategory}=useContext(my_context)
+
+  
     return (
-       <div onClick={()=>setTopCategory(!topCategory)} className='relative w-fit lg:block hidden index '>
-         <button  className="bg-red-600 py-3 px-4 font-semibold flex items-center xl:space-x-20 space-x-24">
+       <div onClick={()=>setTopCategory(!topCategory)} className='relative w-full lg:w-fit lg:block  index '>
+         <button  className="bg-red-700 py-2 text-white lg:py-3 px-4 font-semibold flex items-center xl:space-x-10 justify-evenly lg:justify-center w-full lg:w-fit">
             <span>TOP CATEGORIES</span>
             <span className="text-xl">☰</span>
 

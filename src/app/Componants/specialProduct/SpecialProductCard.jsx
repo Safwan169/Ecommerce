@@ -7,7 +7,7 @@ import Loading from "../Loading/Loading"
 const SpecialProductCard = () => {
   const [loading, setLoading] = useState(true);
   const { trendingProduct } = useContext(my_context);
-  console.log(trendingProduct);
+  // console.log(trendingProduct);
 
   const [cardData, setCardData] = useState([]);
 

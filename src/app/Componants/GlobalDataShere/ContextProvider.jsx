@@ -23,7 +23,8 @@ const ContextProvider = ({ children }) => {
 // for set wishlist to local storage
   const [wishListData, setWishListData] = useState([]);
 
-
+//for control mobile devices navbar left slider 
+const [leftSliderData, setLeftSliderData] = useState(false);
  
 
   useEffect(() => {
@@ -69,7 +70,7 @@ let wishlist
 
     wishlist = (wishListData?.filter((i) => item?.product!==i?.product))
 
-  console.log(wishlist)
+  // console.log(wishlist)
     }
 
     else {
@@ -100,7 +101,7 @@ let wishlist
       quantity,
     };
 
-    console.log(item);
+    // console.log(item);
 
     // Check if item exists in the cart
     const isItemExist = cart?.cartItems?.find(
@@ -146,7 +147,9 @@ let wishlist
     modalData,
     setModalData,
     addItemToWishlist,
-    wishListData
+    wishListData,
+    leftSliderData,
+    setLeftSliderData,
   };
   // console.log(trendingProduct)
   return <my_context.Provider value={data}>{children}</my_context.Provider>;

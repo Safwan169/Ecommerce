@@ -22,7 +22,7 @@ const Categories = () => {
     //   const [togle,setTogle]=useState(true)
       const {topCategory}=useContext(my_context)
   return (
-    <div className={`${topCategory?'block':'hidden  '}  text-gray-500 font-normal  bg-white  text-base absolute  z-50  w-full border border-solid border-gray-300 `}>
+    <div className={`${topCategory?'block':'hidden  '}  text-gray-500 font-normal  bg-white  text-base block lg:absolute  z-50  w-full border border-solid border-gray-300 `}>
                 
                 {categories.map((category, index) => (
                      <button key={index}  className="  group xl:py-[7.2px] lg:py-[12.6px] px-4 border-b-2 z-50 w-full border-gray-200 font-semibold flex items-center ">

@@ -7,17 +7,20 @@ import { MdOutlineSupportAgent } from "react-icons/md";
 import Slider from "./Slider";
 import { data } from "./sliderText";
 import TopCategories from "./Top-Categories/TopCategories";
-import Image from "next/image";
 import { my_context } from "../GlobalDataShere/ContextProvider";
-
+import LogoName from "./Logo & Name/LogoName";
+import { RxHamburgerMenu } from "react-icons/rx";
 function NavbarMain() {
   const [isLoad, setIsload] = useState(false);
-  const { setCart,cart,wishListData } = useContext(my_context);
+  const { setCart, cart, wishListData, leftSliderData, setLeftSliderData } =
+    useContext(my_context);
+  console.log(leftSliderData, "here is the navbar data");
+  const total =
+    cart?.cartItems
+      ?.reduce((acc, current) => acc + current?.price, 0)
+      .toFixed(0) || 0;
 
-
-  const total=cart?.cartItems?.reduce((acc,current)=>acc+current?.price,0).toFixed(0)||0 
-
-//  console.log(cart.cartItems,"here is the cart form local storage ") 
+  //  console.log(cart.cartItems,"here is the cart form local storage ")
   useEffect(() => {
     AOS.init({ duration: 1000 });
     let cursor = 0;
@@ -57,8 +60,8 @@ function NavbarMain() {
     <div className="w-full transition-transform   bg-white duration-1000 z-50 sf ">
       <header className={`z-50 pt-0     `}>
         {/* Top Info Bar */}
-        <div className="bg-gray-100 top-bar z-50 md:px-5 lg:px-0 lg:w-full xl:w-[1400px]    mx-auto ">
-          <div className="    flex justify-between  items-center text-sm text-gray-700">
+        <div className=" bg-gray-100 top-bar z-50 md:px-5 lg:px-0 lg:w-full xl:w-[1400px]    mx-auto ">
+          <div className="  hidden  sm:flex justify-between  items-center text-sm text-gray-700">
             <div>
               Need help? Call us:{" "}
               <span className="hover:text-red-700 cursor-pointer">
@@ -81,6 +84,9 @@ function NavbarMain() {
               </span>
             </div>
           </div>
+          <div className=" sm:hidden block mx-auto w-full   text-center p-2  font-serif text-gray-700">
+            <div className=" ">Welcome To The Electron - Store</div>
+          </div>
         </div>
 
         <div
@@ -91,20 +97,33 @@ function NavbarMain() {
           }`}
         >
           {/* Main Navbar */}
-          <div className=" bg-white py-4 lg:w-full xl:w-[1400px] md:px-5 lg:px-0 mx-auto  flex items-center justify-between">
-            {/* Logo */}
-            <div className=" flex items-center space-x-2">
-              {/* <div className="text-red-600 font-bold text-2xl">E</div> */}
-              <Image
-                width={500}
-                height={500}
-                className="w-[50px]"
-                src="/webLogo.png"
-                alt=""
-              />
-              <div className="font-bold text-xl">Electron</div>
+          <div className=" px-3 bg-white py-4 justify-between lg:w-full xl:w-[1400px] md:px-5 lg:px-0 mx-auto  flex items-center sm:justify-between">
+            <div
+              onClick={() => setLeftSliderData(!leftSliderData)}
+              className="block sm:hidden"
+            >
+              {/* here will come navbar left slider for small devices  */}
+
+              <RxHamburgerMenu size={25} />
             </div>
 
+            {/* Logo */}
+
+            <LogoName />
+
+            {/* cart for small devices */}
+            <div
+              onClick={() => setCart(true)}
+              className="block relative sm:hidden"
+            >
+              <FiShoppingCart className="text-gray-600 mr-1" size={25} />
+              <span className="absolute -top-2 bg-red-700 text-white rounded-full w-4 h-4 text-xs text-center p-[1px] right-0">
+                {cart?.cartItems?.reduce(
+                  (acc, current) => acc + current?.quantity,
+                  0
+                ) || 0}
+              </span>
+            </div>
             {/* Main Links */}
             <nav className="hidden md:flex space-x-8  text-gray-700">
               <div className="relative group">
@@ -133,7 +152,7 @@ function NavbarMain() {
                 </a>
               </div>
             </nav>
-            <div className="flex items-center space-x-4">
+            <div className="hidden sm:flex items-center space-x-4">
               <div className="flex cursor-pointer  hover:text-red-700 items-center gap-1">
                 <FiUser className=" cursor-pointer" />
                 <span>sign In</span>
@@ -143,7 +162,9 @@ function NavbarMain() {
                 <FiHeart className="  cursor-pointer" />
                 <span>Wishlist</span>
 
-                <span className="absolute -top-2 left-2 bg-red-700 rounded-full text-xs  w-4 h-4 flex justify-center text-white">{ wishListData?.length ||0}</span>
+                <span className="absolute -top-2 left-2 bg-red-700 rounded-full text-xs  w-4 h-4 flex justify-center text-white">
+                  {wishListData?.length || 0}
+                </span>
               </div>
             </div>
           </div>
@@ -153,30 +174,43 @@ function NavbarMain() {
             <div className="lg:w-full xl:w-[1400px]   mx-auto z-50  text-white flex items-center md:space-x-3 lg:space-x-3">
               {/*Top Categories */}
 
-              <TopCategories />
+              <div className="hidden lg:block">
+                <TopCategories />
+              </div>
 
               {/* this is the navbar slider  */}
 
-              <div className="w-[25%]   justify-start  ">
+              <div className="w-[25%] hidden sm:block   justify-start  ">
                 <Slider d={data} />
               </div>
 
               {/* Search Bar */}
-              <div className="flex-grow relative">
+              <div className="flex-grow p-2 sm:p-0 relative">
                 <input
                   type="text"
                   placeholder="Find our product"
-                  className="w-full py-2 px-4 rounded-l-md text-gray-700"
+                  className="w-full py-2 px-4 sm:rounded-l-md  text-gray-700"
                 />
-                <button className="absolute right-0 top-0 bottom-0 bg-red-700   px-4 text-white">
+                <button className="absolute right-0 top-0 bottom-0 bg-red-700  mr-2 sm:mr-0 my-2 sm:my-0 px-4 text-white">
                   <FiSearch size={16} />
                 </button>
               </div>
 
-              {/* Cart */}
-              <div onClick={() => setCart(true)} className=" cursor-pointer md:w-[150px] lg:w-[200px] lg:text-[17px]  bg-red-700 py-3 px-4 font-semibold flex justify-center items-center space-x-2">
+              {/* Cart for big devices  */}
+              <div
+                onClick={() => setCart(true)}
+                className=" hidden cursor-pointer md:w-[150px] lg:w-[200px] lg:text-[17px]  bg-red-700 py-3 px-4 font-semibold sm:flex justify-center items-center space-x-2"
+              >
                 <FiShoppingCart size={20} />
-                <span  ><span>{cart?.cartItems?.reduce((acc,current)=>acc + current?.quantity , 0)||0}</span> Item $<span>{total}</span></span>
+                <span>
+                  <span>
+                    {cart?.cartItems?.reduce(
+                      (acc, current) => acc + current?.quantity,
+                      0
+                    ) || 0}
+                  </span>{" "}
+                  Item $<span>{total}</span>
+                </span>
               </div>
             </div>
           </div>
@@ -187,5 +221,3 @@ function NavbarMain() {
 }
 
 export default NavbarMain;
-
-

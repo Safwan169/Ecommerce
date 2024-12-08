@@ -9,7 +9,7 @@ import SpecialProductMain from "@/app/Componants/specialProduct/SpecialProductMa
 export default function Home() {
   return (
     <>
-      <div className="space-y-44 ">
+      <div className="space-y-24 md:space-y-32 lg:space-y-44 ">
         <Background />
         <Services />
 

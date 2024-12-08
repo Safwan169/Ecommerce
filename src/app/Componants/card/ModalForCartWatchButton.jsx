@@ -16,7 +16,7 @@ export default function ModalForCartWatchButton() {
   // const [open, setOpen] = React.useState(false);
 
   const { modalData, setOpenModal, openModal } = React.useContext(my_context);
-  console.log(modalData);
+  // console.log(modalData);
   // const handleClickOpen = () => {
   //   setOpenModal(true);
   // };

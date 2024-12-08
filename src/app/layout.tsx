@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-
+import NavbarMain from "@/app/Componants/Navbar/Navbar-Main/NavbarMain";
 import "./globals.css";
-import NavbarMain from "@/app/Componants/Navbar/NavbarMain";
 import Footer from "@/app/Componants/Footer";
 import { Poppins } from "next/font/google";
-import ContextProvider from "@/app/Componants/GlobalDataShere/ContextProvider"
+import ContextProvider from "@/app/Componants/GlobalDataShere/ContextProvider";
 const poppins = Poppins({
   subsets: ["latin"], // Specify subsets
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -35,8 +34,7 @@ export default function RootLayout({
       </head>
       <body className={`${poppins.variable} antialiased `}>
         <ContextProvider>
-          <NavbarMain  />
-
+          <NavbarMain />
           <div className="lg:w-full xl:w-[1400px] z-10 mx-auto">{children}</div>
           <Footer />
         </ContextProvider>
