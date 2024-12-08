@@ -13,7 +13,7 @@ const NewsletterSection = () => {
             />
           </div>
           <div className="lg:space-y-5 md:space-y-4 space-y-4   text-center  lg:text-start md:text-start">
-            <h3 className="lg:text-xl text-[16px] text-center md:text-start lg:text-start w-full  font-bold text-red-500">
+            <h3 className="lg:text-xl text-[16px] text-center md:text-start lg:text-start w-full  font-bold text-red-700">
               Mr.onsequat <span className="text-gray-800">- designer</span>
             </h3>
             <p className="text-gray-600  w-full lg:pr-4 sm:px-0 px-5 mt-2">
@@ -34,13 +34,13 @@ const NewsletterSection = () => {
               placeholder="Enter your mail.."
               className="flex-1 lg:px-4 md:px-4 text-center sm:text-left w-full py-2 border border-gray-300  rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
             />
-            <button className="bg-red-500 text-white px-4 md:px-6 lg:px-6   py-2 rounded-md hover:bg-red-600">
+            <button className="bg-red-700 text-white px-4 md:px-6 lg:px-6   py-2 rounded-md hover:bg-red-600">
               SUBSCRIBE
             </button>
           </div>
           <div className="mt-4 flex items-center justify-center gap-5 text-center">
             <p className="text-[16px]  items-center text-gray-600 mb-2">
-              <span className="text-red-500 font-semibold">Follow us:</span>
+              <span className="text-red-700 font-semibold">Follow us:</span>
             </p>
             <div className="flex items-center gap-3">
               {/* Social Media Icons */}

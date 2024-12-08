@@ -18,7 +18,7 @@ const TrandingButton = ({ data }) => {
           onClick={() => handleClick(index)} // Using the new handler
           key={index}
           className={`${
-            text === index ? `bg-[#333333] text-white` : 'bg-red-600 text-white'
+            text === index ? `bg-[#333333] text-white` : 'bg-red-700 text-white'
           } px-6 py-3 font-bold uppercase tracking-wide duration-500 hover:bg-[#333333] transition`}
         >
           {button.label}

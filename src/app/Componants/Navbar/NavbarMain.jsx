@@ -54,26 +54,26 @@ function NavbarMain() {
   }, []);
 
   return (
-    <div className="w-full transition-transform  bg-white duration-1000 z-50 sf ">
+    <div className="w-full transition-transform   bg-white duration-1000 z-50 sf ">
       <header className={`z-50 pt-0     `}>
         {/* Top Info Bar */}
-        <div className="bg-gray-100 top-bar z-50 lg:w-full xl:w-[1400px]    mx-auto ">
+        <div className="bg-gray-100 top-bar z-50 md:px-5 lg:px-0 lg:w-full xl:w-[1400px]    mx-auto ">
           <div className="    flex justify-between  items-center text-sm text-gray-700">
             <div>
               Need help? Call us:{" "}
-              <span className="hover:text-red-500 cursor-pointer">
+              <span className="hover:text-red-700 cursor-pointer">
                 (+92) 0123 456 789
               </span>
             </div>
-            <div className=" -translate-x-1/3 relative">
+            <div className="lg:block hidden -translate-x-1/3 relative">
               Today&apos;s deal sale 50% off{" "}
-              <span className="text-red-600 cursor-pointer  hover:text-gray-800 font-semibold">
+              <span className="text-red-700 cursor-pointer  hover:text-gray-800 font-semibold">
                 SHOP NOW!
               </span>
             </div>
 
             {/* Right-side Icons */}
-            <div className="flex items-center space-x-2 text-red-600">
+            <div className="flex items-center space-x-2 text-red-700">
               <MdOutlineSupportAgent size={25} />
               <span className="text-black font-semibold">
                 {" "}
@@ -86,12 +86,12 @@ function NavbarMain() {
         <div
           className={`${
             isLoad
-              ? " transition-all animate__animated animate__fadeInDown delay-3s z-50 mt-0 border-red-500  "
+              ? " transition-all animate__animated animate__fadeInDown delay-3s z-50 mt-0 border-red-700  "
               : " animate__fadeIn animate__animated delay-0 z-50 "
           }`}
         >
           {/* Main Navbar */}
-          <div className=" bg-white py-4 lg:w-full xl:w-[1400px]  mx-auto  flex items-center justify-between">
+          <div className=" bg-white py-4 lg:w-full xl:w-[1400px] md:px-5 lg:px-0 mx-auto  flex items-center justify-between">
             {/* Logo */}
             <div className=" flex items-center space-x-2">
               {/* <div className="text-red-600 font-bold text-2xl">E</div> */}
@@ -108,7 +108,7 @@ function NavbarMain() {
             {/* Main Links */}
             <nav className="hidden md:flex space-x-8  text-gray-700">
               <div className="relative group">
-                <a href="#" className="hover:text-red-600">
+                <a href="#" className="hover:text-red-700">
                   Home
                 </a>
                 {/* Dropdown for Home */}
@@ -117,29 +117,29 @@ function NavbarMain() {
                 </div>
               </div>
               <div className="relative group">
-                <a href="#" className="hover:text-red-600">
+                <a href="#" className="hover:text-red-700">
                   Shop
                 </a>
               </div>
-              <a href="#" className="hover:text-red-600">
+              <a href="#" className="hover:text-red-700">
                 Collection
               </a>
-              <a href="#" className="hover:text-red-600">
+              <a href="#" className="hover:text-red-700">
                 Blog
               </a>
               <div className="relative group">
-                <a href="#" className="hover:text-red-600">
+                <a href="#" className="hover:text-red-700">
                   Pages
                 </a>
               </div>
             </nav>
             <div className="flex items-center space-x-4">
-              <div className="flex cursor-pointer  hover:text-red-500 items-center gap-1">
+              <div className="flex cursor-pointer  hover:text-red-700 items-center gap-1">
                 <FiUser className=" cursor-pointer" />
                 <span>sign In</span>
               </div>
               <span>|</span>
-              <div className="flex relative cursor-pointer  hover:text-red-500 items-center gap-1 ">
+              <div className="flex relative cursor-pointer  hover:text-red-700 items-center gap-1 ">
                 <FiHeart className="  cursor-pointer" />
                 <span>Wishlist</span>
 
@@ -150,7 +150,7 @@ function NavbarMain() {
 
           {/* Secondary Options Bar */}
           <div className="bg-[#2c2b49]   ">
-            <div className="lg:w-full xl:w-[1400px]  mx-auto z-50  text-white flex items-center space-x-8">
+            <div className="lg:w-full xl:w-[1400px]   mx-auto z-50  text-white flex items-center md:space-x-3 lg:space-x-3">
               {/*Top Categories */}
 
               <TopCategories />
@@ -168,15 +168,15 @@ function NavbarMain() {
                   placeholder="Find our product"
                   className="w-full py-2 px-4 rounded-l-md text-gray-700"
                 />
-                <button className="absolute right-0 top-0 bottom-0 bg-white text-gray-700 px-4 rounded-r-md">
-                  <FiSearch />
+                <button className="absolute right-0 top-0 bottom-0 bg-red-700   px-4 text-white">
+                  <FiSearch size={16} />
                 </button>
               </div>
 
               {/* Cart */}
-              <div className=" cursor-pointer  bg-red-600 py-4 px-4 font-semibold flex items-center space-x-1">
+              <div onClick={() => setCart(true)} className=" cursor-pointer md:w-[150px] lg:w-[200px] lg:text-[17px]  bg-red-700 py-3 px-4 font-semibold flex justify-center items-center space-x-2">
                 <FiShoppingCart size={20} />
-                <span onClick={() => setCart(true)}><span>{cart?.cartItems?.reduce((acc,current)=>acc + current?.quantity , 0)||0}</span> Item $<span>{total}</span></span>
+                <span  ><span>{cart?.cartItems?.reduce((acc,current)=>acc + current?.quantity , 0)||0}</span> Item $<span>{total}</span></span>
               </div>
             </div>
           </div>

@@ -17,9 +17,31 @@ export default function Slider({d}) {
     return (
         <>
             <Swiper
-                slidesPerView={2}
 
-                spaceBetween={5}
+            breakpoints={
+                {
+                    320: {
+                    slidesPerView: 1, // 1 slide for mobile
+                    spaceBetween: 5
+                  },
+                  640: {
+                    slidesPerView: 1, // 2 slides for tablets
+                    spaceBetween: 2
+                  },
+                  768: {
+                    slidesPerView: 1, // 3 slides for small desktops
+                    spaceBetween: 2
+                  },
+                  1024: {
+                    slidesPerView: 2, // 4 slides for medium desktops
+                    spaceBetween: 5
+                  }
+
+                }
+
+                // Add breakpoints here
+            }
+               
                 // centeredSlides={true}
                 autoplay={{
                     delay: 2500,
@@ -32,9 +54,9 @@ export default function Slider({d}) {
                 className="mySwiper"
             >
                 {d?.map((data,index)=> <SwiperSlide key={index}>
-                    <div className='flex text-[14px] items-center gap-2 justify-center'>
+                    <div className='flex text-[14px] items-center gap-2   justify-center'>
                         <p >{data.icon}</p>
-                        <span className='flex'>
+                        <span className='flex '>
                             {data.text}
                         </span>
                     </div>
