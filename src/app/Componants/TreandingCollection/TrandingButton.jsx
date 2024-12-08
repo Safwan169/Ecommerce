@@ -12,7 +12,7 @@ const TrandingButton = ({ data }) => {
   };
 
   return (
-    <div className="flex-1  sm:justify-center  items-center space-x-4 text-center  space-y-2 sm:space-y-0  py-4">
+    <div className="flex-1  sm:justify-center  items-center space-x-4 px-5 text-center  space-y-2 sm:space-y-0  py-4">
       {data.map((button, index) => (
         <button
           onClick={() => handleClick(index)} // Using the new handler

@@ -9,7 +9,7 @@ const ProductCard = ({data}) => {
 
 
   return (
-    <div className="group relative mx-auto  bg-white p-2  sm:p-4 w-fit sm:w-64 text-center">
+    <div className="group relative mx-auto  bg-white p-2  sm:p-4 w-full sm:w-64 text-center">
       {/* Product Image */}
       <div className="relative max-w-[500px]">
         <img
