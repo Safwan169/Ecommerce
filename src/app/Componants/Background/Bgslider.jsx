@@ -53,7 +53,7 @@ export default function Bgslider({ data }) {
               }  flex `}
             >
               {/* <div className=" border border-red-500 relative flex-1 lg:w-[500px]  flex justify-end  h-[300px] lg:h-[500px]"> */}
-            <div className="w-[80%] h-[300px] md:h-[500px] md:w-[500px] border object-contain border-red-400 flex items-center text-center  bg-cover  ">
+            <div className="w-[80%] h-[300px] md:h-[500px] md:w-[500px]  object-contain  flex items-center text-center  bg-cover  ">
             <Image
                   layout="responsive"
                   height={10}
