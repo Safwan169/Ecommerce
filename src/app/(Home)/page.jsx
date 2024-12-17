@@ -5,7 +5,8 @@ import Background from "@/app/Componants/Background/Background";
 import NewsletterSection from "@/app/Componants/NewsletterSection/NewsletterSection";
 import Categories from "@/app/Componants/Navbar/Top-Categories/Categories";
 import CartMain from "@/app/Componants/Cart/CartMain";
-import SpecialProductMain from "@/app/Componants/specialProduct/SpecialProductMain"
+import SpecialProductMain from "@/app/Componants/specialProduct/SpecialProductMain";
+import ModalForCartWatchButton from "../Componants/card/ModalForCartWatchButton"
 export default function Home() {
   return (
     <>
@@ -20,6 +21,8 @@ export default function Home() {
         {/* NewsletterSection  */}
         <NewsletterSection />
         <CartMain />
+        <ModalForCartWatchButton/>
+
         <div className="absolute  -top-5 w-[255px] hidden lg:block md:hidden z-50 bg-white">
           <Categories />
         </div>
