@@ -16,7 +16,7 @@ import Image from 'next/image';
 
 export default function Slider({ d }) {
     return (
-        <>
+        <div className='lg:px-3'>
             <Swiper
               breakpoints={{
                 320: {
@@ -56,7 +56,7 @@ export default function Slider({ d }) {
                 className="mySwiper"
             >
                 {d?.map((data, index) => <SwiperSlide key={index}>
-                    <div className='  group  z-30 text-[14px] py-3 w-full space-y-5 '>
+                    <div className='  group  z-30 text-[14px] py-3 w-full  space-y-5 '>
                         <div className='w-[50px] h-[50px] mx-auto'>
                             <Image width={100} height={100} className=' group-hover:scale-110 duration-500 w-[30px]' src={data.icon} alt="" />
 
@@ -68,6 +68,6 @@ export default function Slider({ d }) {
                 </SwiperSlide>)}
 
             </Swiper>
-        </>
+        </div>
     );
 }

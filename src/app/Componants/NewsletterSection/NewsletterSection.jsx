@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const NewsletterSection = () => {
     return (
-      <div className="flex flex-wrap justify-between  items-center lg:gap-8 gap-4 md:gap-y-16  md:px-16 lg:px-0   bg-white  rounded-lg shadow-md lg:flex-nowrap">
+      <div className="flex flex-wrap justify-between  items-center lg:gap-8 gap-4 md:gap-y-16  md:px-16 lg:px-5   bg-white  rounded-lg shadow-md lg:flex-nowrap">
         {/* Left Section */}
         <div className=" flex  lg:flex-row flex-col md:flex-row md:py-10 items-center gap-6    md:px-16 lg:px-0 lg:border-r  lg:border-b-0 md:border-r-0 border-b  py-3 sm:py-0 border-gray-300 border-separate lg:w-1/2 md:w-full">
           <div className="w-1/4 md:w-1/3 lg:w-1/3  h-full">

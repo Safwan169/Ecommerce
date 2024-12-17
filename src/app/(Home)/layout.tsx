@@ -35,7 +35,7 @@ export default function RootLayout({
       <ContextProvider>
         <body className={`${poppins.variable} antialiased `}>
           <NavbarMain />
-          <div className="lg:w-full xl:w-[1400px] z-10 mx-auto">{children}</div>
+          <div className="lg:w-full lg:px-2 xl:w-[1400px] z-10 mx-auto">{children}</div>
           <Footer />
         </body>
       </ContextProvider>

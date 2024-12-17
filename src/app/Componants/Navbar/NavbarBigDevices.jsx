@@ -60,7 +60,7 @@ function NavbarMain() {
     <div className="w-full transition-transform   bg-white duration-1000 z-50 sf ">
       <header className={`z-50 pt-0     `}>
         {/* Top Info Bar */}
-        <div className=" bg-gray-100 top-bar z-50 md:px-5 lg:px-0 lg:w-full xl:w-[1400px]    mx-auto ">
+        <div className=" bg-gray-100 top-bar z-50 md:px-5 lg:px-2 lg:w-full xl:w-[1400px]    mx-auto ">
           <div className="  hidden  sm:flex justify-between  items-center text-sm text-gray-700">
             <div>
               Need help? Call us:{" "}
@@ -97,7 +97,7 @@ function NavbarMain() {
           }`}
         >
           {/* Main Navbar */}
-          <div className=" px-3 bg-white py-4 justify-between lg:w-full xl:w-[1400px] md:px-5 lg:px-0 mx-auto  flex items-center sm:justify-between">
+          <div className=" px-3 bg-white py-4 justify-between lg:w-full xl:w-[1400px] md:px-5 lg:px-2 mx-auto  flex items-center sm:justify-between">
             <div
               onClick={() => setLeftSliderData(!leftSliderData)}
               className="block sm:hidden"
@@ -171,7 +171,7 @@ function NavbarMain() {
 
           {/* Secondary Options Bar */}
           <div className="bg-[#2c2b49]   ">
-            <div className="lg:w-full xl:w-[1400px]   mx-auto z-50  text-white flex items-center md:space-x-3 lg:space-x-3">
+            <div className="lg:w-full xl:w-[1400px]  lg:px-2 mx-auto z-50  text-white flex items-center md:space-x-3 lg:space-x-3">
               {/*Top Categories */}
 
               <div className="hidden lg:block">
@@ -180,16 +180,16 @@ function NavbarMain() {
 
               {/* this is the navbar slider  */}
 
-              <div className="w-[25%] hidden sm:block   justify-start  ">
+              <div className="lg:w-[30%] md:w-[25%] hidden sm:block    justify-start  ">
                 <Slider d={data} />
               </div>
 
               {/* Search Bar */}
-              <div className="flex-grow p-2 sm:p-0 relative">
+              <div className="flex flex-grow p-2 sm:p-0 relative">
                 <input
                   type="text"
                   placeholder="Find our product"
-                  className="w-full py-2 px-4 sm:rounded-l-md  text-gray-700"
+                  className="w-full py-2 px-4  sm:rounded-l-md  text-gray-700"
                 />
                 <button className="absolute right-0 top-0 bottom-0 bg-red-700  mr-2 sm:mr-0 my-2 sm:my-0 px-4 text-white">
                   <FiSearch size={16} />
@@ -199,7 +199,7 @@ function NavbarMain() {
               {/* Cart for big devices  */}
               <div
                 onClick={() => setCart(true)}
-                className=" hidden cursor-pointer md:w-[150px] lg:w-[200px] lg:text-[17px]  bg-red-700 py-3 px-4 font-semibold sm:flex justify-center items-center space-x-2"
+                className=" hidden cursor-pointer md:w-[150px] lg:w-[150px] lg:text-[15px]  bg-red-700 py-3 px-4 font-semibold sm:flex justify-center items-center space-x-2"
               >
                 <FiShoppingCart size={20} />
                 <span>
