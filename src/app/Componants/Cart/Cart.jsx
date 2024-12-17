@@ -9,7 +9,7 @@ import {
   // TransitionChild,
 } from "@headlessui/react";
 // import { XMarkIcon } from "@heroicons/react/24/outline";
-import { my_context } from "../GlobalDataShere/ContextProvider";
+import { my_context } from "@/app/GlobalDataShere/ContextProvider";
 import CartSliderContainer from "./CartSliderContant";
 import { RxCross1 } from "react-icons/rx";
 

@@ -3,7 +3,8 @@ import NavbarMain from "@/app/Componants/Navbar/Navbar-Main/NavbarMain";
 import "./globals.css";
 import Footer from "@/app/Componants/Footer";
 import { Poppins } from "next/font/google";
-import ContextProvider from "@/app/Componants/GlobalDataShere/ContextProvider";
+import GlobalProvider from "@/app/GlobalProvider"
+import ContextProvider from "@/app/GlobalDataShere/ContextProvider";
 const poppins = Poppins({
   subsets: ["latin"], // Specify subsets
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -32,13 +33,13 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/webLogo.png" />
         <title>Electron</title>
       </head>
-      <body className={`${poppins.variable} antialiased `}>
-        <ContextProvider>
+      <ContextProvider>
+        <body className={`${poppins.variable} antialiased `}>
           <NavbarMain />
           <div className="lg:w-full xl:w-[1400px] z-10 mx-auto">{children}</div>
           <Footer />
-        </ContextProvider>
-      </body>
+        </body>
+      </ContextProvider>
     </html>
   );
 }

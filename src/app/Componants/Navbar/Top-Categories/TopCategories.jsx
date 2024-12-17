@@ -1,6 +1,6 @@
 "use client"
 import React, { useContext } from 'react'
-import { my_context } from '../../GlobalDataShere/ContextProvider'
+import { my_context } from '@/app/GlobalDataShere/ContextProvider'
 
 const TopCategories = () => {
   

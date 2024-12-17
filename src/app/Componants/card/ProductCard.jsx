@@ -4,7 +4,7 @@ import CardButton from './CardButton'
 
 const ProductCard = ({data}) => {
 
-  // console.log(data,'from Product')
+  console.log(data,'from Product')
   // Button data array
 
 

@@ -48,10 +48,10 @@ const [leftSliderData, setLeftSliderData] = useState(false);
     setWishListData(data);
   };
 
-  const addItemToWishlist = ({ product, name, image, brand, price }) => {
+  const addItemToWishlist = ({ id, name, image, brand, price }) => {
 
     const item = {
-      product,
+      id,
       name,
       image,
       brand,
@@ -60,7 +60,7 @@ const [leftSliderData, setLeftSliderData] = useState(false);
     }
 
 
-    const isItemExist = wishListData?.find((i) => i?.product === item?.product);
+    const isItemExist = wishListData?.find((i) => i?.id === item?.id);
 // console.log(isItemExist,'isItem exists')
 
 let wishlist
@@ -68,7 +68,7 @@ let wishlist
     if(isItemExist) {
 
 
-    wishlist = (wishListData?.filter((i) => item?.product!==i?.product))
+    wishlist = (wishListData?.filter((i) => item?.id!==i?.id))
 
   // console.log(wishlist)
     }
@@ -85,7 +85,7 @@ let wishlist
   };
 
   const addItemToCart = async ({
-    product,
+    id,
     name,
     image,
     brand,
@@ -93,7 +93,7 @@ let wishlist
     quantity = 1,
   }) => {
     const item = {
-      product,
+      id,
       name,
       image,
       brand,
@@ -105,14 +105,14 @@ let wishlist
 
     // Check if item exists in the cart
     const isItemExist = cart?.cartItems?.find(
-      (i) => i.product === item.product
+      (i) => i.id === item.id
     );
 
     let newCartItems;
 
     if (isItemExist) {
       newCartItems = cart?.cartItems?.map((i) =>
-        i.product === isItemExist.product ? item : i
+        i.id === isItemExist.id ? item : i
       );
     } else {
       newCartItems = [...(cart?.cartItems || []), item];
@@ -125,7 +125,7 @@ let wishlist
 
   // for cart delete from local storage
   const deleteItemFromCart = (id) => {
-    const newCartItems = cart?.cartItems?.filter((i) => i.product !== id);
+    const newCartItems = cart?.cartItems?.filter((i) => i.id !== id);
 
     localStorage.setItem("cart", JSON.stringify({ cartItems: newCartItems }));
     setCartToState();

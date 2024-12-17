@@ -2,7 +2,7 @@
 
 import { useContext, useState } from "react";
 import { RiDeleteBin5Line } from "react-icons/ri";
-import { my_context } from "../GlobalDataShere/ContextProvider";
+import { my_context } from "@/app/GlobalDataShere/ContextProvider";
 
 const QuantityController = ({ data }) => {
   const [quantity, setQuantity] = useState(data?.quantity);

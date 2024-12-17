@@ -5,7 +5,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import Slide from "@mui/material/Slide";
-import { my_context } from "../GlobalDataShere/ContextProvider";
+import { my_context } from "@/app/GlobalDataShere/ContextProvider";
 import { RxCross1 } from "react-icons/rx";
 
 const Transition = React.forwardRef(function Transition(props, ref) {

@@ -2,16 +2,17 @@
 import { useContext } from "react";
 import { FaHeart, FaRegEye, FaRegHeart } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
-import { my_context } from "../GlobalDataShere/ContextProvider";
+import { my_context } from "@/app/GlobalDataShere/ContextProvider";
 
 const CardButton = ({ data }) => {
   const { setModalData, setOpenModal, addItemToCart,addItemToWishlist,wishListData } = useContext(my_context);
 
 
   // for know is this card is added to the wishlist or not 
-  const isWishListExists=wishListData?.some((item)=>(item?.product == data?.id))
+  const isWishListExists=wishListData?.some((item)=>(item?.id == data?.id))
 
-// console.log(isWishListExists)
+console.log(data,"her is the data form card ")
+console.log(isWishListExists,'is there available wishlist',data?.id,wishListData)
   const buttonData = [
     { id: 1, icon: isWishListExists ? <FaHeart size={20} /> : <FaRegHeart size={20}/>, action: "Add to Wishlist" },
     { id: 2, icon: <FaRegEye size={20} />, action: "View Details" },
@@ -23,7 +24,7 @@ const CardButton = ({ data }) => {
 
       // this is for the wishlist data into the local storage
       addItemToWishlist({
-        product: data.id,
+        id: data.id,
         name: data.name,
         image: data.image,
         brand: data.brand,
@@ -37,7 +38,7 @@ const CardButton = ({ data }) => {
     } else if (index === 3) {
       //for cart data into the local storage
       addItemToCart({
-        product: data.id,
+        id: data.id,
         name: data.name,
         image: data.image,
         brand: data.brand,

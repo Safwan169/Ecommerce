@@ -1,6 +1,6 @@
 "use client";
 import { useContext, useState } from "react";
-import { my_context } from "../GlobalDataShere/ContextProvider";
+import { my_context } from "@/app/GlobalDataShere/ContextProvider";
 
 const TrandingButton = ({ data }) => {
   const [text, setText] = useState(0);

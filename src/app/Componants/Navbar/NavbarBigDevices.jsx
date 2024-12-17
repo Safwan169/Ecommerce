@@ -7,7 +7,7 @@ import { MdOutlineSupportAgent } from "react-icons/md";
 import Slider from "./Slider";
 import { data } from "./sliderText";
 import TopCategories from "./Top-Categories/TopCategories";
-import { my_context } from "../GlobalDataShere/ContextProvider";
+import { my_context } from "@/app/GlobalDataShere/ContextProvider";
 import LogoName from "./Logo & Name/LogoName";
 import { RxHamburgerMenu } from "react-icons/rx";
 function NavbarMain() {
