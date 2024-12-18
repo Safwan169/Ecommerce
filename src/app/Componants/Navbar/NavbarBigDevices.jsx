@@ -10,6 +10,7 @@ import TopCategories from "./Top-Categories/TopCategories";
 import { my_context } from "@/app/GlobalDataShere/ContextProvider";
 import LogoName from "./Logo & Name/LogoName";
 import { RxHamburgerMenu } from "react-icons/rx";
+import Link from "next/link";
 function NavbarMain() {
   const [isLoad, setIsload] = useState(false);
   const { setCart, cart, wishListData, leftSliderData, setLeftSliderData } =
@@ -158,14 +159,14 @@ function NavbarMain() {
                 <span>sign In</span>
               </div>
               <span>|</span>
-              <div className="flex relative cursor-pointer  hover:text-red-700 items-center gap-1 ">
+              <Link href={'/wishlist'} className="flex relative cursor-pointer  hover:text-red-700 items-center gap-1 ">
                 <FiHeart className="  cursor-pointer" />
                 <span>Wishlist</span>
 
                 <span className="absolute -top-2 left-2 bg-red-700 rounded-full text-xs  w-4 h-4 flex justify-center text-white">
                   {wishListData?.length || 0}
                 </span>
-              </div>
+              </Link >
             </div>
           </div>
 
@@ -199,7 +200,7 @@ function NavbarMain() {
               {/* Cart for big devices  */}
               <div
                 onClick={() => setCart(true)}
-                className=" hidden cursor-pointer md:w-[150px] lg:w-[150px] lg:text-[15px]  bg-red-700 py-3 px-4 font-semibold sm:flex justify-center items-center space-x-2"
+                className=" hidden cursor-pointer md:w-[150px] lg:w-[150px]  xl:w-[200px]  bg-red-700 py-3 px-2 font-semibold sm:flex justify-center items-center space-x-2"
               >
                 <FiShoppingCart size={20} />
                 <span>

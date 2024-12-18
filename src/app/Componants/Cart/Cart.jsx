@@ -14,12 +14,17 @@ import CartSliderContainer from "./CartSliderContant";
 import { RxCross1 } from "react-icons/rx";
 
 
-import ModalForCartWatchButton from "../card/ModalForCartWatchButton"
+import Subtotal from "./Subtotal"
+import ModalForCartWatchButton from "../card/ModalForCartWatchButton";
+import Link from "next/link";
 
-export default function Example() {
+export default function Cart() {
   //   const [open, setOpen] = useState(true)
 
   const { openCart, setCart, cart } = useContext(my_context);
+
+  const amount =cart?.cartItems?.reduce((acc,current)=>acc+current?.price ,0).toFixed(0) || 0;
+
   return (
     <Dialog open={openCart} onClose={setCart} className="relative z-50">
       <DialogBackdrop
@@ -64,17 +69,47 @@ export default function Example() {
                 <div className="relative mt-6 flex-1 px-4 sm:px-6">
                   {/*slider cart container  */}
 
-                  {cart?.cartItems?.map((data, index) => (
+                  {cart?.cartItems?.length>0?cart?.cartItems?.map((data, index) => (
                     <CartSliderContainer key={index} data={data} />
-                  ))}
+                  )):<div class="flex flex-col items-center justify-center h-[600px] space-y-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-12 h-12 text-gray-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3 3h2l.3 2M7 13h10l4-8H6.3M7 13l-1.4 4.4a2 2 0 001.9 2.6h9.1a2 2 0 001.9-2.6L17 13M7 13h10m-5 8a1 1 0 100-2 1 1 0 000 2m6 0a1 1 0 100-2 1 1 0 000 2"
+                    />
+                  </svg>
+                
+                  <p class="text-lg font-semibold text-gray-800">Your cart is empty</p>
+                
+                  <Link
+                    href="/collection"
+                    class="px-6 py-2 text-white bg-red-700  hover:bg-red-800 transition duration-300"
+                  >
+                    CONTINUE SHOPPING
+                  </Link>
                 </div>
+                }
+                </div>
+
+                {
+                  cart?.cartItems?.length>0?<Subtotal data={amount}/>:''
+                }
               </div>
+              
             </DialogPanel>
           </div>
         </div>
       </div>
 
-      <ModalForCartWatchButton/>
+      <ModalForCartWatchButton />
     </Dialog>
   );
 }

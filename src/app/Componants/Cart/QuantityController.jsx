@@ -35,7 +35,7 @@ const QuantityController = ({ data }) => {
   })
   return (
     <div className=" items-center flex">
-      <p className="flex border justify-evenly w-24 mt-3  font-bold hover:border-red-500  rounded-md">
+      <p className="flex  justify-evenly w-24 mt-3  font-bold hover:border-red-700 border border-slate-200">
         <span
           onClick={handleDecrease}
           className="cursor-pointer p-2 bg-slate-100"
@@ -51,7 +51,7 @@ const QuantityController = ({ data }) => {
         </span>
       </p>
 
-      <div onClick={()=>handelDelete(data?.product)} className=" p-2 mt-3 cursor-pointer text-gray-600">
+      <div onClick={()=>handelDelete(data?.id)} className=" p-2 mt-3 cursor-pointer hover:text-red-800 duration-300 text-gray-600">
         <RiDeleteBin5Line size={16} />
       </div>
     </div>

@@ -4,6 +4,9 @@ import "./globals.css";
 import Footer from "@/app/Componants/Footer";
 import { Poppins } from "next/font/google";
 import ContextProvider from "@/app/GlobalDataShere/ContextProvider";
+import ModalForCartWatchButton from "../Componants/card/ModalForCartWatchButton";
+
+import CartMain from "../Componants/Cart/CartMain";
 const poppins = Poppins({
   subsets: ["latin"], // Specify subsets
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -35,7 +38,11 @@ export default function RootLayout({
       <ContextProvider>
         <body className={`${poppins.variable} antialiased `}>
           <NavbarMain />
-          <div className="lg:w-full lg:px-2 xl:w-[1400px] z-10 mx-auto">{children}</div>
+          <div className="lg:w-full lg:px-2 xl:w-[1400px] z-10 mx-auto">
+            {children}
+          </div>
+          <ModalForCartWatchButton />
+          <CartMain />
           <Footer />
         </body>
       </ContextProvider>
