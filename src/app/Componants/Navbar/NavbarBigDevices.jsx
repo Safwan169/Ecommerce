@@ -15,7 +15,7 @@ function NavbarMain() {
   const [isLoad, setIsload] = useState(false);
   const { setCart, cart, wishListData, leftSliderData, setLeftSliderData } =
     useContext(my_context);
-  console.log(leftSliderData, "here is the navbar data");
+  // console.log(leftSliderData, "here is the navbar data");
   const total =
     cart?.cartItems
       ?.reduce((acc, current) => acc + current?.price, 0)

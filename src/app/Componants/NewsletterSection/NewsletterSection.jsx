@@ -26,7 +26,7 @@ const NewsletterSection = () => {
         {/* Right Section */}
         <div className="lg:w-1/2 mb-16 space-y-7 md:px-20 w-full lg:p-6  lg:px-14 md:w-full">
           <h3 className="lg:text-3xl text-[16px] md:text-[20px] text-center  font-semibold text-gray-800 mb-4">
-            Sign up for newsletter
+            Sign up for Newsletter
           </h3>
           <div className="flex  flex-col px-2 sm:px-0 lg:flex-row md:flex-row items-center gap-3">
             <input
@@ -48,7 +48,7 @@ const NewsletterSection = () => {
                 href="#"
                 className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full text-gray-600 hover:bg-red-500 hover:text-white transition"
               >
-                <i className="fab fa-facebook-f"></i>
+                <i className="fab fa-facebook-f "></i>
               </a>
               <a
                 href="#"

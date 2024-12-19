@@ -11,7 +11,7 @@ import Link from "next/link";
 export default function FixedBottomNavigation() {
 
     const {wishListData}=    useContext(my_context);
-    console.log(wishListData);
+    // console.log(wishListData);
 
   return (
     <div className="z-50 flex fixed  bottom-0 pt-3 text-gray-500 justify-evenly bg-white w-full">

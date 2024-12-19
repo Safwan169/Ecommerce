@@ -16,7 +16,7 @@ const TrendingCollectionCard = () => {
         const res = await axios.get("/api/CardData");
         setCardData(res.data.productsData);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        // console.error("Error fetching data:", error);
       } finally {
         setLoading(false);
       }

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Subtotal = ({data}) => {
@@ -31,7 +32,7 @@ const Subtotal = ({data}) => {
                 {/* Buttons */}
                 <div className="flex gap-4 mt-6">
                   <button className="w-1/2 bg-red-700 text-white py-2 font-semibold rounded-none hover:bg-red-800">
-                    VIEW CART
+                   <Link href={'/addcart'} > VIEW CART</Link>
                   </button>
                   <button
                     className="w-1/2 bg-gray-300 text-gray-500 py-2 font-semibold rounded-none cursor-not-allowed"

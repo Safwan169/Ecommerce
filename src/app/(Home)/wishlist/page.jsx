@@ -7,10 +7,11 @@ import ProductCard from "../../Componants/card/ProductCard";
 import Link from "next/link";
 import HeaderText from "../../Componants/HeaderText/HeaderText";
 import Breadcrumb from "../../Componants/Breadcrumb/Breadcrumb";
+import EmptyCardText from "../../Componants/Cart/Shared/EmptyCardText/EmptyCardText";
 
 const Page = () => {
   const { wishListData } = useContext(my_context);
-  console.log(wishListData, "here is the wish list data");
+  // console.log(wishListData, "here is the wish list data");
 
 
   return (
@@ -21,15 +22,7 @@ const Page = () => {
 
     </div>
       {wishListData?.length < 1 ? (
-        <div className=" min-h-60 text-xl  items-center flex-col sm:flex-row flex justify-center gap-1">
-          <span>Your wishlist is empty</span>{" "}
-          <Link
-            href={"/allProducts"}
-            className="border-b hover:text-red-700 hover:border-red-700 duration-300 border-black "
-          >
-            return to store
-          </Link>
-        </div>
+       <EmptyCardText cartName={'Wishlist'}/>
       ) : (
         <div className=" text-center min-h-96">
           <HeaderText text={"Treanding Collection"} />

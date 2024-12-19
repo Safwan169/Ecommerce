@@ -11,8 +11,8 @@ const CardButton = ({ data }) => {
   // for know is this card is added to the wishlist or not 
   const isWishListExists=wishListData?.some((item)=>(item?.id == data?.id))
 
-console.log(data,"her is the data form card ")
-console.log(isWishListExists,'is there available wishlist',data?.id,wishListData)
+// console.log(data,"her is the data form card ")
+// console.log(isWishListExists,'is there available wishlist',data?.id,wishListData)
   const buttonData = [
     { id: 1, icon: isWishListExists ? <FaHeart size={20} /> : <FaRegHeart size={20}/>, action: "Add to Wishlist" },
     { id: 2, icon: <FaRegEye size={20} />, action: "View Details" },

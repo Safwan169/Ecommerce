@@ -22,7 +22,7 @@ const QuantityController = ({ data }) => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
 
-      const cart = data?.quantity + 1;
+      const cart = data?.quantity - 1;
       addItemToCart({ ...data, quantity: cart });
     }
   };
@@ -42,7 +42,7 @@ const QuantityController = ({ data }) => {
         >
           --
         </span>
-        <span className="p-2">{quantity}</span>
+        <span className="p-2 text-gray-400">{quantity}</span>
         <span
           onClick={handleIncrease}
           className="cursor-pointer p-2 bg-slate-100"
