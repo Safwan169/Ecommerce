@@ -21,7 +21,7 @@ const Page = () => {
 
     </div>
       {wishListData?.length < 1 ? (
-        <div className=" min-h-48 text-xl  items-center flex-col sm:flex-row flex justify-center gap-1">
+        <div className=" min-h-60 text-xl  items-center flex-col sm:flex-row flex justify-center gap-1">
           <span>Your wishlist is empty</span>{" "}
           <Link
             href={"/allProducts"}
