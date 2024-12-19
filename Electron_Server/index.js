@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 5000
+const port = process.env.PORT || 5000;
 
 require('dotenv').config()
 
@@ -24,7 +24,7 @@ async function run() {
     await client.connect();
     // Send a ping to confirm a successful connection
    const database= await client.db("Electron")
-   
+
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();
