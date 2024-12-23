@@ -38,7 +38,10 @@ export default function ModalForCartWatchButton() {
   // };
 
   useEffect(() => {
-    openModal ? document.getElementById("my_modal_5").showModal() : "";
+    const modal = document.getElementById("my_modal_5");
+    if (openModal && modal) {
+      modal.showModal();
+    }
   }, [openModal]);
 
   return (
