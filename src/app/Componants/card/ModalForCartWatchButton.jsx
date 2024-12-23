@@ -1,26 +1,23 @@
 "use client";
 import * as React from "react";
 
-import Slide from "@mui/material/Slide";
+// import Slide from "@mui/material/Slide";
 import { my_context } from "@/app/GlobalDataShere/ContextProvider";
-import { RxCross1 } from "react-icons/rx";
-import { Rating, ThinStar } from "@smastrom/react-rating";
+// import { RxCross1 } from "react-icons/rx";
+// import { Rating, ThinStar } from "@smastrom/react-rating";
 
 import { TbTruckDelivery } from "react-icons/tb";
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  bgcolor: "background.paper",
-  boxShadow: 24,
-  p: 4,
-};
+// const style = {
+//   position: "absolute",
+//   top: "50%",
+//   left: "50%",
+//   transform: "translate(-50%, -50%)",
+//   bgcolor: "background.paper",
+//   boxShadow: 24,
+//   p: 4,
+// };
 export default function ModalForCartWatchButton() {
   // const [open, setOpen] = React.useState(false);
 
@@ -34,11 +31,11 @@ export default function ModalForCartWatchButton() {
     setOpenModal(false);
   };
 
-  const myStyles = {
-    itemShapes: ThinStar,
-    activeFillColor: "#ffb700",
-    inactiveFillColor: "#fbf1a9",
-  };
+  // const myStyles = {
+  //   itemShapes: ThinStar,
+  //   activeFillColor: "#ffb700",
+  //   inactiveFillColor: "#fbf1a9",
+  // };
 
   React.useEffect(() => {
     openModal ? document.getElementById("my_modal_5").showModal() : "";

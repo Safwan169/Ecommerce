@@ -6,7 +6,7 @@ const SearchAllProducts = () => {
     const {slug}=useParams()
     console.log(slug,'search bar text')
   return (
-    <div>
+    <div className="min-h-80">
       
     </div>
   )

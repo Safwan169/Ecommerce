@@ -7,7 +7,7 @@ import ContextProvider from "@/app/GlobalDataShere/ContextProvider";
 import ModalForCartWatchButton from "../Componants/card/ModalForCartWatchButton";
 
 import CartMain from "../Componants/Cart/CartMain";
-import Categories from "../Componants/Navbar/Top-Categories/Categories";
+// import Categories from "../Componants/Navbar/Top-Categories/Categories";
 const poppins = Poppins({
   subsets: ["latin"], // Specify subsets
   weight: ["400", "500", "600", "700", "800", "900"],
