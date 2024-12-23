@@ -1,8 +1,8 @@
 "use client";
-import * as React from "react";
 
 // import Slide from "@mui/material/Slide";
 import { my_context } from "@/app/GlobalDataShere/ContextProvider";
+import { useContext, useEffect } from "react";
 // import { RxCross1 } from "react-icons/rx";
 // import { Rating, ThinStar } from "@smastrom/react-rating";
 
@@ -21,7 +21,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 export default function ModalForCartWatchButton() {
   // const [open, setOpen] = React.useState(false);
 
-  const { modalData, setOpenModal, openModal } = React.useContext(my_context);
+  const { modalData, setOpenModal, openModal } = useContext(my_context);
   // console.log(modalData);
   // const handleClickOpen = () => {
   //   setOpenModal(true);
@@ -37,7 +37,7 @@ export default function ModalForCartWatchButton() {
   //   inactiveFillColor: "#fbf1a9",
   // };
 
-  React.useEffect(() => {
+  useEffect(() => {
     openModal ? document.getElementById("my_modal_5").showModal() : "";
   }, [openModal]);
 
