@@ -7,6 +7,7 @@ import ContextProvider from "@/app/GlobalDataShere/ContextProvider";
 import ModalForCartWatchButton from "../Componants/card/ModalForCartWatchButton";
 
 import CartMain from "../Componants/Cart/CartMain";
+import Categories from "../Componants/Navbar/Top-Categories/Categories";
 const poppins = Poppins({
   subsets: ["latin"], // Specify subsets
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -38,6 +39,9 @@ export default function RootLayout({
       <ContextProvider>
         <body className={`${poppins.variable} antialiased `}>
           <NavbarMain />
+          {/* <div className="absolute  -top-5 w-[255px] hidden lg:block md:hidden z-50 bg-white">
+          <Categories />
+        </div> */}
           <div className="lg:w-full lg:px-2 xl:w-[1400px] z-10 mx-auto">
             {children}
           </div>

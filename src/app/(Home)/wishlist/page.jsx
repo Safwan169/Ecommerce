@@ -21,7 +21,7 @@ const Page = () => {
         <EmptyCardText cartName={"Wishlist"} />
       ) : (
         <div className=" text-center min-h-96">
-          <HeaderText text={"Treanding Collection"} />
+          <HeaderText text={"Your wishlist"} />
           <div className="flex-wrap flex justify-center">
             {wishListData?.map((datas, index) => (
               <ProductCard key={index} data={datas} />

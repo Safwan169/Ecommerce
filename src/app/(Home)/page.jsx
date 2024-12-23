@@ -23,7 +23,7 @@ export default function Home() {
         <CartMain />
         <ModalForCartWatchButton/>
 
-        <div className="absolute  -top-5 w-[255px] hidden lg:block md:hidden z-50 bg-white">
+        <div className="absolute  -top-5 w-[200px] hidden lg:block md:hidden z-50 bg-white">
           <Categories />
         </div>
       </div>
