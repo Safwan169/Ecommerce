@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-const Subtotal = ({data}) => {
+const Subtotal = ({data,setCart}) => {
   return (
     <div className="p-4 absolute bottom-0 w-full bg-white border rounded-none shadow-sm max-w-md mx-auto">
                 {/* Subtotal Section */}
@@ -31,9 +31,12 @@ const Subtotal = ({data}) => {
 
                 {/* Buttons */}
                 <div className="flex gap-4 mt-6">
-                  <button className="w-1/2 bg-red-700 text-white py-2 font-semibold rounded-none hover:bg-red-800">
-                   <Link href={'/addcart'} > VIEW CART</Link>
-                  </button>
+                   <Link  onClick={()=>setCart(false)}   href={'/addcart'} className='w-1/2 bg-red-700 text-white py-2  hover:bg-gray-800 duration-300 text-center   font-semibold rounded-none' >
+                  {/* <button  onClick={()=>setCart(false)}  className="border border-green-400"> */}
+           
+                 VIEW CART
+                  {/* </button> */}
+                   </Link>
                   <button
                     className="w-1/2 bg-gray-300 text-gray-500 py-2 font-semibold rounded-none cursor-not-allowed"
                     disabled

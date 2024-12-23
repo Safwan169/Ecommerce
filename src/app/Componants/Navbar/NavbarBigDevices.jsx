@@ -11,6 +11,7 @@ import { my_context } from "@/app/GlobalDataShere/ContextProvider";
 import LogoName from "./Logo & Name/LogoName";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 function NavbarMain() {
   const [isLoad, setIsload] = useState(false);
   const { setCart, cart, wishListData, leftSliderData, setLeftSliderData } =
@@ -56,6 +57,19 @@ function NavbarMain() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+const navigate = useRouter()
+
+// function for search bar for product search 
+const handleSearch=e=>{
+  e.preventDefault()
+  const searchValue=e.target.search.value
+  console.log (searchValue,'here is the value for search bar for product search',navigate)
+  navigate.push(`shop/${searchValue}`)
+
+}
+
+
 
   return (
     <div className="w-full transition-transform   bg-white duration-1000 z-50 sf ">
@@ -128,9 +142,9 @@ function NavbarMain() {
             {/* Main Links */}
             <nav className="hidden md:flex space-x-8  text-gray-700">
               <div className="relative group">
-                <a href="#" className="hover:text-red-700">
+                <Link href="/" className="hover:text-red-700">
                   Home
-                </a>
+                </Link>
                 {/* Dropdown for Home */}
                 <div className="absolute left-0 mt-1 hidden group-hover:block bg-white border border-gray-200 rounded shadow-lg">
                   {/* Dropdown items go here */}
@@ -186,9 +200,12 @@ function NavbarMain() {
               </div>
 
               {/* Search Bar */}
+              <form onSubmit={handleSearch} className="flex-grow flex">
+
               <div className="flex flex-grow p-2 sm:p-0 relative">
                 <input
                   type="text"
+                  name="search"
                   placeholder="Find our product"
                   className="w-full py-2 px-4  sm:rounded-l-md  text-gray-700"
                 />
@@ -196,6 +213,7 @@ function NavbarMain() {
                   <FiSearch size={16} />
                 </button>
               </div>
+              </form>
 
               {/* Cart for big devices  */}
               <div

@@ -12,6 +12,7 @@ const AddCartPage = dynamic(
 const AddCart = () => {
   return (
     <div className="min-h-96">
+      
       <AddCartPage />
     </div>
   );

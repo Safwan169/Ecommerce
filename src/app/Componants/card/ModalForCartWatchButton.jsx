@@ -133,7 +133,7 @@ export default function ModalForCartWatchButton() {
                   </button>
                 </div>
 
-                <div className="flex items-center gap-2 mt-5">
+                <div className="flex items-center gap-2 mt-10">
                   <span>
                     <TbTruckDelivery size={20} className="text-red-700" />
                   </span>
@@ -143,24 +143,15 @@ export default function ModalForCartWatchButton() {
                   </span>
                 </div>
 
-                <div className="x2:block mt-2 hidden">
+                <div className="x2:block mt-5 hidden">
                   <div className="flex space-x-4 mt-4 lg:mt-0">
                     {/* Payment Icons */}
-                   <div className="w-16 justify-center flex p-1 bg-white h-14">
-
-                   <img
-                      src="/bkash.png"
-                      alt="Visa"
-                      className=""
-                    />
-                   </div>
-                  <div className="w-18 justify-center flex p-1 bg-white h-14">
-                  <img
-                      src="/nogad.svg"
-                      alt="Paypal"
-                      className=""
-                    />
-                  </div>
+                    <div className="w-16 justify-center  object-cover flex p-1 bg-white h-14">
+                      <img src="/bkash.png" alt="Visa" className=" " />
+                    </div>
+                    <div className="w-18 justify-center flex p-1 bg-white h-14">
+                      <img src="/nogad.svg" alt="Paypal" className="" />
+                    </div>
                     <div className=" w-14 h-14   ">
                       <img
                         src="/Rocket.png"
@@ -169,12 +160,11 @@ export default function ModalForCartWatchButton() {
                       />
                     </div>
                     <div className="w-14 justify-center flex p-1 bg-white h-12 mt-1">
-
-                    <img
-                      src="/duchBangla.png"
-                      alt="American Express"
-                      className=""
-                    />
+                      <img
+                        src="/duchBangla.png"
+                        alt="American Express"
+                        className=""
+                      />
                     </div>
                   </div>
                 </div>

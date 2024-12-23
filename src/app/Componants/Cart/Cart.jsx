@@ -100,7 +100,7 @@ export default function Cart() {
                 </div>
 
                 {
-                  cart?.cartItems?.length>0?<Subtotal data={amount}/>:''
+                  cart?.cartItems?.length>0?<Subtotal setCart data={amount}/>:''
                 }
               </div>
               
