@@ -13,7 +13,7 @@ import { my_context } from "@/app/GlobalDataShere/ContextProvider";
 import CartSliderContainer from "./CartSliderContant";
 import { RxCross1 } from "react-icons/rx";
 
-
+import FreeShippingBar from './Shared/AddCartfPage/Shared/FreeShippingBar'
 import Subtotal from "./Subtotal"
 import ModalForCartWatchButton from "../card/ModalForCartWatchButton";
 import Link from "next/link";
@@ -23,7 +23,7 @@ export default function Cart() {
 
   const { openCart, setCart, cart } = useContext(my_context);
 
-  const amount =cart?.cartItems?.reduce((acc,current)=>acc+current?.price ,0).toFixed(0) || 0;
+  const amount =cart?.cartItems?.reduce((acc,current)=>acc+(current?.price)*current?.quantity ,0).toFixed(0) || 0;
 
   return (
     <Dialog open={openCart} onClose={setCart} className="relative z-50">
@@ -68,6 +68,8 @@ export default function Cart() {
 
                 <div className="relative mt-6 flex-1 px-4 sm:px-6">
                   {/*slider cart container  */}
+                 {cart?.cartItems?.length>0&& <FreeShippingBar amount={amount / 10} />} 
+
 
                   {cart?.cartItems?.length>0?cart?.cartItems?.map((data, index) => (
                     <CartSliderContainer key={index} data={data} />
