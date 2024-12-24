@@ -48,7 +48,7 @@ const [leftSliderData, setLeftSliderData] = useState(false);
     setWishListData(data);
   };
 
-  const addItemToWishlist = ({ id, name, image, brand, price }) => {
+  const addItemToWishlist = ({ id, name, image, brand, price,previousPrice,discount }) => {
 
     const item = {
       id,
@@ -56,7 +56,8 @@ const [leftSliderData, setLeftSliderData] = useState(false);
       image,
       brand,
       price,
-      
+      previousPrice,
+      discount      
     }
 
 
@@ -91,6 +92,8 @@ let wishlist
     brand,
     price,
     quantity = 1,
+    previousPice,
+    discount
   }) => {
     const item = {
       id,
@@ -99,6 +102,8 @@ let wishlist
       brand,
       price,
       quantity,
+      previousPice,
+      discount
     };
 
     // console.log(item);

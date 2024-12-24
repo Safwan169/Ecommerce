@@ -6,7 +6,7 @@ import { my_context } from "@/app/GlobalDataShere/ContextProvider";
 
 const CardButton = ({ data }) => {
   const { setModalData, setOpenModal, addItemToCart,addItemToWishlist,wishListData } = useContext(my_context);
-
+console.log(data,'this is for cart button ')
 
   // for know is this card is added to the wishlist or not 
   const isWishListExists=wishListData?.some((item)=>(item?.id == data?.id))
@@ -29,6 +29,9 @@ const CardButton = ({ data }) => {
         image: data.image,
         brand: data.brand,
         price: data.price,
+        previousPrice:data?.previousPrice,
+        discount:data?.discount
+
       });
       
     } else if (index === 2) {
@@ -43,6 +46,8 @@ const CardButton = ({ data }) => {
         image: data.image,
         brand: data.brand,
         price: data.price,
+        previousPrice:data?.previousPrice,
+        discount:data?.discount
       });
     }
     // console.log(addItemToCart,index)
@@ -51,7 +56,7 @@ const CardButton = ({ data }) => {
     <>
       {buttonData.map((button, index) => (
         <button
-          onClick={() => handleButton(button.id)}
+          onClick={() => handleButton(button?.id)}
           key={index}
           className={`bg-red-700 duration-300 text-white p-2  hover:bg-black  `}
           // here is styled
