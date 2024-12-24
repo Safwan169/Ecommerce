@@ -63,7 +63,7 @@ const AddCartPage = () => {
           </div>
           <div className="flex justify-between text-gray-700 mb-2">
             <span>Tax:</span>
-            <span>${tax}</span>
+            <span>${tax.toFixed(2)}</span>
           </div>
           <div className="flex justify-between text-gray-900 font-semibold text-lg mb-4">
             <span>Total:</span>

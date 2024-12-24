@@ -73,7 +73,7 @@ export default function Cart() {
 
                   {cart?.cartItems?.length>0?cart?.cartItems?.map((data, index) => (
                     <CartSliderContainer key={index} data={data} />
-                  )):<div class="flex flex-col items-center justify-center h-[600px] space-y-4">
+                  )):<div className="flex flex-col items-center justify-center h-[600px] space-y-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="w-12 h-12 text-gray-500"
@@ -92,7 +92,7 @@ export default function Cart() {
                   <p class="text-lg font-semibold text-gray-800">Your cart is empty</p>
                 
                   <Link
-                    href="/collection"
+                    href="/shop/all"
                     class="px-6 py-2 text-white bg-red-700  hover:bg-red-800 transition duration-300"
                   >
                     CONTINUE SHOPPING

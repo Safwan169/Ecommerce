@@ -17,7 +17,7 @@ const CardStructure = ({ data }) => {
               {data?.name}
             </p>
             <p className="text-red-700 font-bold text-sm md:text-base">
-              ${data?.price.toFixed(0)}
+              ${data?.price.toFixed(0)}.00
             </p>
             <p className="text-sm text-gray-500">Brand: {data?.brand}</p>
           </div>
@@ -32,7 +32,7 @@ const CardStructure = ({ data }) => {
 
           <div className="mt-2 text-center w-full md:text-right">
             <p className="text-red-700 font-bold text-base md:text-lg">
-              ${data?.quantity ? (data?.price * data?.quantity).toFixed(0) : data?.price.toFixed(0)}
+              ${data?.quantity ? (data?.price * data?.quantity).toFixed(0) : data?.price.toFixed(0)}.00
             </p>
           </div>
         </div>

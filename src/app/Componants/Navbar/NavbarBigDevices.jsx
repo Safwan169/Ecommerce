@@ -28,7 +28,7 @@ useEffect(() => {
   let cursor = 0;
 
   const handelNavbar = () => {
-    const data = window.pageYOffset || document.documentElement.scrollTop;
+    const data = window.pageYOffset || document.documentElement.scrollTop ;
     if (data < cursor) {
       document.querySelector(".sf").classList.add("top-0");
       document.querySelector(".sf").classList.add("fixed");
