@@ -2,12 +2,12 @@
 
 // import Slide from "@mui/material/Slide";
 import { my_context } from "@/app/GlobalDataShere/ContextProvider";
+import Link from "next/link";
 import { useContext, useEffect } from "react";
 // import { RxCross1 } from "react-icons/rx";
 // import { Rating, ThinStar } from "@smastrom/react-rating";
 
 import { TbTruckDelivery } from "react-icons/tb";
-
 
 // const style = {
 //   position: "absolute",
@@ -21,14 +21,36 @@ import { TbTruckDelivery } from "react-icons/tb";
 export default function ModalForCartWatchButton() {
   // const [open, setOpen] = React.useState(false);
 
-  const { modalData, setOpenModal, openModal } = useContext(my_context);
+  const { modalData, setOpenModal, addItemToCart,openModal, setCart } =
+    useContext(my_context);
   // console.log(modalData);
   // const handleClickOpen = () => {
   //   setOpenModal(true);
+
   // };
 
-  const handleClose = () => {
+  // const { openCart, , cart } = useContext(my_context);
+
+ const handleCardData=()=>{
+
+  addItemToCart({
+    id: modalData.id,
+    name: modalData.name,
+    image: modalData.image,
+    brand: modalData.brand,
+    price: modalData.price,
+  });
+ }
+
+  const handleClose = (text) => {
     setOpenModal(false);
+  if (text=='add') {
+
+    setCart(true)
+    handleCardData()
+    
+  }
+
   };
 
   // const myStyles = {
@@ -39,6 +61,8 @@ export default function ModalForCartWatchButton() {
 
   useEffect(() => {
     const modal = document.getElementById("my_modal_5");
+
+
     if (openModal && modal) {
       modal.showModal();
     }
@@ -119,12 +143,18 @@ export default function ModalForCartWatchButton() {
 
                 {/* Action Buttons */}
                 <div className="mt-6 flex gap-4">
-                  <button
-                    className="w-full py-3 bg-red-700 text-white font-medium  hover:bg-gray-800 transition-all"
-                    // onClick={() => alert("Added to Cart")}
-                  >
-                    Add to Cart
-                  </button>
+                  {/* <Link href={''} className="w-full"> */}
+                  <form method="dialog" className=" w-full">
+                    <button
+                      className="w-full py-3 bg-red-700 text-white font-medium  hover:bg-gray-800 transition-all"
+                      onClick={()=> handleClose('add')}
+                      // onClick={() => alert("Added to Cart")}
+                    >
+                      Add to Cart
+                    </button>
+                  </form>
+
+                  {/* </Link> */}
                   <button
                     className="w-full py-3 bg-red-700 text-white font-medium  hover:bg-gray-800 transition-all"
                     // onClick={() => alert("Buy It Now")}
