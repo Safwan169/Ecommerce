@@ -19,7 +19,7 @@ const SignIN = () => {
     <HeaderText text={'Sign In'} />
 
     <p className="text-center text-gray-500 text-sm mt-1">
-      Please login below account detail
+      Please Sign In below account detail
     </p>
     <div className="w-16 h-1 bg-red-600 mx-auto my-4"></div>
 
@@ -75,7 +75,7 @@ const SignIN = () => {
       </a>
     </div>
     <div className="mt-4 text-center text-sm">
-      <span className="text-gray-500">Don't have an account?</span>{" "}
+      <span className="text-gray-500">Don&apos;t have an account?</span>{" "}
       <Link
         href="/signup"
         className="font-medium text-red-700 hover:underline hover:text-red-800"

@@ -28,7 +28,7 @@ const ProductCard = ({data}) => {
         className="w-full object-cover"
       />
 
-      <div className=" bg-gray-800  p-1 px-3 text-xs absolute text-white top-1 right-1">
+      <div className=" bg-gray-800  p-1 px-3 text-xs absolute text-white top-1 right-5 sm:right-1">
         -{data?.discount}%
       </div>
       {/* Buttons (Hidden by default, shown on hover for this card only) */}

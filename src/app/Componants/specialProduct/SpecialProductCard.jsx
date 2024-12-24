@@ -12,8 +12,9 @@ const SpecialProductCard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("/api/CardData");
-        setCardData(res.data.productsData);
+        const res = await axios.get("http://localhost:5000/CardData");
+        setCardData(res.data.products);
+        // console.log()
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -27,9 +28,9 @@ const SpecialProductCard = () => {
 
   return (
     <div className="flex flex-wrap">
-      {cardData.map((item) => (
+      {/* {cardData?.map((item) => (
         <ProductCard key={item.id} data={item} />
-      ))}
+      ))} */}
     </div>
   );
 };
