@@ -2,69 +2,51 @@
 
 // import Slide from "@mui/material/Slide";
 import { my_context } from "@/app/GlobalDataShere/ContextProvider";
-import Link from "next/link";
 import { useContext, useEffect } from "react";
-// import { RxCross1 } from "react-icons/rx";
-// import { Rating, ThinStar } from "@smastrom/react-rating";
+import { Rating, ThinStar } from "@smastrom/react-rating";
 
 import { TbTruckDelivery } from "react-icons/tb";
+import "@smastrom/react-rating/style.css"; // CSS ফাইল ইম্পোর্ট
 
-// const style = {
-//   position: "absolute",
-//   top: "50%",
-//   left: "50%",
-//   transform: "translate(-50%, -50%)",
-//   bgcolor: "background.paper",
-//   boxShadow: 24,
-//   p: 4,
-// };
 export default function ModalForCartWatchButton() {
-  // const [open, setOpen] = React.useState(false);
-
-  const { modalData, setOpenModal, addItemToCart,openModal, setCart } =
+  const { modalData, setOpenModal, addItemToCart, openModal, setCart } =
     useContext(my_context);
-  // console.log(modalData);
-  // const handleClickOpen = () => {
-  //   setOpenModal(true);
 
-  // };
-
-  // const { openCart, , cart } = useContext(my_context);
-
- const handleCardData=()=>{
-
-  addItemToCart({
-    id: modalData.id,
-    name: modalData.name,
-    image: modalData.image,
-    brand: modalData.brand,
-    price: modalData.price,
-  });
- }
-
-  const handleClose = (text) => {
-    setOpenModal(false);
-  if (text=='add') {
-
-    setCart(true)
-    handleCardData()
-    
-  }
-
+  const myStyles = {
+    itemShapes: ThinStar,
+    activeFillColor: "#ffb700",
+    inactiveFillColor: "#fbf1a9",
   };
 
-  // const myStyles = {
-  //   itemShapes: ThinStar,
-  //   activeFillColor: "#ffb700",
-  //   inactiveFillColor: "#fbf1a9",
-  // };
+  const handleCardData = () => {
+    // Add data to the cart when clicking on Add Cart button
+    addItemToCart({
+      id: modalData.id,
+      name: modalData.name,
+      image: modalData.image,
+      brand: modalData.brand,
+      price: modalData.price,
+    });
+  };
 
+  const handleClose = (text) => {
+    // Close modal and add data to the cart when clicking on Add Cart button
+    setOpenModal(false);
+    if (text === "add") {
+      setCart(true);
+      handleCardData();
+    }
+  };
+
+  // Ensure the modal is controlled by `openModal`
   useEffect(() => {
     const modal = document.getElementById("my_modal_5");
-
-
-    if (openModal && modal) {
-      modal.showModal();
+    if (modal) {
+      if (openModal) {
+        modal.showModal();
+      } else {
+        modal.close();
+      }
     }
   }, [openModal]);
 
@@ -74,11 +56,12 @@ export default function ModalForCartWatchButton() {
         id="my_modal_5"
         className="modal w-full lg:w-3/4 x1:w-[60%] h-fit"
       >
-        <form method="dialog" className="absolute right-5  top-3">
-          {/* if there is a button in form, it will close the modal */}
+        <form method="dialog" className="absolute right-5 top-3">
+          {/* Button to close the modal */}
           <button
+            type="button"
             className="text-gray-400 hover:text-gray-600"
-            onClick={handleClose}
+            onClick={() => setOpenModal(false)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -96,11 +79,11 @@ export default function ModalForCartWatchButton() {
             </svg>
           </button>
         </form>
-        <div className=" w-full h-full  p-6  bg-white  ">
+        <div className="w-full h-full p-6 bg-white">
           {/* Modal Content */}
-          <div className="flex flex-col  w-full md:flex-row lg:flex-row gap-6 mt-6">
+          <div className="flex flex-col w-full md:flex-row lg:flex-row gap-6 mt-6">
             {/* Product Image */}
-            <div className="w-full border-2 border-gray-200  lg:w-1/2 flex items-center justify-center">
+            <div className="w-full border-2 border-gray-200 lg:w-1/2 flex items-center justify-center">
               <img
                 src={modalData.image || "/images/placeholder.png"}
                 alt={modalData.name}
@@ -109,15 +92,15 @@ export default function ModalForCartWatchButton() {
             </div>
 
             {/* Product Details */}
-            <div className="w-full  lg:w-1/2">
+            <div className="w-full lg:w-1/2">
               {/* Modal Header */}
               <div className="flex items-center justify-between">
                 <h3 className="font-bold text-2xl text-gray-800">
                   {modalData.name}
                 </h3>
               </div>
-              <div className="mt-5 lg:mt-8 ">
-                {/* after name all card data  */}
+              <div className="mt-5 lg:mt-8">
+                {/* Product description */}
                 <p className="text-gray-700 leading-6">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Minus, laboriosam, nihil expedita omnis nemo accusantium iure
@@ -138,26 +121,31 @@ export default function ModalForCartWatchButton() {
                         ? `${modalData.stock} in stock`
                         : "Out of stock"}
                     </span>
+                    <span className="w-full flex mt-3 items-center gap-1 text-gray-800">
+                      <Rating
+                        itemStyles={myStyles}
+                        readOnly
+                        style={{ maxWidth: 100 }}
+                        value={modalData?.rating || 5}
+                      />
+                    </span>
                   </p>
                 </div>
 
                 {/* Action Buttons */}
                 <div className="mt-6 flex gap-4">
-                  {/* <Link href={''} className="w-full"> */}
-                  <form method="dialog" className=" w-full">
+                  <form method="dialog" className="w-full">
                     <button
-                      className="w-full py-3 bg-red-700 text-white font-medium  hover:bg-gray-800 transition-all"
-                      onClick={()=> handleClose('add')}
-                      // onClick={() => alert("Added to Cart")}
+                      type="button"
+                      className="w-full py-3 bg-red-700 text-white font-medium hover:bg-gray-800 transition-all"
+                      onClick={() => handleClose("add")}
                     >
                       Add to Cart
                     </button>
                   </form>
-
-                  {/* </Link> */}
                   <button
-                    className="w-full py-3 bg-red-700 text-white font-medium  hover:bg-gray-800 transition-all"
-                    // onClick={() => alert("Buy It Now")}
+                    type="button"
+                    className="w-full py-3 bg-red-700 text-white font-medium hover:bg-gray-800 transition-all"
                   >
                     Buy Now
                   </button>
@@ -167,26 +155,25 @@ export default function ModalForCartWatchButton() {
                   <span>
                     <TbTruckDelivery size={20} className="text-red-700" />
                   </span>
-                  <span className=" hover:text-red-700 duration-300">
-                    {" "}
-                    Item will be delivered on or before{" "}
+                  <span className="hover:text-red-700 duration-300">
+                    Item will be delivered on or before
                   </span>
                 </div>
 
                 <div className="x2:block mt-5 hidden">
                   <div className="flex space-x-4 mt-4 lg:mt-0">
                     {/* Payment Icons */}
-                    <div className="w-16 justify-center  object-cover flex p-1 bg-white h-14">
-                      <img src="/bkash.png" alt="Visa" className=" " />
+                    <div className="w-16 justify-center object-cover flex p-1 bg-white h-14">
+                      <img src="/bkash.png" alt="Visa" className="" />
                     </div>
                     <div className="w-18 justify-center flex p-1 bg-white h-14">
                       <img src="/nogad.svg" alt="Paypal" className="" />
                     </div>
-                    <div className=" w-14 h-14   ">
+                    <div className="w-14 h-14">
                       <img
                         src="/Rocket.png"
                         alt="Mastercard"
-                        className="  w-full "
+                        className="w-full"
                       />
                     </div>
                     <div className="w-14 justify-center flex p-1 bg-white h-12 mt-1">
