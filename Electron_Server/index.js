@@ -36,12 +36,38 @@ async function run () {
    
 
    
-  app.get("/CardData",async(req,res)=>{
+  app.get("/CardData/:id",async(req,res)=>{
 
-     const data = await productsData.find().toArray()
 
-     console.log(data,'this is the data')
-     const products =  data?.flatMap(d=>d.products)
+    const id =req.params.id
+    console.log(id)
+
+    let data
+    if (id ==0){
+
+      
+      data = await productsData.aggregate([
+      {$unwind:'$products'},
+      {$sort:{'products.add_date':-1}},
+      {
+        $project:{
+          products:'$products'
+        }
+      }
+     ]).toArray()
+
+    }
+    if(id==1){
+
+    }
+    if(id==2){
+
+
+    }
+
+
+    const products =  data?.flatMap(d=>d.products)
+    console.log(products,'this is the data')
 
     res.send({products})
 
