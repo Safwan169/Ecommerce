@@ -12,7 +12,7 @@ const SpecialProductCard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/specialProducts`);
+        const res = await axios.get(`https://ecommerce-rpcd.onrender.com/specialProducts`);
         setCardData(res.data.products);
         // console.log()
       } catch (error) {

@@ -19,7 +19,7 @@ const TrendingCollectionCard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/CardData/${trendingProduct}`);
+        const res = await axios.get(`https://ecommerce-rpcd.onrender.com/CardData/${trendingProduct}`);
         setCardData(res.data.products);
 
         console.log(res.data,'this is form next js server ')
