@@ -35,7 +35,7 @@ async function run() {
       const id = req.params.id;
       console.log(id);
 
-      let data;
+      let data
       if (id == 0) {
         // this is for new products section 
         data = await productsData
@@ -44,6 +44,7 @@ async function run() {
             { $sort: { "products.add_date": -1 } },
             {
               $project: {
+                _id:0,
                 products: "$products",
               },
             },
@@ -64,6 +65,7 @@ async function run() {
           { $sort: { "products.add_date": -1 } }, // Sort by add_date in descending order
           { 
             $project: { 
+              _id:0,
               products: "$products" // Project only the products field
             } 
           }
@@ -79,16 +81,64 @@ async function run() {
       }
       if (id == 2) {
 
+        // this is just for demo  purposes
+        data = await productsData
+        .aggregate([
+          { $unwind: "$products" },
+          { $sort: { "products.add_date": -1 } },
+          {
+            $project: {
+              _id:0,
+              products: "$products",
+            },
+          },
+        ])
+        .toArray();
+
         // this is for best seller button when payment is done then i add a field  which is sell product then i found the product which was the best seller product
       }
 
       const products = data?.flatMap((d) => d.products);
 
-      console.log(data,'this is the data for the products')
-      console.log(products, "this is the data");
+      // console.log(data,'this is the data for the products')
+      // console.log(products, "this is the data");
 
       res.send({ products });
     });
+
+
+
+
+
+
+    // this is for special product 
+    app.get("/specialProducts", async (req, res) => {
+      const data  = await productsData
+       .aggregate([
+          { $unwind: "$products" },
+         {
+          $sort:{"products.discount": -1 }
+
+         },
+          {
+            $project: {
+              _id: 0,
+              products: "$products",
+            },
+          },
+        ])
+       .toArray();
+       console.log(data,'special purposes')
+       
+       
+       const products =data.flatMap(d=>d.products)
+       console.log(products)
+
+       res.send({ products });
+       
+       });
+
+
   } finally {
     // Ensures that the client will close when you finish/error
     // await client.close();

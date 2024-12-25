@@ -37,7 +37,7 @@ const TrendingCollectionCard = () => {
   return (
     <div className="flex flex-wrap gap-5">
       {cardData.map((item) => (
-        <ProductCard key={item.id} data={item} />
+        <ProductCard key={item.id} button={trendingProduct}  data={item} />
       ))}
     </div>
   );

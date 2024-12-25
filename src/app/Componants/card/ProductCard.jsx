@@ -5,7 +5,7 @@ import { Rating, ThinStar } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css"; // CSS ফাইল ইম্পোর্ট
 
 
-const ProductCard = ({data}) => {
+const ProductCard = ({data,button}) => {
 
   // console.log(data,'from Product')
   // Button data array
@@ -29,7 +29,7 @@ const ProductCard = ({data}) => {
       />
 
       <div className=" bg-gray-800  p-1 px-3 text-xs absolute text-white top-1 right-5 sm:right-1">
-        -{data?.discount}%
+       {button==0?<span>New</span>:<span>{button==1?<span>Featured</span>:<span> -{data?.discount}%</span>}</span>}
       </div>
       {/* Buttons (Hidden by default, shown on hover for this card only) */}
       <div className="absolute inset-0 flex justify-center items-end space-x-3 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-10 transition-all duration-700">
