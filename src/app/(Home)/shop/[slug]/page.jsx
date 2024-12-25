@@ -1,25 +1,24 @@
-'use client'
+"use client";
 
-import axios from "axios"
-import { useParams } from "next/navigation"
-import { useEffect } from "react"
+import axios from "axios";
+import { useParams } from "next/navigation";
+import { useEffect } from "react";
 
 const SearchAllProducts = () => {
-    const {slug}=useParams()
-    console.log(slug,'search bar text')
+  const { slug } = useParams();
+  // console.log(slug,'search bar text')
 
-    useEffect(()=>{
+  useEffect(() => {
+    const func = async () => {
+      const res = await axios.get(
+        `http://localhost:5000/search?value=${slug}`
+      );
+      console.log(res.data, "this is for search bar");
+    };
+    func();
+  }, [slug]);
 
-      const data= axios.get(`http://localhost:5000/search?value=${slug}`)
+  return <div className="min-h-80"></div>;
+};
 
-    },[slug])
-
-
-  return (
-    <div className="min-h-80">
-      
-    </div>
-  )
-}
-
-export default SearchAllProducts
+export default SearchAllProducts;

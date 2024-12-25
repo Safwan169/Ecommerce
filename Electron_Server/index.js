@@ -7,7 +7,7 @@ require("dotenv").config();
 const cors = require("cors");
 app.use(
   cors({
-    origin: ["http://localhost:3000","https://electron-nu.vercel.app"],
+    origin: ["http://localhost:3000", "https://electron-nu.vercel.app"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     credentials: true,
   })
@@ -35,16 +35,16 @@ async function run() {
       const id = req.params.id;
       console.log(id);
 
-      let data
+      let data;
       if (id == 0) {
-        // this is for new products section 
+        // this is for new products section
         data = await productsData
           .aggregate([
             { $unwind: "$products" },
             { $sort: { "products.add_date": -1 } },
             {
               $project: {
-                _id:0,
+                _id: 0,
                 products: "$products",
               },
             },
@@ -52,48 +52,43 @@ async function run() {
           .toArray();
       }
       if (id == 1) {
+        // this is for featured products section
+        data = await productsData
+          .aggregate([
+            { $unwind: "$products" }, // Unwind the products array
+            {
+              $match: {
+                "products.isFeatured": "true", // Filter for isFeatured = true
+              },
+            },
+            { $sort: { "products.add_date": -1 } }, // Sort by add_date in descending order
+            {
+              $project: {
+                _id: 0,
+                products: "$products", // Project only the products field
+              },
+            },
+          ])
+          .toArray();
 
-        // this is for featured products section 
-         data = await productsData
-        .aggregate([
-          { $unwind: "$products" }, // Unwind the products array
-          { 
-            $match: { 
-              "products.isFeatured": "true" // Filter for isFeatured = true
-            } 
-          },
-          { $sort: { "products.add_date": -1 } }, // Sort by add_date in descending order
-          { 
-            $project: { 
-              _id:0,
-              products: "$products" // Project only the products field
-            } 
-          }
-        ])
-        .toArray();
-      
-      console.log(data);
-      
+        console.log(data);
 
         // console.log(da,"this is for featured products ")
-
-
       }
       if (id == 2) {
-
         // this is just for demo  purposes
         data = await productsData
-        .aggregate([
-          { $unwind: "$products" },
-          { $sort: { "products.add_date": -1 } },
-          {
-            $project: {
-              _id:0,
-              products: "$products",
+          .aggregate([
+            { $unwind: "$products" },
+            { $sort: { "products.add_date": -1 } },
+            {
+              $project: {
+                _id: 0,
+                products: "$products",
+              },
             },
-          },
-        ])
-        .toArray();
+          ])
+          .toArray();
 
         // this is for best seller button when payment is done then i add a field  which is sell product then i found the product which was the best seller product
       }
@@ -106,20 +101,14 @@ async function run() {
       res.send({ products });
     });
 
-
-
-
-
-
-    // this is for special product 
+    // this is for special product
     app.get("/specialProducts", async (req, res) => {
-      const data  = await productsData
-       .aggregate([
+      const data = await productsData
+        .aggregate([
           { $unwind: "$products" },
-         {
-          $sort:{"products.discount": -1 }
-
-         },
+          {
+            $sort: { "products.discount": -1 },
+          },
           {
             $project: {
               _id: 0,
@@ -127,52 +116,41 @@ async function run() {
             },
           },
         ])
-       .toArray();
+        .toArray();
       //  console.log(data,'special purposes')
-       
-       
-       const products =data.flatMap(d=>d.products)
-       console.log(products)
 
-       res.send({ products });
-       
-       });
+      const products = data.flatMap((d) => d.products);
+      console.log(products);
 
+      res.send({ products });
+    });
 
-      //  for search value 
-      app.get("/search", async (req, res) => {
-        const searchValue = req.query.value;
-        console.log(searchValue, "search value");
+    //  for search value
+    app.get("/search", async (req, res) => {
+      const searchValue = req.query.value;
+      console.log(searchValue, "search value");
 
-let data
-        if (searchValue=='all'){
+      let data;
+      if (searchValue == "all") {
+        data = await productsData.find().toArray();
+      } else {
+        const query = {
+          $or: [
+            { Category: { $regex: searchValue, $options: "i" } },
+            { "products.name": { $regex: searchValue, $options: "i" } },
+            { "products.brand": { $regex: searchValue, $options: "i" } },
+          ],
+        };
 
+        data = await productsData.find(query).toArray();
 
-           data= await productsData.find().toArray();
+        // console.log(data,'this is from search section ')
+      }
 
-
-        }
-        else{
-          const query={$or:[{Category:{$regex:searchValue,$options:'i'}},
-            {'products.name':{$regex:searchValue,$options:'i'}},
-            {'products.brand':{$regex:searchValue,$options:'i'}}
-          ]}
-
-          
-
-          data=await productsData.find(query).toArray();
-
-          // console.log(data,'this is from search section ')
-        } 
-        
-        const products=data.flatMap(d=>d.products)
-        console.log(products)
-
-
-
-
-      })
-
+      const products = data?.flatMap((d) => d?.products);
+      console.log(products);
+      res.send(products);
+    });
   } finally {
     // Ensures that the client will close when you finish/error
     // await client.close();

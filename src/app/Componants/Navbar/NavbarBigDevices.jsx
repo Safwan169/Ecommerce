@@ -14,7 +14,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 function NavbarMain() {
   const [isLoad, setIsload] = useState(false);
-  const { setCart, cart, wishListData, leftSliderData, setLeftSliderData,setSearchText} = useContext(my_context);
+  const { setCart, cart, wishListData, leftSliderData, setLeftSliderData} = useContext(my_context);
   // console.log(leftSliderData, "here is the navbar data");
   const total =
     cart?.cartItems
@@ -61,7 +61,7 @@ const handleSearch=e=>{
   const searchValue=e.target.search.value
   console.log (searchValue,'here is the value for search bar for product search',navigate)
 
-  navigate.push(`shop/${searchValue}`)
+  navigate.push(`/shop/${searchValue||'all'}`)
 
 }
 
