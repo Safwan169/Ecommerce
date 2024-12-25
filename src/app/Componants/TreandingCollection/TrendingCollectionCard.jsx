@@ -30,7 +30,7 @@ const TrendingCollectionCard = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [trendingProduct]);
 
   if (loading) return <Loading/>
 
