@@ -61,7 +61,7 @@ const handleSearch=e=>{
   const searchValue=e.target.search.value
   console.log (searchValue,'here is the value for search bar for product search',navigate)
 
-  navigate.push(`/shop/${searchValue||'all'}`)
+  navigate.push(`/shop/${searchValue||'Products'}`)
 
 }
 

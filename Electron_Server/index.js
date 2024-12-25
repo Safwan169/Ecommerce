@@ -131,7 +131,7 @@ async function run() {
       console.log(searchValue, "search value");
 
       let data;
-      if (searchValue == "all") {
+      if (searchValue == "Products") {
         data = await productsData.find().toArray();
       } else {
         const query = {
@@ -142,10 +142,11 @@ async function run() {
           ],
         };
 
-        data = await productsData.find(query).toArray();
+        data = await productsData.find(query).toArray() 
 
         // console.log(data,'this is from search section ')
       }
+
 
       const products = data?.flatMap((d) => d?.products);
       console.log(products);
