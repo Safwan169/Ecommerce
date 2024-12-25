@@ -19,6 +19,7 @@ const TrendingCollectionCard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);  // for loading animation
         const res = await axios.get(`https://ecommerce-rpcd.onrender.com/CardData/${trendingProduct}`);
         setCardData(res.data.products);
 
@@ -26,7 +27,7 @@ const TrendingCollectionCard = () => {
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
-        setLoading(false);
+        setLoading(false); 
       }
     };
     fetchData();

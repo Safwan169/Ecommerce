@@ -128,7 +128,7 @@ async function run() {
           },
         ])
        .toArray();
-       console.log(data,'special purposes')
+      //  console.log(data,'special purposes')
        
        
        const products =data.flatMap(d=>d.products)
@@ -138,6 +138,40 @@ async function run() {
        
        });
 
+
+      //  for search value 
+      app.get("/search", async (req, res) => {
+        const searchValue = req.query.value;
+        console.log(searchValue, "search value");
+
+let data
+        if (searchValue=='all'){
+
+
+           data= await productsData.find().toArray();
+
+
+        }
+        else{
+          const query={$or:[{Category:{$regex:searchValue,$options:'i'}},
+            {'products.name':{$regex:searchValue,$options:'i'}},
+            {'products.brand':{$regex:searchValue,$options:'i'}}
+          ]}
+
+          
+
+          data=await productsData.find(query).toArray();
+
+          // console.log(data,'this is from search section ')
+        } 
+        
+        const products=data.flatMap(d=>d.products)
+        console.log(products)
+
+
+
+
+      })
 
   } finally {
     // Ensures that the client will close when you finish/error

@@ -25,6 +25,10 @@ const ContextProvider = ({ children }) => {
 
 //for control mobile devices navbar left slider 
 const [leftSliderData, setLeftSliderData] = useState(false);
+
+
+// for manage search input and search results
+const [searchText,setSearchText]=useState();
  
 
   useEffect(() => {
@@ -155,6 +159,8 @@ let wishlist
     wishListData,
     leftSliderData,
     setLeftSliderData,
+    searchText,
+    setSearchText,
   };
   // console.log(trendingProduct)
   return <my_context.Provider value={data}>{children}</my_context.Provider>;
