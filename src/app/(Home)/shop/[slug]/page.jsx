@@ -11,12 +11,12 @@ const SearchAllProducts = () => {
   const { slug } = useParams();
   // console.log(slug,'search bar text')
 const [searchData,setSearchData]=useState()
-const [loading,setLoading]=useState(true)
+const [loading,setLoading]=useState()
   useEffect(() => {
     const func = async () => {
       setLoading(true);
       const res = await axios.get(
-        `http://localhost:5000/search?value=${slug}`
+        `https://ecommerce-rpcd.onrender.com/search?value=${slug}`
       );
       setSearchData(res?.data)
       setInterval(()=>setLoading(false), 500
@@ -34,7 +34,7 @@ const [loading,setLoading]=useState(true)
       <Breadcrumb text={slug} />
     </div>
 
-    <div className="flex flex-wrap mt-5 justify-center border min-h-96 items-center sm:mt-10">
+    <div className="flex flex-wrap mt-5 justify-center  min-h-96 items-center sm:mt-10">
 
       {
 

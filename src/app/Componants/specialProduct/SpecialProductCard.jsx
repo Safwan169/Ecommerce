@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "../card/ProductCard";
 import Loading from "../Loading/Loading"
 const SpecialProductCard = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState();
  
 
   const [cardData, setCardData] = useState([]);
