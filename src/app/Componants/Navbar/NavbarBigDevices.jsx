@@ -15,13 +15,11 @@ import { useRouter } from "next/navigation";
 function NavbarMain() {
   const [isLoad, setIsload] = useState(false);
   const { setCart, cart, wishListData, leftSliderData, setLeftSliderData} = useContext(my_context);
-  // console.log(leftSliderData, "here is the navbar data");
   const total =
     cart?.cartItems
       ?.reduce((acc, current) => acc + (current?.price)*current?.quantity, 0)
       .toFixed(0) || 0;
 
-  //  console.log(cart.cartItems,"here is the cart form local storage ")
 useEffect(() => {
   AOS.init({ duration: 1000 }); // AOS animation initialization
   let cursor = 0;
