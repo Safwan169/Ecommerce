@@ -16,7 +16,7 @@ const [loading,setLoading]=useState()
     const func = async () => {
       setLoading(true);
       const res = await axios.get(
-        `http://localhost:5000/search?value=${slug}`
+        `https://electron-server-eta.vercel.app/search?value=${slug}`
       );
       setSearchData(res?.data)
       setInterval(()=>setLoading(false), 500

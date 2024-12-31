@@ -12,7 +12,7 @@ const SpecialProductCard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`https://ecommerce-rpcd.onrender.com/specialProducts`);
+        const res = await axios.get(`https://electron-server-eta.vercel.app/specialProducts`);
         setCardData(res.data.products);
         // console.log()
       } catch (error) {
