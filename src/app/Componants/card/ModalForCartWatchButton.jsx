@@ -101,20 +101,20 @@ export default function ModalForCartWatchButton() {
               </div>
               <div className="mt-5 lg:mt-8">
                 {/* Product description */}
-                <p className="text-gray-700 leading-6">
+                <span className="text-gray-700 leading-6">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Minus, laboriosam, nihil expedita omnis nemo accusantium iure
                   eveniet veritatis officia aliquid laudantium possimus magni
                   tenetur vel nesciunt dicta molestiae odio. Quibusdam!
-                </p>
+                </span>
 
                 {/* Product Price and Stock */}
                 <div className="mt-4">
-                  <p className="text-xl font-semibold text-gray-900">
+                  <div className="text-xl font-semibold text-gray-900">
                     Price:{" "}
                     <span className="text-red-600">${modalData.price}</span>
-                  </p>
-                  <p className="text-sm text-gray-600 mt-2">
+                  </div>
+                  <div className="text-sm text-gray-600 mt-2">
                     Availability:{" "}
                     <span className="text-green-600 font-medium">
                       {modalData.stock > 0
@@ -129,7 +129,7 @@ export default function ModalForCartWatchButton() {
                         value={modalData?.rating || 5}
                       />
                     </span>
-                  </p>
+                  </div>
                 </div>
 
                 {/* Action Buttons */}
