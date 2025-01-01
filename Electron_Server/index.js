@@ -141,18 +141,27 @@ async function run() {
           ],
         };
 
-        data = await productsData.find(query).toArray() 
+        data = await productsData.find(query).toArray();
 
         // console.log(data,'this is from search section ')
       }
 
-console.log(data)
+      console.log(data);
       const products = data?.flatMap((d) => d?.products);
       // console.log(products);
       res.send(products);
     });
+
+    // for all categories
+    app.get("/categories", async (req, res) => {
+      const categories = await productsData
+        .find({}, { projection: { Category: 1, _id: 0 } })
+        .toArray();
+      console.log(categories, "this is all categories from backend ");
+
+      res.send(categories);
+    });
   } finally {
-   
   }
 }
 
