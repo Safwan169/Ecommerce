@@ -28,7 +28,7 @@ const Categories = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/categories')
+        const res = await axios.get('https://electron-server-eta.vercel.app/categories')
         setCategory(res?.data)
 
         console.log(res?.data);
@@ -46,7 +46,7 @@ const Categories = () => {
       }  text-gray-500 font-normal  bg-white  text-base block lg:absolute  z-50  w-full border border-solid border-gray-300 `}
     >
       {categories.map((category, index) => (
-        <Link href={`/shop/${category?.Category}`}>
+        <Link key={index} href={`/shop/${category?.Category}`}>
           <button
             key={index}
             className="  group xl:py-[7.2px] lg:py-[12.6px] px-4 border-b-2 z-50 w-full border-gray-200 font-semibold flex items-center "
