@@ -16,6 +16,7 @@ import Image from "next/image";
 import GlobalButton from "@/app/Componants/GloabalButton/GlobalButton";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 export default function Bgslider({ data }) {
   const [hover, setHover] = useState();
 
@@ -99,13 +100,13 @@ export default function Bgslider({ data }) {
                       {d.mainText}
                     </p>
                   </div>
-                  <div
+                  <Link  href={'/shop/Products'}
                     className={`${
-                      index % 2 == 0 ? "justify-start" : "justify-end"
-                    }   animate__animated animate__repeat animate__delay-2s animate__fadeInUp  lg:mt-7   w-fit flex `}
+                      index % 2 == 0 ? "justify-start " : "justify-end"
+                    }   animate__animated animate__repeat animate__delay-2s cursor-pointer animate__fadeInUp  lg:mt-7 z-50  w-fit flex `}
                   >
                     <GlobalButton text={"Shop Now"} />
-                  </div>
+                  </Link>
                 </div>
               </div>
               <button

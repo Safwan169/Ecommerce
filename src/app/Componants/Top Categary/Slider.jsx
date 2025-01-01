@@ -13,6 +13,7 @@ import './styles.css';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Slider({ d }) {
     return (
@@ -56,7 +57,7 @@ export default function Slider({ d }) {
                 className="mySwiper"
             >
                 {d?.map((data, index) => <SwiperSlide key={index}>
-                    <div className='  group  z-30 text-[14px] py-3 w-full  space-y-5 '>
+                    <Link href={`/shop/${data?.text}`} className='  group  z-30 text-[14px] py-3 w-full  space-y-5 '>
                         <div className='w-[50px] h-[50px] mx-auto'>
                             <Image width={100} height={100} className=' group-hover:scale-110 duration-500 w-[30px]' src={data.icon} alt="" />
 
@@ -64,7 +65,7 @@ export default function Slider({ d }) {
                         <span className='flex transition-all group-hover:text-red-600 duration-300 mx-auto w-[100px]   justify-center'>
                             {data.text}
                         </span>
-                    </div>
+                    </Link>
                 </SwiperSlide>)}
 
             </Swiper>

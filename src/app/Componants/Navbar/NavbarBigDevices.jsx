@@ -145,7 +145,7 @@ const handleSearch=e=>{
                 </div>
               </div>
               <div className="relative group">
-                <a href="#" className="hover:text-red-700">
+                <a onClick={handleSearch} className="cursor-pointer hover:text-red-700">
                   Shop
                 </a>
               </div>

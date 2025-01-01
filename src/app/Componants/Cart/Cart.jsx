@@ -25,6 +25,11 @@ export default function Cart() {
 
   const amount =cart?.cartItems?.reduce((acc,current)=>acc+(current?.price)*current?.quantity ,0).toFixed(0) || 0;
 
+  const handleContinue=()=>{
+    setCart(false)
+   
+  }
+
   return (
     <Dialog open={openCart} onClose={setCart} className="relative z-50">
       <DialogBackdrop
@@ -76,7 +81,7 @@ export default function Cart() {
                   )):<div className="flex flex-col items-center justify-center h-[600px] space-y-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="w-12 h-12 text-gray-500"
+                    className="w-12 h-12 text-gray-500"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -89,11 +94,11 @@ export default function Cart() {
                     />
                   </svg>
                 
-                  <p class="text-lg font-semibold text-gray-800">Your cart is empty</p>
+                  <p className="text-lg font-semibold text-gray-800">Your cart is empty</p>
                 
-                  <Link
-                    href="/shop/all"
-                    class="px-6 py-2 text-white bg-red-700  hover:bg-red-800 transition duration-300"
+                  <Link onClick={handleContinue}
+                    href="/shop/Products"
+                    className="px-6 py-2 text-white bg-red-700  hover:bg-red-800 transition duration-300"
                   >
                     CONTINUE SHOPPING
                   </Link>
