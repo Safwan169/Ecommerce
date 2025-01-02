@@ -1,4 +1,5 @@
 "use client";
+import axios from "axios";
 import React, { createContext, useState, useEffect } from "react";
 
 export const my_context = createContext();
@@ -29,6 +30,26 @@ const [leftSliderData, setLeftSliderData] = useState(false);
 
 // for manage search input and search results
 const [searchText,setSearchText]=useState();
+
+
+
+// for manage collection and categories data 
+const [categories,setCategory]=useState([])
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const res = await axios.get('https://electron-server-eta.vercel.app/categories')
+      setCategory(res?.data)
+
+      console.log(res?.data);
+    } catch (error) {
+      console.log(error, "this is from category section");
+
+    }
+  };
+  fetchData();
+},[]);
  
 
   useEffect(() => {
@@ -161,6 +182,9 @@ let wishlist
     setLeftSliderData,
     searchText,
     setSearchText,
+    categories,
+    setCategory,
+
   };
   // console.log(trendingProduct)
   return <my_context.Provider value={data}>{children}</my_context.Provider>;

@@ -154,24 +154,29 @@ async function run() {
 
     // for all categories
     app.get("/categories", async (req, res) => {
-      const categories = await productsData.aggregate([{$project:{
-        _id:0,
-        Category:1,
-        image:1,
-        Count:{$size:"$products"}
-       }}]).toArray()
-console.log(categories,'tjsiasdfadff')
+      const categories = await productsData
+        .aggregate([
+          {
+            $project: {
+              _id: 0,
+              Category: 1,
+              image: 1,
+              Count: { $size: "$products" },
+            },
+          },
+        ])
+        .toArray();
+      // console.log(categories, "tjsiasdfadff");
       res.send(categories);
     });
 
-  // for all collections
-  // app.get("/collections", async (req, res) => {
-  //   const collections = await productsData
-  //    .distinct("products.collection");
-  //   console.log(collections, "this is all collections from backend ")
-  
-  
-  // })
+    // for all collections
+    // app.get("/collections", async (req, res) => {
+    //   const collections = await productsData
+    //    .distinct("products.collection");
+    //   console.log(collections, "this is all collections from backend ")
+
+    // })
   } finally {
   }
 }

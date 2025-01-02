@@ -20,25 +20,10 @@ const Categories = () => {
   //   { name: "Mobile", image: "path/to/mobile.jpg" },
   // ];
 
-  const { topCategory } = useContext(my_context);
+  const { topCategory,categories } = useContext(my_context);
 
 
-  const [categories,setCategory]=useState([])
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await axios.get('http://localhost:5000/categories')
-        setCategory(res?.data)
-
-        console.log(res?.data);
-      } catch (error) {
-        console.log(error, "this is from category section");
-
-      }
-    };
-    fetchData();
-  },[]);
+ 
   return (
     <div
       className={`${
