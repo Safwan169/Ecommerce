@@ -6,7 +6,7 @@ const EmptyCardText = ({cartName}) => {
     <div className=" min-h-60 text-xl  items-center flex-col sm:flex-row flex justify-center gap-1">
           <span>Your {cartName} is empty</span>{" "}
           <Link
-            href={"/shop/all"}
+            href={"/shop/Products"}
             className="border-b hover:text-red-700 hover:border-red-700 duration-300 border-black "
           >
             return to store

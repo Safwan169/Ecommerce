@@ -166,17 +166,10 @@ async function run() {
           },
         ])
         .toArray();
-      // console.log(categories, "tjsiasdfadff");
       res.send(categories);
     });
 
-    // for all collections
-    // app.get("/collections", async (req, res) => {
-    //   const collections = await productsData
-    //    .distinct("products.collection");
-    //   console.log(collections, "this is all collections from backend ")
-
-    // })
+   
   } finally {
   }
 }
