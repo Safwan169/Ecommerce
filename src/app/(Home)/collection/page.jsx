@@ -14,7 +14,7 @@ const {categories}=useContext(my_context)
 
      <div className='flex flex-wrap min-h-96  justify-evenly mt-20 '>
     {
-      categories?.map((data)=>(<Collection data={data} />))
+      categories?.map((data,index)=>(<Collection key={index} data={data} />))
     }
    </div>
   </div>

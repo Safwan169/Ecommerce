@@ -1,7 +1,6 @@
 "use client";
 
-import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { my_context } from "@/app/GlobalDataShere/ContextProvider";
 import Link from "next/link";
 
@@ -20,10 +19,8 @@ const Categories = () => {
   //   { name: "Mobile", image: "path/to/mobile.jpg" },
   // ];
 
-  const { topCategory,categories } = useContext(my_context);
+  const { topCategory, categories } = useContext(my_context);
 
-
- 
   return (
     <div
       className={`${
