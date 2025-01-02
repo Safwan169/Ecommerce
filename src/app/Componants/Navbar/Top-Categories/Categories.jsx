@@ -28,7 +28,7 @@ const Categories = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('https://electron-server-eta.vercel.app/categories')
+        const res = await axios.get('http://localhost:5000/categories')
         setCategory(res?.data)
 
         console.log(res?.data);

@@ -61,6 +61,7 @@ const handleSearch=e=>{
 
   navigate.push(`/shop/${searchValue||'Products'}`)
 
+  e.target.search.value = ''
 }
 
 
@@ -149,9 +150,9 @@ const handleSearch=e=>{
                   Shop
                 </a>
               </div>
-              <a href="#" className="hover:text-red-700">
+              <Link href={'/collection'} className="hover:text-red-700">
                 Collection
-              </a>
+              </Link>
               <a href="#" className="hover:text-red-700">
                 Blog
               </a>
