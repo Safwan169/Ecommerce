@@ -8,8 +8,6 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import { my_context } from "@/app/GlobalDataShere/ContextProvider";
 import { RxCross1 } from "react-icons/rx";
 import TopCategories from "../Top-Categories/TopCategories";
@@ -56,7 +54,7 @@ export default function MobileNavbarLeftSlider() {
           { link: "/", text: "Blog", icon: <GrBlog size={20} /> },
           { link: "/", text: "Pages", icon: <RiPagesLine size={20} /> },
         ].map((text, index) => (
-          <ListItem key={text.text} disablePadding>
+          <ListItem key={index} disablePadding>
             <Link onClick={toggleDrawer(false)} href={text?.link}>
               <ListItemButton className="">
                 <ListItemIcon className="flex justify-center">
