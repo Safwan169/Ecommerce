@@ -24,14 +24,14 @@ const Categories = () => {
   return (
     <div
       className={`${
-        topCategory ? "block absolute" : "hidden  "
+        topCategory ? "block duration-500" : "hidden  "
       }  text-gray-500 font-normal  bg-gray-50 z-50 text-base block lg:absolute    w-full border border-solid border-gray-300 `}
     >
       {categories.map((category, index) => (
-        <Link key={index} href={`/shop/${category?.Category}`}>
+        <Link className="" key={index} href={`/shop/${category?.Category}`}>
           <button
             key={index}
-            className="  group xl:py-[7.2px] lg:py-[12.6px] px-4 border-b-2 w-full border-gray-200 font-semibold flex items-center "
+            className="  group xl:py-[7.2px] lg:py-[7.6px] px-4 py-2  border-b-2 w-full border-gray-200 font-semibold flex items-center "
           >
             {/* this is for img or icon  */}
             <span className="text-xl"></span>

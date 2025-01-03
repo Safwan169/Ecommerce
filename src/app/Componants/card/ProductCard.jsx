@@ -18,21 +18,22 @@ const ProductCard = ({data,button}) => {
   };
 
   return (
-    <div className="group relative mx-auto   bg-white -z-10 p-2 sm:p-4 w-full sm:w-64 text-center">
+   <div className="group  mx-auto ">
+     <div className=" relative -z-10 bg-white   p-2 sm:p-4 w-full sm:w-64 text-center">
     {/* Product Image */}
-    <div className="relative z-0  max-w-[500px]">
+    <div className="relative  max-w-[500px]">
       <img
         src={data?.image}
         loading="lazy"
         alt="Product"
-        className="w-full z-0 object-cover"
+        className="w-full  object-cover"
       />
 
       <div className=" bg-gray-800  p-1 px-3 text-xs absolute text-white top-1 right-5 sm:right-1">
        {button==0?<span>New</span>:<span>{button==1?<span>Featured</span>:<span> -{data?.discount}%</span>}</span>}
       </div>
       {/* Buttons (Hidden by default, shown on hover for this card only) */}
-      <div className="absolute inset-0 flex justify-center items-end space-x-3 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-10 transition-all duration-700">
+      <div className="absolute inset-0   flex justify-center items-end space-x-3 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-10 transition-all duration-700">
         <CardButton data={data} />
       </div>
     </div>
@@ -59,6 +60,7 @@ const ProductCard = ({data,button}) => {
       </div>
     </div>
   </div>
+   </div>
   
   );
 };

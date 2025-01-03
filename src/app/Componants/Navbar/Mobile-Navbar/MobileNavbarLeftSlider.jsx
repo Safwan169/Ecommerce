@@ -26,6 +26,29 @@ export default function MobileNavbarLeftSlider() {
   const toggleDrawer = (newOpen) => () => {
     setLeftSliderData(newOpen);
   };
+  const [windowWidth, setWindowWidth] = React.useState(0);
+
+  React.useEffect(() => {
+    // Function to update the window width
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Set the initial width
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
+  // for shut down the window
+  React.useEffect(()=>{
+    setLeftSliderData(false);
+  },[windowWidth])
 
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation">
