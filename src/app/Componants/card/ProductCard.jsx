@@ -18,14 +18,14 @@ const ProductCard = ({data,button}) => {
   };
 
   return (
-    <div className="group relative mx-auto bg-white p-2 sm:p-4 w-full sm:w-64 text-center">
+    <div className="group relative mx-auto   bg-white -z-10 p-2 sm:p-4 w-full sm:w-64 text-center">
     {/* Product Image */}
-    <div className="relative max-w-[500px]">
+    <div className="relative z-0  max-w-[500px]">
       <img
         src={data?.image}
         loading="lazy"
         alt="Product"
-        className="w-full object-cover"
+        className="w-full z-0 object-cover"
       />
 
       <div className=" bg-gray-800  p-1 px-3 text-xs absolute text-white top-1 right-5 sm:right-1">

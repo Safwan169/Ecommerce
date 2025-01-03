@@ -1,26 +1,19 @@
 "use client"
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { my_context } from '@/app/GlobalDataShere/ContextProvider'
+import { usePathname } from 'next/navigation'
 
 const TopCategories = () => {
   
-
-  // useEffect(()=>{
-  //   const handleScroll=()=>{
-  //     const data=window.pageYOffset
-  //     if(data>=200){
-  //       setTogle(false)
-  //     }else{
-  //       setTogle(true)
-  //     }
-  //   }
-  //   window.addEventListener('scroll',handleScroll)
-  //   return ()=>{
-  //     window.removeEventListener('scroll',handleScroll)
-  //   }
-  // })
-
   const {topCategory,setTopCategory}=useContext(my_context)
+  const path=usePathname()
+
+// use for off category when change the route 
+  useEffect(()=>{
+    setTopCategory(false)
+    
+  },[path])
+
 
   
     return (

@@ -12,59 +12,60 @@ import LogoName from "./Logo & Name/LogoName";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Categories from "./Top-Categories/Categories";
 function NavbarMain() {
   const [isLoad, setIsload] = useState(false);
-  const { setCart, cart, wishListData, leftSliderData, setLeftSliderData} = useContext(my_context);
+  const { setCart, cart, wishListData, leftSliderData, setLeftSliderData } =
+    useContext(my_context);
   const total =
     cart?.cartItems
-      ?.reduce((acc, current) => acc + (current?.price)*current?.quantity, 0)
+      ?.reduce((acc, current) => acc + current?.price * current?.quantity, 0)
       .toFixed(0) || 0;
 
-useEffect(() => {
-  AOS.init({ duration: 1000 }); // AOS animation initialization
-  let cursor = 0;
+  useEffect(() => {
+    AOS.init({ duration: 1000 }); // AOS animation initialization
+    let cursor = 0;
 
-  const handelNavbar = () => {
-    const data = window.pageYOffset || document.documentElement.scrollTop ;
-    if (data < cursor) {
-      document.querySelector(".sf").classList.add("top-0");
-      document.querySelector(".sf").classList.add("fixed");
-      setIsload(true);
+    const handelNavbar = () => {
+      const data = window.pageYOffset || document.documentElement.scrollTop;
+      if (data < cursor) {
+        document.querySelector(".sf").classList.add("top-0");
+        document.querySelector(".sf").classList.add("fixed");
+        setIsload(true);
 
-      if (data < 200) {
+        if (data < 200) {
+          document.querySelector(".sf").classList.remove("fixed");
+          document.querySelector(".top-bar").classList.remove("hidden");
+        }
+      } else {
         document.querySelector(".sf").classList.remove("fixed");
-        document.querySelector(".top-bar").classList.remove("hidden");
+        document.querySelector(".top-bar").classList.add("hidden");
+        setIsload(false);
       }
-    } else {
-      document.querySelector(".sf").classList.remove("fixed");
-      document.querySelector(".top-bar").classList.add("hidden");
-      setIsload(false);
-    }
 
-    cursor = data;
+      cursor = data;
+    };
+
+    // Adding the scroll event listener
+    window.addEventListener("scroll", handelNavbar);
+  }, []);
+
+  const navigate = useRouter();
+
+  // function for search bar for product search
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const searchValue = e.target.search.value;
+    console.log(
+      searchValue,
+      "here is the value for search bar for product search",
+      navigate
+    );
+
+    navigate.push(`/shop/${searchValue || "Products"}`);
+
+    e.target.search.value = "";
   };
-
-  // Adding the scroll event listener
-  window.addEventListener("scroll", handelNavbar);
-
-
-}, []);
-
-
-const navigate = useRouter()
-
-// function for search bar for product search 
-const handleSearch=e=>{
-  e.preventDefault()
-  const searchValue=e.target.search.value
-  console.log (searchValue,'here is the value for search bar for product search',navigate)
-
-  navigate.push(`/shop/${searchValue||'Products'}`)
-
-  e.target.search.value = ''
-}
-
-
 
   return (
     <div className="w-full transition-transform   bg-white duration-1000 z-50 sf ">
@@ -146,11 +147,14 @@ const handleSearch=e=>{
                 </div>
               </div>
               <div className="relative group">
-                <a onClick={handleSearch} className="cursor-pointer hover:text-red-700">
+                <a
+                  onClick={handleSearch}
+                  className="cursor-pointer hover:text-red-700"
+                >
                   Shop
                 </a>
               </div>
-              <Link href={'/collection'} className="hover:text-red-700">
+              <Link href={"/collection"} className="hover:text-red-700">
                 Collection
               </Link>
               <a href="#" className="hover:text-red-700">
@@ -168,14 +172,17 @@ const handleSearch=e=>{
                 <span>sign In</span>
               </div>
               <span>|</span>
-              <Link href={'/wishlist'} className="flex relative cursor-pointer  hover:text-red-700 items-center gap-1 ">
+              <Link
+                href={"/wishlist"}
+                className="flex relative cursor-pointer  hover:text-red-700 items-center gap-1 "
+              >
                 <FiHeart className="  cursor-pointer" />
                 <span>Wishlist</span>
 
                 <span className="absolute -top-2 left-2 bg-red-700 rounded-full text-xs  w-4 h-4 flex justify-center text-white">
                   {wishListData?.length || 0}
                 </span>
-              </Link >
+              </Link>
             </div>
           </div>
 
@@ -184,8 +191,12 @@ const handleSearch=e=>{
             <div className="lg:w-full xl:w-[1400px]  lg:px-2 mx-auto z-50  text-white flex items-center md:space-x-3 lg:space-x-3">
               {/*Top Categories */}
 
-              <div className="hidden lg:block">
+              <div className="hidden relative z-50 lg:block">
                 <TopCategories />
+
+                <div className="absolute w-full hidden lg:block md:hidden z-50 ">
+                  <Categories />
+                </div>
               </div>
 
               {/* this is the navbar slider  */}
@@ -196,18 +207,17 @@ const handleSearch=e=>{
 
               {/* Search Bar */}
               <form onSubmit={handleSearch} className="flex-grow flex">
-
-              <div className="flex flex-grow p-2 sm:p-0 relative">
-                <input
-                  type="text"
-                  name="search"
-                  placeholder="Find our product"
-                  className="w-full py-2 px-4  sm:rounded-l-md  text-gray-700"
-                />
-                <button className="absolute right-0 top-0 bottom-0 bg-red-700  mr-2 sm:mr-0 my-2 sm:my-0 px-4 text-white">
-                  <FiSearch size={16} />
-                </button>
-              </div>
+                <div className="flex flex-grow p-2 sm:p-0 relative">
+                  <input
+                    type="text"
+                    name="search"
+                    placeholder="Find our product"
+                    className="w-full py-2 px-4  sm:rounded-l-md  text-gray-700"
+                  />
+                  <button className="absolute right-0 top-0 bottom-0 bg-red-700  mr-2 sm:mr-0 my-2 sm:my-0 px-4 text-white">
+                    <FiSearch size={16} />
+                  </button>
+                </div>
               </form>
 
               {/* Cart for big devices  */}

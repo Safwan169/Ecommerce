@@ -25,7 +25,7 @@ export default function Bgslider({ data }) {
   }, []);
   return (
     // <div className="slide-end border border-white ">
-    <Swiper
+    <Swiper 
       slidesPerView={1}
       spaceBetween={5}
       loop={true}
@@ -41,15 +41,15 @@ export default function Bgslider({ data }) {
         prevEl: ".custom-prev",
       }}
       modules={[Autoplay, Pagination, Navigation]}
-      className="mySwiper slide-end "
+      className="mySwiper z-10  slide-end "
     >
       {data.map((d, index) => (
         <SwiperSlide key={index}>
-          <div className="  w-[100%]  h-full -z-50  ">
+          <div className="  w-[100%] z-10 h-full   ">
             <div
               onMouseLeave={() => setHover(false)}
               onMouseOver={() => setHover(true)}
-              className={` flex  group animate__animated animate__repeat animate__delay-0.9s  mx-0  z-0 animate__fadeIn  relative w-full  h-full md:w-[100%]  lg:w-[100%]   lg:h-1/2  bg-cover md:h-[50%]   lg:px-16 justify-between items-center bg-[#e7e9eb] ${
+              className={` flex  group animate__animated animate__repeat animate__delay-0.9s  mx-0  z-0 animate__fadeIn  relative w-full  h-full md:w-[100%]  lg:w-[100%]   lg:h-1/2  bg-cover md:h-[50%]   lg:px-16 justify-between items-center ${
                 (index + 1) % 2 == 0 ? "flex-row " : "flex-row-reverse"
               }  flex `}
             >
