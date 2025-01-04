@@ -36,6 +36,14 @@ const [searchText,setSearchText]=useState();
 // for manage collection and categories data 
 const [categories,setCategory]=useState([])
 
+// this is for maxPrice 
+const [maxPrice, setMaxPrice] = useState(100);
+
+
+// this is for set brands for shop and search results
+const [Brands, setBrand] = useState([]);
+
+
 useEffect(() => {
   const fetchData = async () => {
     try {
@@ -184,6 +192,10 @@ let wishlist
     setSearchText,
     categories,
     setCategory,
+    maxPrice,
+    setMaxPrice,
+    Brands,
+    setBrand
 
   };
   // console.log(trendingProduct)

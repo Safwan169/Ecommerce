@@ -2,13 +2,14 @@
 
 import axios from "axios";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ProductCard from "../../../Componants/card/ProductCard";
 import Breadcrumb from "../../../Componants/Breadcrumb/Breadcrumb";
 import Loading from "../../../Componants/Loading/Loading";
 import Brand from "../../../Componants/Brand/Brand";
 import FilterProductSize from "../../../Componants/FilterProductSize/FilterProductSize";
 import FilterPrice from "../../../Componants/FilterPrice/FilterPrice";
+import {my_context} from "../../../GlobalDataShere/ContextProvider"
 
 const SearchAllProducts = () => {
   const { slug } = useParams();
@@ -16,18 +17,25 @@ const SearchAllProducts = () => {
   const [searchData, setSearchData] = useState();
   const [loading, setLoading] = useState();
 
-  const [Brands, setBrand] = useState([]);
+  const {Brands,setBrand,setMaxPrice,maxPrice}=useContext(my_context);
+
+
   useEffect(() => {
     const func = async () => {
       setLoading(true);
       const res = await axios.get(
-        `https://electron-server-eta.vercel.app/search?value=${slug}`
+        `http://localhost:5000/search?value=${slug}`
       );
-      setSearchData(res?.data);
+
+
+      console.log(res?.data,'this is for maxprice ')
+      setSearchData(res?.data?.products);
+      setMaxPrice(res?.data?.maxPrice)
+
 
 
 // to find unique brands
-      const brand = (res?.data)?.reduce((acc, current) => {
+      const brand = (res?.data?.products)?.reduce((acc, current) => {
         // console.log(current?.brand, "brand for check");
          if (acc?.includes(current?.brand)) {
 
@@ -76,7 +84,7 @@ const SearchAllProducts = () => {
             {Brands?.map((data, index) => (
               <Brand key={index} data={data} />
             ))}
-            <FilterPrice/>
+            <FilterPrice maxPrice={maxPrice}/>
           </div>
 
           <div className="flex flex-wrap mt-5  w-full justify-center   min-h-96 items-center sm:mt-10">
