@@ -4,6 +4,7 @@ const Brand = ({data,setBrandCheck}) => {
 
   const handleBrandCheck = (event) => {
     console.log(event);
+    setBrandCheck()
     // setBrandCheck( event.arget.checkbox.valutarget.value);
   }
   return (

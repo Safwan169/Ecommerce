@@ -24,7 +24,7 @@ const SearchAllProducts = () => {
   const [getPriceRange, setPriceRange] = useState();
 
   const [getBrand, setBrandCheck] = useState();
-  console.log(getPriceRange, "price range");
+  console.log(getPriceRange,getBrand, "price range");
   useEffect(() => {
     const func = async () => {
       setLoading(true);
