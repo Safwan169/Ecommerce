@@ -130,31 +130,33 @@ async function run() {
       console.log(searchValue, "search value");
 
       let data;
-      let highestPrice
-      let totalProducts
+      // let highestPrice;
+      // let totalProducts;
       if (searchValue == "Products") {
-         highestPrice = await productsData
+       
+// this is for all data for search values where have all products,all unique brands, maxPrice, and totalPrice
+        data = await productsData
           .aggregate([
             { $unwind: "$products" },
             {
               $group: {
-                _id: 0,
+                _id: "null",
+                allProducts: { $push: "$products" },
+                totalProducts: { $sum: 1 },
                 maxPrice: { $max: "$products.price" },
+                brand: { $addToSet: "$products.brand" },
               },
             },
           ])
           .toArray();
-        // console.log(highestPrice, "this is for highest and lowest price");
-         totalProducts= await productsData.aggregate([{
-          $unwind:"$products"
-        }]).toArray()
 
-        // console.log(totalProducts.length,'total products')
-        data = await productsData.find().toArray();
+          console.log(data,'this is for total data and also set limit')
       } else {
-        // for find highest available product price 
-         highestPrice = await productsData
+        // this is for search Value all in one get brand ,maxPrice,totalProducts and all products in a array
+
+        data = await productsData
           .aggregate([
+            { $unwind: "$products" },
             {
               $match: {
                 $or: [
@@ -164,52 +166,22 @@ async function run() {
                 ],
               },
             },
-            { $unwind: "$products" },
             {
               $group: {
-                _id: 0,
+                _id: null, // Group all products into one group
+                allProducts: { $push: "$products" },
+                totalProducts: { $sum: 1 }, // Count total products in all groups
                 maxPrice: { $max: "$products.price" },
+                brand: { $addToSet: "$products.brand" },
               },
             },
           ])
           .toArray();
 
-          // console.log(price,'this is for search price after search price')
-
-          // for find products from search section
-        const query = {
-          $or: [
-            { Category: { $regex: searchValue, $options: "i" } },
-            { "products.name": { $regex: searchValue, $options: "i" } },
-            { "products.brand": { $regex: searchValue, $options: "i" } },
-          ],
-        };
-
-        data = await productsData.find(query).toArray();
-        const data1= await productsData.aggregate([
-         {$unwind:"$products"},
-         {$match:{
-          $or: [
-            { Category: { $regex: searchValue, $options: "i" } },
-            { "products.name": { $regex: searchValue, $options: "i" } },
-            { "products.brand": { $regex: searchValue, $options: "i" } },
-          ],
-         }},
-         {
-          $group: {
-            _id: null, // Group all products into one group
-            allProducts: { $push: "$products" } // Combine all products into a single array
-          }}
-
-        ]).toArray()
-
-        console.log(data1,'this is from asdfasfsearch section ')
       }
 
-      // console.log(data);
-      const products = data?.flatMap((d) => d?.products);
-      // console.log(,'full data after price');
-      res.send({products:[...products],maxPrice:highestPrice[0]?.maxPrice});
+     
+      res.send(data[0]);
     });
 
     // for all categories

@@ -9,7 +9,7 @@ import Loading from "../../../Componants/Loading/Loading";
 import Brand from "../../../Componants/Brand/Brand";
 import FilterProductSize from "../../../Componants/FilterProductSize/FilterProductSize";
 import FilterPrice from "../../../Componants/FilterPrice/FilterPrice";
-import {my_context} from "../../../GlobalDataShere/ContextProvider"
+import { my_context } from "../../../GlobalDataShere/ContextProvider";
 
 const SearchAllProducts = () => {
   const { slug } = useParams();
@@ -17,42 +17,24 @@ const SearchAllProducts = () => {
   const [searchData, setSearchData] = useState();
   const [loading, setLoading] = useState();
 
-  const {Brands,setBrand,setMaxPrice,maxPrice}=useContext(my_context);
+  const [totalProducts, setTotalProducts] = useState();
 
+  const { Brands, setBrand, setMaxPrice, maxPrice } = useContext(my_context);
 
+  const [getPriceRange, setPriceRange] = useState();
+
+  const [getBrand, setBrandCheck] = useState();
+  console.log(getPriceRange, "price range");
   useEffect(() => {
     const func = async () => {
       setLoading(true);
-      const res = await axios.get(
-        `http://localhost:5000/search?value=${slug}`
-      );
+      const res = await axios.get(`https://electron-server-eta.vercel.app/search?value=${slug}`);
 
-
-      console.log(res?.data,'this is for maxprice ')
-      setSearchData(res?.data?.products);
-      setMaxPrice(res?.data?.maxPrice)
-
-
-
-// to find unique brands
-      const brand = (res?.data?.products)?.reduce((acc, current) => {
-        // console.log(current?.brand, "brand for check");
-         if (acc?.includes(current?.brand)) {
-
-          return acc
-
-         }
-         else{
-          acc?.push(current?.brand)
-          return acc;
-         }
-        
-      }, []);
-      console.log(brand, "hlw");
-      setBrand(brand)
-
-      
-
+      console.log(res?.data, "this is for maxprice ");
+      setSearchData(res?.data?.allProducts);
+      setMaxPrice(res?.data?.maxPrice);
+      setBrand(res?.data?.brand);
+      setTotalProducts(res?.data?.totalProducts);
       setInterval(() => setLoading(false), 500);
     };
     func();
@@ -78,13 +60,15 @@ const SearchAllProducts = () => {
 
         <div className="flex">
           <div className="mt-10 pl-5 space-y-6">
+            <FilterProductSize size={totalProducts} />
+            <div>
+              <h1 className="  text-xl">Brands</h1>
 
-          <FilterProductSize size={searchData?.length}/>
-
-            {Brands?.map((data, index) => (
-              <Brand key={index} data={data} />
-            ))}
-            <FilterPrice maxPrice={maxPrice}/>
+              {[...Brands, "sf"]?.map((data, index) => (
+                <Brand key={index} setBrandCheck={setBrandCheck} data={data} />
+              ))}
+            </div>
+            <FilterPrice setPriceRange={setPriceRange} maxPrice={maxPrice} />
           </div>
 
           <div className="flex flex-wrap mt-5  w-full justify-center   min-h-96 items-center sm:mt-10">

@@ -1,7 +1,7 @@
 import { Box, Slider } from '@mui/material';
 import React from 'react'
 
-const FilterPrice = ({maxPrice}) => {
+const FilterPrice = ({maxPrice,setPriceRange}) => {
 
 
   
@@ -9,6 +9,7 @@ const FilterPrice = ({maxPrice}) => {
 
       const handleChange = (event, newValue) => {
         setValue(newValue);
+        setPriceRange(newValue); // Call the context function to update price range in parent component.  // update local state for text
       };
 
       console.log(value,'this is for filter price')

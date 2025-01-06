@@ -1,11 +1,14 @@
 import { Checkbox, FormControlLabel, FormGroup } from '@mui/material'
-import React from 'react'
 
-const Brand = ({data}) => {
+const Brand = ({data,setBrandCheck}) => {
+
+  const handleBrandCheck = (event) => {
+    console.log(event);
+    // setBrandCheck( event.arget.checkbox.valutarget.value);
+  }
   return (
    <FormGroup className='space-y-2'>
-   <h1 className='  text-xl'>Brands</h1>
-      <FormControlLabel control={<Checkbox  />} label={`${data}`} />
+      <FormControlLabel control={<Checkbox  />} name='checkbox' onClick={()=>handleBrandCheck(data)} value={`${data}`} label={`${data}`} />
     
     </FormGroup>
   )
