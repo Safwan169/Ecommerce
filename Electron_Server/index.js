@@ -126,8 +126,10 @@ async function run() {
 
     //  for search value
     app.get("/search", async (req, res) => {
-      const searchValue = req.query.value;
-      console.log(searchValue, "search value");
+      const searchValue= req.query.value;
+      const priceMax= req.query.priceMax;
+      const priceMin= req.query.priceMin;
+      console.log(priceMax ,priceMin, "search value for get max and min price values");
 
       let data;
       // let highestPrice;

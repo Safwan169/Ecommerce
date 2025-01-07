@@ -14,21 +14,23 @@ import { my_context } from "../../../GlobalDataShere/ContextProvider";
 const SearchAllProducts = () => {
   const { slug } = useParams();
   // console.log(slug,'search bar text')
-  const [searchData, setSearchData] = useState();
-  const [loading, setLoading] = useState();
+  const [searchData, setSearchData] = useState('');
+  const [loading, setLoading] = useState('');
 
-  const [totalProducts, setTotalProducts] = useState();
+  const [totalProducts, setTotalProducts] = useState('');
 
   const { Brands, setBrand, setMaxPrice, maxPrice } = useContext(my_context);
 
-  const [getPriceRange, setPriceRange] = useState();
+  const [getPriceRange, setPriceRange] = useState('');
 
-  const [getBrand, setBrandCheck] = useState();
+  const [getBrand, setBrandCheck] = useState('');
   console.log(getPriceRange,getBrand, "price range");
+
+  console.log(Brands ,'this is for brands errors')
   useEffect(() => {
     const func = async () => {
       setLoading(true);
-      const res = await axios.get(`https://electron-server-eta.vercel.app/search?value=${slug}`);
+      const res = await axios.get(`http://localhost:5000/search?value=${slug}&priceMax=${getPriceRange[1]}&priceMin=${getPriceRange[0]}`);
 
       console.log(res?.data, "this is for maxprice ");
       setSearchData(res?.data?.allProducts);
@@ -38,7 +40,7 @@ const SearchAllProducts = () => {
       setInterval(() => setLoading(false), 500);
     };
     func();
-  }, [slug]);
+  }, [slug,getPriceRange]);
 
   // console.log(searchData, "tihs is for searching");
   if (loading)
