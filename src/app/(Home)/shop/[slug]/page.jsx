@@ -26,7 +26,7 @@ const SearchAllProducts = () => {
   const [getBrand, setBrandCheck] = useState('');
   console.log(getPriceRange[0]?.min, "price range");
 
-  console.log(Brands ,'this is for brands errors')
+  console.log(Brands ,getBrand,'this is for brands errors')
   useEffect(() => {
     const func = async () => {
       setLoading(true);
