@@ -24,13 +24,13 @@ const SearchAllProducts = () => {
   const [getPriceRange, setPriceRange] = useState('');
 
   const [getBrand, setBrandCheck] = useState('');
-  console.log(getPriceRange,getBrand, "price range");
+  console.log(getPriceRange[0]?.min, "price range");
 
   console.log(Brands ,'this is for brands errors')
   useEffect(() => {
     const func = async () => {
       setLoading(true);
-      const res = await axios.get(`http://localhost:5000/search?value=${slug}&priceMax=${getPriceRange[1]}&priceMin=${getPriceRange[0]}`);
+      const res = await axios.get(`http://localhost:5000/search?value=${slug}&priceMax=${getPriceRange[1]?.max}&priceMin=${getPriceRange[0]?.min}`);
 
       console.log(res?.data, "this is for maxprice ");
       setSearchData(res?.data?.allProducts);
@@ -70,7 +70,7 @@ const SearchAllProducts = () => {
                 <Brand key={index} setBrandCheck={setBrandCheck} data={data} />
               ))}
             </div>
-            <FilterPrice setPriceRange={setPriceRange} maxPrice={maxPrice} />
+            <FilterPrice setPrice={setPriceRange} maxPrice={maxPrice} />
           </div>
 
           <div className="flex flex-wrap mt-5  w-full justify-center   min-h-96 items-center sm:mt-10">

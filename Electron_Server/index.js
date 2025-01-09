@@ -70,7 +70,7 @@ async function run() {
           ])
           .toArray();
 
-        console.log(data);
+        // console.log(data);
 
         // console.log(da,"this is for featured products ")
       }
@@ -119,7 +119,7 @@ async function run() {
       //  console.log(data,'special purposes')
 
       const products = data.flatMap((d) => d.products);
-      console.log(products);
+      // console.log(products);
 
       res.send({ products });
     });
@@ -152,7 +152,7 @@ async function run() {
           ])
           .toArray();
 
-          console.log(data,'this is for total data and also set limit')
+          // console.log(data,'this is for total data and also set limit')
       } else {
         // this is for search Value all in one get brand ,maxPrice,totalProducts and all products in a array
 
