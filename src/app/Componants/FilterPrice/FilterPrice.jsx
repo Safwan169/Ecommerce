@@ -1,43 +1,45 @@
-import { Box, Slider } from '@mui/material';
-import React from 'react'
+// import { Box, Slider } from '@mui/material';
+import React from "react";
+import { BsArrows } from "react-icons/bs";
+import { IoIosArrowDroprightCircle } from "react-icons/io";
 
-const FilterPrice = ({maxPrice,setPriceRange}) => {
+const FilterPrice = ({ maxPrice, setPriceRange }) => {
+  // const [value, setValue] = React.useState([0, set || maxPrice]);
 
-
-let set
-      const [value, setValue] = React.useState([0, set || maxPrice]);
-
-      const handleChange = (event, newValue) => {
-        setValue(newValue);
-        set=[newValue]
-
-        setTimeout(() => {
-          setPriceRange(newValue); 
-
-        },3000)
-      };
-      console.log(set)
-
-      console.log(value,'this is for filter price')
+  // const handlePriceValue = () => {};
   return (
-<>
+    <>
+      <h1 className="text-xl mb-3">Price</h1>
+      <p>The highest price is ${maxPrice}</p>
 
-<Box sx={{ width: 150 }}>
-<h1 className='text-xl mb-3'>Price</h1>
-<p>
-The highest price is ${maxPrice}
-</p>
-      <Slider
-        getAriaLabel={() => 'Temperature range'}
-        value={value}
-        onChange={handleChange}
-        valueLabelDisplay="auto"
-        max={maxPrice}
-        // getAriaValueText={valuetext}
-      />
-    </Box>
-</>
-  )
-}
+     <form action="">
+     <div className="flex gap-1 items-center justify-center ">
+        <input
+          className="border text-center w-16 p-2 "
+          type="text"
+          placeholder="Min"
+          name="min"
+          id=""
+        />
+        <BsArrows />
 
-export default FilterPrice
+        <input
+          className="border text-center w-16 p-2"
+          type="text"
+          placeholder="Max"
+          name="max"
+          id=""
+        />
+        <button className="text-red-700">
+        <IoIosArrowDroprightCircle size={30} />
+
+        </button>
+      </div>
+     </form>
+
+
+    </>
+  );
+};
+
+export default FilterPrice;
