@@ -24,13 +24,13 @@ const SearchAllProducts = () => {
   const [getPriceRange, setPriceRange] = useState('');
 
   const [getBrand, setBrandCheck] = useState('');
-  console.log(getPriceRange[0]?.min, "price range");
+  console.log(getPriceRange, "price range");
 
-  console.log(Brands ,getBrand,'this is for brands errors')
+  // console.log(Brands ,getBrand,'this is for brands errors')
   useEffect(() => {
     const func = async () => {
       setLoading(true);
-      const res = await axios.get(`http://localhost:5000/search?value=${slug}&priceMax=${getPriceRange[1]?.max}&priceMin=${getPriceRange[0]?.min}`);
+      const res = await axios.get(`http://localhost:5000/search?value=${slug}&priceMax=${getPriceRange[1]?.max || 0}&priceMin=${getPriceRange[0]?.min || 0}`);
 
       console.log(res?.data, "this is for maxprice ");
       setSearchData(res?.data?.allProducts);
@@ -40,7 +40,7 @@ const SearchAllProducts = () => {
       setInterval(() => setLoading(false), 500);
     };
     func();
-  }, [slug,getPriceRange]);
+  }, [slug,getPriceRange[1]?.max]);
 
   // console.log(searchData, "tihs is for searching");
   if (loading)
@@ -66,9 +66,9 @@ const SearchAllProducts = () => {
             <div>
               <h1 className="  text-xl">Brands</h1>
 
-              {[...Brands, "sf"]?.map((data, index) => (
+              {/* {[...Brands, "sf"]?.map((data, index) => (
                 <Brand key={index} setBrandCheck={setBrandCheck} data={data} />
-              ))}
+              ))} */}
             </div>
             <FilterPrice setPrice={setPriceRange} maxPrice={maxPrice} />
           </div>

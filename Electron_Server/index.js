@@ -126,17 +126,22 @@ async function run() {
 
     //  for search value
     app.get("/search", async (req, res) => {
-      const searchValue= req.query.value;
-      const priceMax= req.query.priceMax;
-      const priceMin= req.query.priceMin;
-      console.log(priceMax ,priceMin, "search value for get max and min price values");
+      const searchValue = req.query.value;
+      const priceMax = req.query.priceMax;
+      const priceMin = req.query.priceMin;
+      console.log(
+        priceMax,
+        priceMin,
+        "search value for get max and min price values"
+      );
 
       let data;
       // let highestPrice;
       // let totalProducts;
-      if (searchValue == "Products") {
-       
-// this is for all data for search values where have all products,all unique brands, maxPrice, and totalPrice
+      if (searchValue == "Products" && priceMax < 1) {
+        console.log("for all search values");
+
+        // this is for all data for search values where have all products,all unique brands, maxPrice, and totalPrice
         data = await productsData
           .aggregate([
             { $unwind: "$products" },
@@ -152,10 +157,11 @@ async function run() {
           ])
           .toArray();
 
-          // console.log(data,'this is for total data and also set limit')
+        // console.log(data,'this is for total data and also set limit')
       } else {
         // this is for search Value all in one get brand ,maxPrice,totalProducts and all products in a array
 
+        console.log("for price value");
         data = await productsData
           .aggregate([
             { $unwind: "$products" },
@@ -165,6 +171,14 @@ async function run() {
                   { Category: { $regex: searchValue, $options: "i" } },
                   { "products.name": { $regex: searchValue, $options: "i" } },
                   { "products.brand": { $regex: searchValue, $options: "i" } },
+                  {
+                    $expr: {
+                      $and: [
+                        { $gte: [{ $toDouble: "$products.price" }, priceMin] },
+                        { $lte: [{ $toDouble: "$products.price" }, priceMax] }
+                      ]
+                    }
+                  }
                 ],
               },
             },
@@ -179,10 +193,8 @@ async function run() {
             },
           ])
           .toArray();
-
       }
 
-     
       res.send(data[0]);
     });
 
