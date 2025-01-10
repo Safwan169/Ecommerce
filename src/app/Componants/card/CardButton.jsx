@@ -58,7 +58,7 @@ console.log(data,'this is for cart button ')
         <button
           onClick={() => handleButton(button?.id)}
           key={index}
-          className={`bg-red-700 duration-300 text-white p-2  hover:bg-black  `}
+          className={`bg-red-700 z-50 duration-300 text-white p-2  hover:bg-black  `}
           // here is styled
           // style={{
           //   animationDelay: `10s`, // Delay for staggered animation

@@ -19,7 +19,7 @@ const ProductCard = ({data,button}) => {
 
   return (
    <div className="group  mx-auto ">
-     <div className=" relative -z-10 bg-white   p-2 sm:p-4 w-full sm:w-64 text-center">
+     <div className=" relative  bg-white   p-2 sm:p-4 w-full sm:w-64 text-center">
     {/* Product Image */}
     <div className="relative  max-w-[500px]">
       <img
@@ -33,7 +33,7 @@ const ProductCard = ({data,button}) => {
        {button==0?<span>New</span>:<span>{button==1?<span>Featured</span>:<span> -{data?.discount}%</span>}</span>}
       </div>
       {/* Buttons (Hidden by default, shown on hover for this card only) */}
-      <div className="absolute inset-0   flex justify-center items-end space-x-3 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-10 transition-all duration-700">
+      <div className="absolute  inset-0   flex justify-center items-end space-x-3 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-10 transition-all duration-700">
         <CardButton data={data} />
       </div>
     </div>
