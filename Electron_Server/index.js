@@ -171,22 +171,15 @@ async function run() {
                   { Category: { $regex: searchValue, $options: "i" } },
                   { "products.name": { $regex: searchValue, $options: "i" } },
                   { "products.brand": { $regex: searchValue, $options: "i" } },
-                  {
-                    $expr: {
-                      $and: [
-                        { $gte: [{ $toDouble: "$products.price" }, priceMin] },
-                        { $lte: [{ $toDouble: "$products.price" }, priceMax] }
-                      ]
-                    }
-                  }
+                
                 ],
               },
             },
             {
               $group: {
-                _id: null, // Group all products into one group
+                _id: null, 
                 allProducts: { $push: "$products" },
-                totalProducts: { $sum: 1 }, // Count total products in all groups
+                totalProducts: { $sum: 1 }, 
                 maxPrice: { $max: "$products.price" },
                 brand: { $addToSet: "$products.brand" },
               },
@@ -194,6 +187,8 @@ async function run() {
           ])
           .toArray();
       }
+
+      console.log(data,'this is for  product')
 
       res.send(data[0]);
     });

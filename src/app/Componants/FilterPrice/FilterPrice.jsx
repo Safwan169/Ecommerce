@@ -8,11 +8,11 @@ const FilterPrice = ({ maxPrice, setPrice }) => {
   const handlePriceValue = (e) => {
     e.preventDefault();
 
-    const min = parseInt((e.target.min.value)) || 0 
-    const max = parseInt((e.target.max.value)) || 0
+    const min = parseInt((e.target.min.value)) 
+    const max = parseInt((e.target.max.value)) 
     // console.log(min, max,"price is there ")
 
-      if (min>= 0 && min <= maxPrice && max>0 && max<=maxPrice && max>min) {
+      if (min>= 0 && min <= maxPrice && max>0 &&  max>min) {
 
         console.log(min, max,"price is there ")
       
