@@ -136,8 +136,7 @@ async function run() {
       );
 
       let data;
-      // let highestPrice;
-      // let totalProducts;
+
       if (searchValue == "Products" && priceMax < 1) {
         console.log("for all search values");
 
@@ -192,6 +191,8 @@ async function run() {
 
       res.send(data[0]);
     });
+
+    
 
     // for all categories
     app.get("/categories", async (req, res) => {
