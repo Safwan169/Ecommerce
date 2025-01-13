@@ -116,10 +116,8 @@ async function run() {
           },
         ])
         .toArray();
-      //  console.log(data,'special purposes')
 
       const products = data.flatMap((d) => d.products);
-      // console.log(products);
 
       res.send({ products });
     });
