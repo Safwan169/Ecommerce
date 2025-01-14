@@ -26,7 +26,7 @@ const ProductCard = ({data,button}) => {
         src={data?.image}
         loading="lazy"
         alt="Product"
-        className="w-full  object-cover"
+        className="w-full bg-gray-100 object-cover"
       />
 
       <div className=" bg-gray-800  p-1 px-3 text-xs absolute text-white top-1 right-5 sm:right-1">

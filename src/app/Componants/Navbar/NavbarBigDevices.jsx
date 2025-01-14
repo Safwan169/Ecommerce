@@ -71,11 +71,13 @@ function NavbarMain() {
   };
 
   return (
-    <div className="  transition-all  w-full   duration-1000 z-50 sf ">
+    <div className="  transition-all bg-white w-full   duration-1000 z-50 sf ">
       <header className={`z-50 pt-0    `}>
         {/* Top Info Bar */}
         <div className=" bg-gray-100 top-bar z-50 md:px-5 lg:px-2 lg:w-full     mx-auto ">
-          <div className="  hidden  sm:flex justify-between  items-center text-sm text-gray-700">
+
+          {/* this is for contant  */}
+          <div className="  hidden px-[5%] sm:flex justify-between  items-center text-sm text-gray-700">
             <div>
               Need help? Call us:{" "}
               <span className="hover:text-red-700 cursor-pointer">
@@ -110,10 +112,10 @@ function NavbarMain() {
             }`}
         >
           {/* Main Navbar */}
-          <div className=" px-3 bg-white py-4 justify-between lg:w-full  md:px-5 lg:px-2 mx-auto  flex items-center sm:justify-between">
+          <div className=" px-3   py-2 justify-between lg:w-full  md:px-5 lg:px-[5%] mx-auto  flex items-center sm:justify-between">
             <div
               onClick={() => setLeftSliderData(!leftSliderData)}
-              className="block sm:hidden"
+              className="block  sm:hidden"
             >
               {/* here will come navbar left slider for small devices  */}
 
@@ -190,7 +192,7 @@ function NavbarMain() {
 
           {/* Secondary Options Bar */}
           <div className="bg-[#2c2b49]   ">
-            <div className="lg:w-full  lg:px-2 mx-auto z-50  text-white flex items-center md:space-x-3 lg:space-x-3">
+            <div className="lg:w-full  lg:px-[5%] mx-auto z-50  text-white flex items-center md:space-x-3 lg:space-x-3">
               {/*Top Categories */}
 
               <div className="hidden relative z-50 lg:block">
