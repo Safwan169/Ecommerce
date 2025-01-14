@@ -6,7 +6,7 @@ import { useContext, useEffect, useState } from "react";
 import ProductCard from "../../../Componants/card/ProductCard";
 import Breadcrumb from "../../../Componants/Breadcrumb/Breadcrumb";
 import Loading from "../../../Componants/Loading/Loading";
-import Brand from "../../../Componants/Brand/Brand";
+// import Brand from "../../../Componants/Brand/Brand";
 import FilterProductSize from "../../../Componants/FilterProductSize/FilterProductSize";
 import FilterPrice from "../../../Componants/FilterPrice/FilterPrice";
 import { my_context } from "../../../GlobalDataShere/ContextProvider";
@@ -19,11 +19,11 @@ const SearchAllProducts = () => {
 
   const [totalProducts, setTotalProducts] = useState('');
 
-  const { Brands, setBrand, setMaxPrice, maxPrice } = useContext(my_context);
+  const {  setBrand, setMaxPrice, maxPrice } = useContext(my_context);
 
   const [getPriceRange, setPriceRange] = useState('');
 
-  const [getBrand, setBrandCheck] = useState('');
+  // const [getBrand, setBrandCheck] = useState('');
   console.log(getPriceRange, "price range");
 
   // console.log(Brands ,getBrand,'this is for brands errors')
