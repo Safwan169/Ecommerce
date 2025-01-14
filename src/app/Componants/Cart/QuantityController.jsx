@@ -35,7 +35,7 @@ const QuantityController = ({ data }) => {
   })
   return (
     <div className=" items-center flex">
-      <p className="flex  justify-evenly w-24 mt-3  font-bold hover:border-red-700 border border-slate-100 duration-300">
+      <p className="flex  justify-evenly w-24 mt-3  font-bold hover:border-red-700 hover:border  duration-300">
         <span
           onClick={handleDecrease}
           className="cursor-pointer flex items-center  "

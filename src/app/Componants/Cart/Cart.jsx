@@ -23,22 +23,22 @@ export default function Cart() {
 
   const { openCart, setCart, cart } = useContext(my_context);
 
-  const amount =cart?.cartItems?.reduce((acc,current)=>acc+(current?.price)*current?.quantity ,0).toFixed(0) || 0;
+  const amount = cart?.cartItems?.reduce((acc, current) => acc + (current?.price) * current?.quantity, 0).toFixed(0) || 0;
 
-  const handleContinue=()=>{
+  const handleContinue = () => {
     setCart(false)
-   
+
   }
 
   return (
-    <Dialog open={openCart} onClose={setCart} className="relative z-50">
+    <Dialog open={openCart} onClose={setCart} className="relative  z-50">
       <DialogBackdrop
         transition
-        className="fixed inset-0 bg-gray-500/75 transition-opacity duration-500 ease-in-out data-[closed]:opacity-0"
+        className="fixed inset-0 bg-gray-500/75  transition-opacity duration-500 ease-in-out data-[closed]:opacity-0"
       />
 
-      <div className="fixed inset-0 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
+      <div className="fixed inset-0">
+        <div className="absolute inset-0 ">
           <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
             <DialogPanel
               transition
@@ -57,7 +57,7 @@ export default function Cart() {
                   </button>
                 </div>
               </TransitionChild> */}
-              <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 ">
+              <div className="flex h-full flex-col   bg-white py-6 ">
                 <div className="px-4 sm:px-6 border-b-gray-300 pb-5 border-b">
                   <DialogTitle className="text-base flex justify-between items-center font-semibold text-gray-900">
                     My shopping cart{" "}
@@ -70,47 +70,50 @@ export default function Cart() {
                     </span>
                   </DialogTitle>
                 </div>
-
-                <div className="relative mt-6 flex-1 px-4 sm:px-6">
+                {/*this is for contant   */}
+                <div className="relative overflow-y-scroll mt-6 h-full flex-1  sm:px-6">
                   {/*slider cart container  */}
-                 {cart?.cartItems?.length>0&& <FreeShippingBar amount={amount / 10} />} 
+                  {cart?.cartItems?.length > 0 && <FreeShippingBar amount={amount / 10} />}
 
 
-                  {cart?.cartItems?.length>0?cart?.cartItems?.map((data, index) => (
+                  {cart?.cartItems?.length > 0 ? cart?.cartItems?.map((data, index) => (
                     <CartSliderContainer key={index} data={data} />
-                  )):<div className="flex flex-col items-center justify-center h-[600px] space-y-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-12 h-12 text-gray-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M3 3h2l.3 2M7 13h10l4-8H6.3M7 13l-1.4 4.4a2 2 0 001.9 2.6h9.1a2 2 0 001.9-2.6L17 13M7 13h10m-5 8a1 1 0 100-2 1 1 0 000 2m6 0a1 1 0 100-2 1 1 0 000 2"
-                    />
-                  </svg>
-                
-                  <p className="text-lg font-semibold text-gray-800">Your cart is empty</p>
-                
-                  <Link onClick={handleContinue}
-                    href="/shop/Products"
-                    className="px-6 py-2 text-white bg-red-700  hover:bg-red-800 transition duration-300"
-                  >
-                    CONTINUE SHOPPING
-                  </Link>
-                </div>
-                }
-                </div>
+                  )) : <div className="flex flex-col items-center justify-center h-[600px] space-y-4">
 
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-12 h-12 text-gray-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M3 3h2l.3 2M7 13h10l4-8H6.3M7 13l-1.4 4.4a2 2 0 001.9 2.6h9.1a2 2 0 001.9-2.6L17 13M7 13h10m-5 8a1 1 0 100-2 1 1 0 000 2m6 0a1 1 0 100-2 1 1 0 000 2"
+                      />
+                    </svg>
+
+                    <p className="text-lg font-semibold text-gray-800">Your cart is empty</p>
+
+                    <Link onClick={handleContinue}
+                      href="/shop/Products"
+                      className="px-6 py-2 text-white bg-red-700  hover:bg-red-800 transition duration-300"
+                    >
+                      CONTINUE SHOPPING
+                    </Link>
+                  </div>
+                  }
+                <div>
+                </div>
+                </div>
                 {
-                  cart?.cartItems?.length>0?<Subtotal setCart data={amount}/>:''
-                }
+                    cart?.cartItems?.length > 0 ? <Subtotal setCart data={amount} /> : ''
+                  }
               </div>
-              
+
             </DialogPanel>
           </div>
         </div>

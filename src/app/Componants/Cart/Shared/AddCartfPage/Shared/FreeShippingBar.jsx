@@ -1,14 +1,16 @@
 import React from "react";
 
 const FreeShippingBar = ({ amount }) => {
+
+  console.log(amount)
   return (
     <div className="text-center mb-6">
-     { amount>99? <p className="text-gray-700 font-semibold text-sm md:text-lg">
+      {amount > 99 ? <p className="text-gray-700 font-semibold text-sm md:text-[16px] leading-7">
         CONGRATULATIONS, YOU&#39;VE GOT FREE SHIPPING!
-      </p>:<p className="text-gray-700 font-semibold text-sm md:text-lg">
-      Spend $ {1000-amount*10} more and get free shipping!
-        
-        </p>}
+      </p> : <p className="text-gray-700 font-semibold text-sm md:text-lg">
+        Spend $ {1000 - amount * 10} more and get free shipping!
+
+      </p>}
 
       <div className="relative w-full md:w-3/5 mx-auto mt-2">
         <div className="h-2 bg-gray-200 rounded-full">
@@ -18,9 +20,10 @@ const FreeShippingBar = ({ amount }) => {
           ></div>
         </div>
         <div
-          className={` ${
-            amount > 99 ? "left-[99%] absolute " : `left-[${amount}%] absolute `
-          } absolute top-1/2 -translate-y-1/2 bg-red-700 p-1 rounded-full text-white`}
+          className="absolute top-1/2 -translate-y-1/2 bg-red-700 p-1 rounded-full text-white"
+          style={{
+            left: amount < 99 ? `${amount-1}%` : "98%",
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
