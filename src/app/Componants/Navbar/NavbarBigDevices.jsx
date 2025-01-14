@@ -205,7 +205,7 @@ function NavbarMain() {
 
               {/* this is the navbar slider  */}
 
-              <div className="lg:w-[30%] md:w-[25%] hidden sm:block    justify-start  ">
+              <div className="lg:w-[35%] xl:w-[26%] md:w-[25%] hidden sm:block    justify-start  ">
                 <Slider d={data} />
               </div>
 
