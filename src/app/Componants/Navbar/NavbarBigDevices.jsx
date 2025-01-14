@@ -31,11 +31,14 @@ function NavbarMain() {
       if (data < cursor) {
         document.querySelector(".sf").classList.add("top-0");
         document.querySelector(".sf").classList.add("fixed");
+        document.querySelector(".sf").classList.add("ease-in");
         setIsload(true);
 
-        if (data < 200) {
+        if (data < 150) {
           document.querySelector(".sf").classList.remove("fixed");
+          document.querySelector(".sf").classList.add("ease-in");
           document.querySelector(".top-bar").classList.remove("hidden");
+
         }
       } else {
         document.querySelector(".sf").classList.remove("fixed");
@@ -68,10 +71,10 @@ function NavbarMain() {
   };
 
   return (
-    <div className="w-full transition-transform   bg-white duration-1000 z-50 sf ">
-      <header className={`z-50 pt-0     `}>
+    <div className="  transition-all  w-full   duration-1000 z-50 sf ">
+      <header className={`z-50 pt-0    `}>
         {/* Top Info Bar */}
-        <div className=" bg-gray-100 top-bar z-50 md:px-5 lg:px-2 lg:w-full xl:w-[1400px]    mx-auto ">
+        <div className=" bg-gray-100 top-bar z-50 md:px-5 lg:px-2 lg:w-full     mx-auto ">
           <div className="  hidden  sm:flex justify-between  items-center text-sm text-gray-700">
             <div>
               Need help? Call us:{" "}
@@ -101,14 +104,13 @@ function NavbarMain() {
         </div>
 
         <div
-          className={`${
-            isLoad
+          className={`${isLoad
               ? " transition-all animate__animated animate__fadeInDown delay-3s z-50 mt-0 border-red-700  "
               : " animate__fadeIn animate__animated delay-0 z-50 "
-          }`}
+            }`}
         >
           {/* Main Navbar */}
-          <div className=" px-3 bg-white py-4 justify-between lg:w-full xl:w-[1400px] md:px-5 lg:px-2 mx-auto  flex items-center sm:justify-between">
+          <div className=" px-3 bg-white py-4 justify-between lg:w-full  md:px-5 lg:px-2 mx-auto  flex items-center sm:justify-between">
             <div
               onClick={() => setLeftSliderData(!leftSliderData)}
               className="block sm:hidden"
@@ -125,7 +127,7 @@ function NavbarMain() {
             {/* cart for small devices */}
             <div
               onClick={() => setCart(true)}
-              className="block relative sm:hidden"
+              className="block border  relative sm:hidden"
             >
               <FiShoppingCart className="text-gray-600 mr-1" size={25} />
               <span className="absolute -top-2 bg-red-700 text-white rounded-full w-4 h-4 text-xs text-center p-[1px] right-0">
@@ -188,7 +190,7 @@ function NavbarMain() {
 
           {/* Secondary Options Bar */}
           <div className="bg-[#2c2b49]   ">
-            <div className="lg:w-full xl:w-[1400px]  lg:px-2 mx-auto z-50  text-white flex items-center md:space-x-3 lg:space-x-3">
+            <div className="lg:w-full  lg:px-2 mx-auto z-50  text-white flex items-center md:space-x-3 lg:space-x-3">
               {/*Top Categories */}
 
               <div className="hidden relative z-50 lg:block">

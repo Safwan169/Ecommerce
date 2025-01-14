@@ -4,7 +4,7 @@ import { FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
 function Footer() {
   return (
     <footer className="bg-gray-100 pb-14 sm:pb-0  w-full pt-8">
-    <div className="lg:w-full lg:px-3 lg:pl-10 xl:w-[1300px] mx-auto">
+    <div className="lg:w-full lg:px-3 lg:pl-10  mx-auto">
       {/* Footer Links Section */}
       <div
         className="grid grid-cols-2 lg:p-24 p-6 md:pl-20 lg:px-0 sm:grid-cols-3 
@@ -159,7 +159,7 @@ function Footer() {
       </div>
     </div>
     <div className="w-full bg-[#2c2b49]">
-      <div className="lg:w-full lg:px-5 px-0 xl:w-[1300px] mx-auto">
+      <div className="lg:w-full lg:px-5 px-0 mx-auto">
         <div
           className="p-8 px-0 border-t text-white border-gray-300 pt-4 flex flex-col lg:flex-row 
           justify-between items-center text-sm"

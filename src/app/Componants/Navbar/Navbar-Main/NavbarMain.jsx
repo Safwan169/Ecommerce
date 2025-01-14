@@ -5,7 +5,7 @@ import MobileNavbarLeftSlider from "../Mobile-Navbar/MobileNavbarLeftSlider";
 import BottomNavbar from "../Mobile-Navbar/Bottom-Navbar/BottomNavabr"
 const NavbarMain = () => {
   return (
-    <div>
+    <div className=" ">
       <span className=""><NavbarBigDevices/></span>
 
       <MobileNavbarLeftSlider/>

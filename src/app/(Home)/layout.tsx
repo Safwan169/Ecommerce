@@ -42,7 +42,7 @@ export default function RootLayout({
           {/* <div className="absolute  -top-5 w-[255px] hidden lg:block md:hidden z-50 bg-white">
           <Categories />
         </div> */}
-          <div className="lg:w-full lg:px-2 xl:w-[1400px] z-10 mx-auto">
+          <div className="lg:w-full lg:px-2  z-10 mx-auto">
             {children}
           </div>
           <ModalForCartWatchButton />
