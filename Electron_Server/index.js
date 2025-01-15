@@ -94,8 +94,6 @@ async function run() {
 
       const products = data?.flatMap((d) => d.products);
 
-      // console.log(data,'this is the data for the products')
-      // console.log(products, "this is the data");
 
       res.send({ products });
     });
