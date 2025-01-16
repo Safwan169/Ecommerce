@@ -152,7 +152,6 @@ async function run() {
           ])
           .toArray();
 
-        // console.log(data,'this is for total data and also set limit')
       } else {
         // this is for search Value all in one get brand ,maxPrice,totalProducts and all products in a array
 
