@@ -134,7 +134,6 @@ async function run() {
       let data;
 
       if (searchValue == "Products" && priceMax < 1) {
-        console.log("for all search values");
 
         // this is for all data for search values where have all products,all unique brands, maxPrice, and totalPrice
         data = await productsData
