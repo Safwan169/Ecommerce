@@ -6,7 +6,6 @@ import Breadcrumb from '../../Componants/Breadcrumb/Breadcrumb'
 const Page = () => {
 
 const {categories}=useContext(my_context)
-  console.log(categories,'this is the category for collection')
   
   return (
   <div className=" mt-10">
